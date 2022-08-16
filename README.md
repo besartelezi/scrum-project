@@ -12,6 +12,8 @@ The best way to describe this assignment, is by adding my favourite BeCode meme 
 
 ![spongebob-meme](images/advanced-becode.png)
 
+---
+
 ## The Team
 
 * SCRUM Master: Besart
@@ -20,8 +22,9 @@ The best way to describe this assignment, is by adding my favourite BeCode meme 
 * Full-Stack: Shiva, Pablo, and Besart
 
 ## Q&A with the Client
+Here we have written down the notes we made when we had our first talk with the client.
 
-### Name: G-Bay
+### Name of the site: G-Bay
 
 * Cool font, G-Bay as logo, color and design: very geeky, fun, interactive, flashy,...
 * Bol.com functionality, looks dry and commercial, but fun interactiveness
@@ -48,7 +51,6 @@ The best way to describe this assignment, is by adding my favourite BeCode meme 
 * Sell products using GeekCoins <br>
 * Bidding System, seller need to define a buy-out price => instant purchase <br>
 * Payment: Bank-Account variable, user can add as much money as possible to it.
-
 
 ## Workflow
 
@@ -98,3 +100,10 @@ Because I want to get some $$$ from products I'm not using anymore.
 I want to receive an email when something has been sold/when I buy something.
 So that I know when something has been sold.
 Because I need the confirmation in order to know nothing went wrong.
+
+---
+
+## Day-to-Day Summaries!
+Here we will write down all short summaries of what we did, how we did it, and how we did it.
+
+### Day 1: Developer-Team Aligos has been born!
