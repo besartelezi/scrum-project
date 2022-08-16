@@ -10,7 +10,7 @@ The client doesn't know how they want everything, that's for the developers to d
 
 The best way to describe this assignment, is by adding my favourite BeCode meme to the README.
 
-![spongebob-meme](images/advanced-becode.png)
+![spongebob-meme](readme-images/advanced-becode.png)
 
 ---
 
