@@ -1,0 +1,33 @@
+@import '../colorscheme.scss';
+
+header {
+    background-color: $c-dark;
+    color: $c-light;
+    padding: 1rem 0;
+    width: 100vw;
+
+    nav {
+        margin-left:auto;
+        display: flex;
+        align-items: center;
+
+        ul {
+            list-style-type: none;
+            display: flex;
+
+            li:not(:last-child){
+                margin-right:1rem;
+            }
+        }
+    }
+
+    a {
+        color: $c-light;
+        text-decoration: none;
+        font-size: 1.2rem;
+        
+        &:hover {
+            color: darken($c-light, 10%);
+        }
+    }
+}
