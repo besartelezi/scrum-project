@@ -34,7 +34,7 @@ export const GbayProvider = ({ children }) => {
             url: "./images/4.jpg",
             price: "€20",
             category_id: 3,
-            description: "Toasting to an eagle"
+            description: "Toasting to a hedgehog"
         },
         {
             id: 5,
