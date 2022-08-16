@@ -1,5 +1,12 @@
-# SCRUM: A Geeky Ebay, but better!
-[Intro needs to be here]
+# SCRUM-ming our way to a Geeky eBay.
+This assignment is a big, beefy one.
+We will be working in group to create an e-Bay-like website for a client.
+This is a project where the deadline is in 2 weeks.
+As of now, this is the biggest assignment that BeCode has given us yet.
+
+We will be learning how to work with SCRUM, communicating properly with a client and other developers, as well as how to plan, start and finish a big project like this.
+Something very important here is that we need to decide for ourselves how we will tackle everything.
+The client doesn't know how they want everything, that's for the developers to decide.
 
 The best way to describe this assignment, is by adding my favourite BeCode meme to the README.
 
@@ -7,61 +14,48 @@ The best way to describe this assignment, is by adding my favourite BeCode meme 
 
 ## The Team
 
-Besart - SCRUM Master
-Jelle - Frontend
-Lucas - Backend
-Pablo, Shiva, and Besart - Both
+* SCRUM Master: Besart
+* Lead Frontend: Jelle
+* Lead Backend: Lucas
+* Full-Stack: Shiva, Pablo, and Besart
 
 ## Q&A with the Client
 
-Name: G-Bay
+### Name: G-Bay
 
-Cool font, G-Bay as logo, color and design: very geeky, fun, interactive, flashy,... <br>
-Bol.com functionality, looks dry and commercial, but fun interactiveness <br>
-Amazon/2dehands for pure products, but make everything geeky <br>
-Payments need to be clear, email confirm payment happened, payment system not needed <br>
+* Cool font, G-Bay as logo, color and design: very geeky, fun, interactive, flashy,...
+* Bol.com functionality, looks dry and commercial, but fun interactiveness
+* Amazon/2dehands for pure products, but make everything geeky
+* Payments need to be clear, email confirm payment happened, payment system not needed
 
-To-Do
+## Must-Haves 
 
-Create a dummy repository to practice Git Pull Requests behaviour
-
-## Client
-
-Bare Bones <br>
-Ebay, main difference, Geeky kind of version <br>
-categories: Marvel, Pokemon, ATLA, DBZ,... <br>
-People log in and sell/buy <br>
-product with price, pic, description <br>
-work smoothly on email, email confirmation to seller <br>
-seller: your product ahs been bought, send to this ... <br>
-Shopping cart, add multiple products and remove them <br>
+* Ebay, main difference, Geeky kind of version.
+* categories: Marvel, Pokemon, ATLA, DBZ,...
+* People log in and sell/buy
+* product with price, pic, description
+* work smoothly on email, email confirmation to seller
+* seller: your product ahs been bought, send to this ...
+* Shopping cart, add multiple products and remove them
 
 ## Nice-to-haves
 
-Wish list <br>
-Recommended section, when buying/clicking <br>
-Purchase history <br>
-Track previous prices of same product, prices then and now, user should be able to see prices fluctuate <br>
-Create as much action on website as possible, on every purchase/sell, add site currency (GeekCoins) <br>
-Sell products using GeekCoins <br>
-Bidding System, seller need to define a buy-out price => instant purchase <br>
-Payment: Bank-Account variable, user can add as much money as possible to it.
+* Wish list <br>
+* Recommended section, when buying/clicking <br>
+* Purchase history <br>
+* Track previous prices of same product, prices then and now, user should be able to see prices fluctuate <br>
+* Create as much action on website as possible, on every purchase/sell, add site currency (GeekCoins) <br>
+* Sell products using GeekCoins <br>
+* Bidding System, seller need to define a buy-out price => instant purchase <br>
+* Payment: Bank-Account variable, user can add as much money as possible to it.
 
-### Questions
 
-How will the payment happen <br>
-Will they send their logo/brand so we can design website accordingly <br>
-What websites should we use for a reference, what do they like about that website? <br>
-What fun features would they like to add if we have enough time?
+## Workflow
 
----
-
-Workflow
-
-Rest API/Node.JS for backend, React for front-end. <br>
-GitHub behaviour: Setting up small branches for big features, and add smaller branches to those for smaller features. <br>
-Pull requests: ask coaches => They recommend learning Pull Requests, this is a very common practice, will help avoid unintentional mistakes. <br>
-Using Trello: When an event is done, communicate it on Discord (create pull requests). <br>
+* Rest API/Node.JS for backend, React for front-end. <br>
+* GitHub behaviour: Setting up small branches for big features, and add smaller branches to those for smaller features. <br>
+* Pull requests: ask coaches => They recommend learning Pull Requests, this is a very common practice, will help avoid unintentional mistakes. <br>
+* Using Trello: When an event is done, communicate it on Discord (create pull requests). <br>
 
 ---
 
@@ -101,6 +95,6 @@ So that I can log in to the page, see all different items I am selling, add new 
 Because I want to get some $$$ from products I'm not using anymore.
 
 ### Email Confirmation
-
-
-
+I want to receive an email when something has been sold/when I buy something.
+So that I know when something has been sold.
+Because I need the confirmation in order to know nothing went wrong.
