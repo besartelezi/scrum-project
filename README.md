@@ -1,4 +1,4 @@
-# SCRUM-ming our way to a Geeky eBay.
+# SCRUM-ming our way to a Geeky eBay!
 This assignment is a big, beefy one.
 We will be working in group to create an e-Bay-like website for a client.
 This is a project where the deadline is in 2 weeks.
@@ -14,12 +14,13 @@ The best way to describe this assignment, is by adding my favourite BeCode meme 
 
 ---
 
-## The Team
+## Meet The Team
 
-* SCRUM Master: Besart
-* Lead Frontend: Jelle
-* Lead Backend: Lucas
-* Full-Stack: Shiva, Pablo, and Besart
+* [Shiva](https://github.com/shivamottaghi): Full-Stack Developer
+* [Pablo](https://github.com/PabloGP18): Full-Stack Developer
+* [Jelle](https://github.com/jelle-vdp): Lead Frontend Developer
+* [Lucas](https://github.com/Gepoverlow): Lead Backend Developer
+* [Besart](https://github.com/besartelezi): Scrum-Master and Full-Stack Developer
 
 ## Q&A with the Client
 Here we have written down the notes we made when we had our first talk with the client.
@@ -31,7 +32,7 @@ Here we have written down the notes we made when we had our first talk with the 
 * Amazon/2dehands for pure products, but make everything geeky
 * Payments need to be clear, email confirm payment happened, payment system not needed
 
-## Must-Haves 
+### Must-Haves 
 
 * Ebay, main difference, Geeky kind of version.
 * categories: Marvel, Pokemon, ATLA, DBZ,...
@@ -41,23 +42,25 @@ Here we have written down the notes we made when we had our first talk with the 
 * seller: your product ahs been bought, send to this ...
 * Shopping cart, add multiple products and remove them
 
-## Nice-to-haves
+### Nice-to-haves
 
-* Wish list <br>
-* Recommended section, when buying/clicking <br>
-* Purchase history <br>
-* Track previous prices of same product, prices then and now, user should be able to see prices fluctuate <br>
-* Create as much action on website as possible, on every purchase/sell, add site currency (GeekCoins) <br>
-* Sell products using GeekCoins <br>
-* Bidding System, seller need to define a buy-out price => instant purchase <br>
+* Wish list
+* Recommended section, when buying/clicking
+* Purchase history
+* Track previous prices of same product, prices then and now, user should be able to see prices fluctuate
+* Create as much action on website as possible, on every purchase/sell, add site currency (GeekCoins)
+* Sell products using GeekCoins
+* Bidding System, seller need to define a buy-out price => instant purchase
 * Payment: Bank-Account variable, user can add as much money as possible to it.
 
-## Workflow
+---
 
-* Rest API/Node.JS for backend, React for front-end. <br>
-* GitHub behaviour: Setting up small branches for big features, and add smaller branches to those for smaller features. <br>
-* Pull requests: ask coaches => They recommend learning Pull Requests, this is a very common practice, will help avoid unintentional mistakes. <br>
-* Using Trello: When an event is done, communicate it on Discord (create pull requests). <br>
+## Workflow: Flowing through our work
+
+* Rest API/Node.JS for backend, React for front-end. 
+* GitHub behaviour: Setting up small branches for big features, and add smaller branches to those for smaller features. 
+* Pull requests: ask coaches => They recommend learning Pull Requests, this is a very common practice, will help avoid unintentional mistakes.
+* Using Trello: When an event is done, communicate it on Discord (create pull requests).
 
 ---
 
@@ -107,3 +110,22 @@ Because I need the confirmation in order to know nothing went wrong.
 Here we will write down all short summaries of what we did, how we did it, and how we did it.
 
 ### Day 1: Developer-Team Aligos has been born!
+After Pablo assembled the Aligo-vengers, we had our very first meeting.
+It was decided that we would prepare some questions for the client, since we only have one meeting with them every week and they respond slowly to emails.
+After that, we started to prepare how we would tackle the backend and the frontend.
+It was decided we would use a restful API and a database for the frontend, and React for the front end.
+
+Then we decided what rules we should follow regarding our Git behaviour.
+We thought using Pull requests would've been the best way, since we were all unfamiliar with it and learning is what being a developer is all about!
+It's also the most professional way of working.
+Afterwards, it was decided that we would add a branch called "Development".
+In that branch, we would add other branches like "homepage" and the like.
+Then those branches would be split up once more into smaller branches, named after every feature that would be added for that main feature.
+
+Once that was all written out, we opened up our Trello and started writing out small and attainable goals as if our livelihood depended on it (which it will in the future).
+Since it was our first time using Trello as a SCRUM board, there was some struggling, but nothing the 5 Aligos couldn't handle!
+We quickly decided how we would order all tasks, how we would add more tasks when needed, and how we would start on the assignment.
+
+All in all, it was a great first day!
+
+![aligos-assemble](readme-images/aligos-assemble.png)
