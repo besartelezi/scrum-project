@@ -35,6 +35,7 @@ main {
                 background-color:$c-dark;
                 color:$c-light;
                 text-align:center;
+                box-shadow: 10px 10px $c-secondary;
         
                 &__img {
                     margin-bottom:1rem;

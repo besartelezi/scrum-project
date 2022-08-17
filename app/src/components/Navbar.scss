@@ -6,6 +6,10 @@ header {
     padding: 1rem 0;
     width: 100vw;
 
+    svg {
+        max-width: 200px;
+    }
+
     nav {
         margin-left:auto;
         display: flex;
@@ -23,6 +27,7 @@ header {
                 color: $c-light;
                 text-decoration: none;
                 font-size: 1.2rem;
+                cursor:pointer;
                 
                 &:hover {
                     color: darken($c-light, 10%);
