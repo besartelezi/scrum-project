@@ -129,3 +129,24 @@ We quickly decided how we would order all tasks, how we would add more tasks whe
 All in all, it was a great first day!
 
 ![aligos-assemble](readme-images/aligos-assemble.png)
+
+### Day 2: Our Big G(b)ay International Logo
+The second day started out like all future days will start, with a meeting.
+We went over everything what was done, and what needed to be done. 
+An email was sent to the client for some additional information, the database was nearly done, and there was some huge progress made in the front end.
+
+After the meeting we also let our Lead Developers inform the rest of the team what features they added and what other features they'd like to add.
+This gave the rest of the team a clearer view of what they could help with and what needs to be done.
+
+Then right before our lunch-break, we held another meeting.
+Frequent meetings is something that is very important to the Aligos.
+Group up every so often so that everyone can work separately as efficient as possible, or in smaller sub-groups.
+
+The most notable event of that day was when Besart added the logo to our repository.
+He made a wonderful logo on Adobe Illustrator.
+Unfortunately, he used a custom font and forgot to turn the text into outlines.
+This caused a weird bug that made our logo look like this.
+
+![our-logo](readme-images/wrong-logo.PNG)
+
+Luckily we were able to fix this issue in less than a minute (after ten minutes of constant laughter).
