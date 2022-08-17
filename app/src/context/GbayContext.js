@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 const GbayContext = createContext();
 
 export const GbayProvider = ({ children }) => {
+    
     const [products, setProducts] = useState([
         {
             id: 1,
@@ -46,8 +47,21 @@ export const GbayProvider = ({ children }) => {
         }
     ]);
 
+    const [users, setUsers] = useState([
+        {
+            id: 1, 
+            username: "becode",
+            password: "becode"
+        }
+    ]);
+
+    const [loggedInUser, setLoggedInUser] = useState(null);
+
     return <GbayContext.Provider value={{
-        products
+        products,
+        users, 
+        loggedInUser,
+        setLoggedInUser
     }}>{children}</GbayContext.Provider>;
 }
 
