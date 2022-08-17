@@ -12,7 +12,7 @@ function HomePage() {
             <h1>Home</h1>
             <section className="products-wrapper">
                 {products.map((product) => (
-                    <article key={product.id} className="product">
+                    <article key={crypto.randomUUID()} className="product">
                         <img className="product__img" src={product.url} />
                         <h3 className="product__name">{product.name}</h3>
                         <p className="product__description">{product.description}</p>
