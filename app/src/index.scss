@@ -29,7 +29,6 @@ button, input {
 button {
   background-color: $c-secondary;
   color:#fff;
-  margin: 0 auto;
 
   &:hover {
     background-color: darken($c-secondary, 10%);
@@ -56,13 +55,14 @@ body {
     display:flex;
     width:100%;
     position: relative;
-    margin:auto;
+    margin-left:auto;
+    margin-right:auto;
 
-    @media (min-width:900px){
+    @media (min-width:1180px){
         max-width: calc(1080px - 4rem);
     }
 
-    @media (max-width:900px){
+    @media (max-width:1180px){
         max-width: calc(100vw - 40px);
     }
 }

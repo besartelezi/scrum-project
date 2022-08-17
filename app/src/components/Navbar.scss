@@ -18,16 +18,26 @@ header {
             li:not(:last-child){
                 margin-right:1rem;
             }
+            
+            a {
+                color: $c-light;
+                text-decoration: none;
+                font-size: 1.2rem;
+                
+                &:hover {
+                    color: darken($c-light, 10%);
+                }
+            }
         }
     }
 
-    a {
-        color: $c-light;
-        text-decoration: none;
-        font-size: 1.2rem;
-        
-        &:hover {
-            color: darken($c-light, 10%);
+    .navbar__user-info {
+        display: flex;
+        align-items: center;
+        margin-left: 2rem;
+
+        svg {
+            margin-right: 0.5rem;
         }
     }
 }
