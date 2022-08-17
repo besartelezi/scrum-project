@@ -1,0 +1,8 @@
+@import '../colorscheme.scss';
+
+footer {
+    width:100%;
+    background: $c-dark;
+    color: $c-light;
+    padding:0.8rem 0;
+}
