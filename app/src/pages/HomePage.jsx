@@ -11,6 +11,7 @@ function HomePage() {
         <div className="container">
             <h1>HOME</h1>
             <section className="products-wrapper">
+                {/* <img src={require("../assets/images/gbay-logo-yellow.svg").default} alt="G-bay logo" /> */}
                 {products.map((product) => (
                     <article key={crypto.randomUUID()} className="product">
                         <img className="product__img" src={product.url} />
