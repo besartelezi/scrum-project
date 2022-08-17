@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  },
+  "name": "scrum-project",
+  "description": "This assignment is a big, beefy one. We will be working in group to create an e-Bay-like website for a client. This is a project where the deadline is in 2 weeks. As of now, this is the biggest assignment that BeCode has given us yet.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "cd server && npm install && node server.js",
+    "heroku-postbuild": "cd app && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gepoverlow/scrum-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gepoverlow/scrum-project/issues"
+  },
+  "homepage": "https://github.com/Gepoverlow/scrum-project#readme"
+}

@@ -1,11 +1,15 @@
+const dotenv = require("dotenv");
+
+dotenv.config({
+  path: "../.env",
+});
+
 const config = {
   db: {
-    //TODO:HIDE THESE
-
-    host: "localhost",
-    user: "becode",
-    password: "becode",
-    database: "languages",
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
   },
   listPerPage: 10,
 };
