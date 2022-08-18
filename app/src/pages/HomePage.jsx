@@ -9,7 +9,7 @@ function HomePage() {
 
     return (
         <div className="container">
-            <h1>Home</h1>
+            <h1>HOME</h1>
             <section className="products-wrapper">
                 {products.map((product) => (
                     <article key={crypto.randomUUID()} className="product">
