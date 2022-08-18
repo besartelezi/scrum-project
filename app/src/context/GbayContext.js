@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-const GbayContext = createContext();
+const GbayContext = createContext();  
 
 export const GbayProvider = ({ children }) => {
     
@@ -11,7 +11,8 @@ export const GbayProvider = ({ children }) => {
             url: "../assets/images/1.jpg",
             price: "€20",
             category_id: 1,
-            description: "Getting a leg hug from your girlfriend"
+            shortDescription: "Getting a leg hug from your girlfriend",
+            longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ligula sem, pellentesque et elementum non, luctus sit amet arcu. Duis faucibus, ipsum vel interdum faucibus, nunc velit porta magna, vitae pellentesque purus urna vitae libero. Proin mattis lorem non nisi dictum facilisis. Morbi et nibh turpis. Nunc ultricies nulla diam, vel bibendum justo vehicula quis. Donec ut felis id dolor faucibus placerat. Vivamus facilisis ligula in scelerisque dapibus. Duis sagittis consequat pulvinar. Phasellus pharetra luctus nulla, ut dictum lacus eleifend consectetur. Duis in molestie mauris. Quisque auctor dolor et arcu molestie, ornare aliquam lorem pulvinar. Nam mattis est at nulla tincidunt semper. Aenean nec facilisis nibh, a elementum urna."
         },
         {
             id: 2,
@@ -19,7 +20,8 @@ export const GbayProvider = ({ children }) => {
             url: "../assets/images/2.jpg",
             price: "€50",
             category_id: 1,
-            description: "Photoshopped birthday wishes from J-Lo"
+            shortDescription: "Photoshopped birthday wishes from J-Lo",
+            longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ligula sem, pellentesque et elementum non, luctus sit amet arcu. Duis faucibus, ipsum vel interdum faucibus, nunc velit porta magna, vitae pellentesque purus urna vitae libero. Proin mattis lorem non nisi dictum facilisis. Morbi et nibh turpis. Nunc ultricies nulla diam, vel bibendum justo vehicula quis. Donec ut felis id dolor faucibus placerat. Vivamus facilisis ligula in scelerisque dapibus. Duis sagittis consequat pulvinar. Phasellus pharetra luctus nulla, ut dictum lacus eleifend consectetur. Duis in molestie mauris. Quisque auctor dolor et arcu molestie, ornare aliquam lorem pulvinar. Nam mattis est at nulla tincidunt semper. Aenean nec facilisis nibh, a elementum urna."
         },
         {
             id: 3,
@@ -27,7 +29,7 @@ export const GbayProvider = ({ children }) => {
             url: "../assets/images/3.jpg",
             price: "€350",
             category_id: 2,
-            description: "Having a refreshing icecream with a dictator"
+            shortDescription: "Having a refreshing icecream with a dictator"
         },
         {
             id: 4,
@@ -35,7 +37,8 @@ export const GbayProvider = ({ children }) => {
             url: "../assets/images/4.jpg",
             price: "€20",
             category_id: 3,
-            description: "Toasting to a hedgehog"
+            shortDescription: "Toasting to a hedgehog",
+            longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ligula sem, pellentesque et elementum non, luctus sit amet arcu. Duis faucibus, ipsum vel interdum faucibus, nunc velit porta magna, vitae pellentesque purus urna vitae libero. Proin mattis lorem non nisi dictum facilisis. Morbi et nibh turpis. Nunc ultricies nulla diam, vel bibendum justo vehicula quis. Donec ut felis id dolor faucibus placerat. Vivamus facilisis ligula in scelerisque dapibus. Duis sagittis consequat pulvinar. Phasellus pharetra luctus nulla, ut dictum lacus eleifend consectetur. Duis in molestie mauris. Quisque auctor dolor et arcu molestie, ornare aliquam lorem pulvinar. Nam mattis est at nulla tincidunt semper. Aenean nec facilisis nibh, a elementum urna."
         },
         {
             id: 5,
@@ -43,7 +46,8 @@ export const GbayProvider = ({ children }) => {
             url: "../assets//images/5.jpg",
             price: "€15",
             category_id: 2,
-            description: "Multiple screens with OG Putin"
+            shortDescription: "Multiple screens with OG Putin",
+            longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ligula sem, pellentesque et elementum non, luctus sit amet arcu. Duis faucibus, ipsum vel interdum faucibus, nunc velit porta magna, vitae pellentesque purus urna vitae libero. Proin mattis lorem non nisi dictum facilisis. Morbi et nibh turpis. Nunc ultricies nulla diam, vel bibendum justo vehicula quis. Donec ut felis id dolor faucibus placerat. Vivamus facilisis ligula in scelerisque dapibus. Duis sagittis consequat pulvinar. Phasellus pharetra luctus nulla, ut dictum lacus eleifend consectetur. Duis in molestie mauris. Quisque auctor dolor et arcu molestie, ornare aliquam lorem pulvinar. Nam mattis est at nulla tincidunt semper. Aenean nec facilisis nibh, a elementum urna."
         }
     ]);
 

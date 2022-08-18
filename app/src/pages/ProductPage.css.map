@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAEI,aAFS,CAET,aAAa,CAAC;EACV,SAAS,EAAC,GAAG;EACb,MAAM,EAAC,aAAa;EACpB,KAAK,EAAC,IAAI;CACb;;AANL,AAQI,aARS,CAQT,eAAe,CAAC;EACZ,SAAS,EAAC,IAAI;EACd,WAAW,EAAE,GAAG;CACnB",
+    "sources": [
+        "Productpage.scss",
+        "../colorscheme.scss"
+    ],
+    "names": [],
+    "file": "Productpage.css"
+}

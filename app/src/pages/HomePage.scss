@@ -27,47 +27,9 @@ main {
                 grid-template-columns: 1fr 1fr;
                 gap: 1rem;
             }
-        
-            .product {
-                display:flex;
-                flex-direction: column;
-                align-items: center;
-                background-color:$c-dark;
-                color:$c-light;
-                text-align:center;
-                box-shadow: 3px 3px $c-light, 10px 10px $c-secondary;
-                transition: transform 0.5s ease-in-out;
-                cursor:pointer;
 
-                &:hover {
-                    transform: scale(1.05);
-                }
-        
-                &__img {
-                    margin-bottom:1rem;
-                    max-width:100%;
-                }
-
-                &__name, &__description, &__price {
-                    margin-left:1rem;
-                    margin-right:1rem;
-                }
-
-                &__name {
-                    margin-bottom: 0.4rem;
-                }
-            
-                &__description {
-                    margin-bottom:1rem;
-                }
-        
-                &__price {
-                    background-color: $c-light;
-                    color: $c-dark;
-                    padding: 0.5rem 1rem;
-                    border-radius: 0.5rem;
-                    margin-bottom:1rem;
-                }
+            a {
+                text-decoration: none;
             }
         }
     }
