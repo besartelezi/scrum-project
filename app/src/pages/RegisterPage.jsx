@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import {useContext, useEffect} from 'react';
 import GbayContext from '../context/GbayContext';
 
 import "./RegisterPage.scss";
@@ -10,23 +10,32 @@ function RegisterPage(){
     const [firstName , setFirstName] = useState('');
     const [lastName , setLastName] = useState('');
     const [email , setEmail] = useState('');
-    const [userName , setUserName] = useState('');
-    const [userNameError , setUserNameError] = useState(false);
-    const [userNameTouched , serUserNameTouched] = useState(false);
+    const [userName , setUserName] = useState({
+        value : "",
+        error : false,
+        tag : ''
+    });
+
     const [pass , setPass] = useState('');
     const [passConfirm , setPassConfirm] = useState('');
 
     const handleUserName = (event) => {
-        const username = event.target.value;
-        setUserName(username);
-        serUserNameTouched(true);
+        let input = event.target.value;
+        setUserName({value: input});
+        let errortemp = users.find(user => user.username === input);
+        if (errortemp !== undefined){
+            setUserName({value : input ,error: true, tag: <span className='error'>This username is already taken.</span>})
+        }else {
+            setUserName({value : input ,error: false, tag: <span className='confirm'>Good!</span>})
+        }
     }
+
 
 
     return (
         <div className="container">
             <h1>Register</h1>
-
+            
             <label htmlFor="firstname">First Name</label>
             <input type="text" placeholder="First Name" id="firstname"
                    value={firstName} onChange={(event)=> setFirstName(event.target.value)}/>
@@ -41,12 +50,8 @@ function RegisterPage(){
 
             <label htmlFor="username">Username</label>
             <input type="text" placeholder="Username" id="username"
-                   value={userName} onChange={handleUserName}/>
-            {
-                userNameError
-                ? (<p className='error'>Username already exists</p>)
-                : (<p className='confirm'>You're good to go!</p>)
-            }
+                   value={userName.value} onChange={handleUserName}/>
+            {userName.tag}
 
 
 
