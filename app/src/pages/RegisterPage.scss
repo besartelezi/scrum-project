@@ -16,10 +16,31 @@ input {
   margin-right:auto;
 }
 
-.error {
-  color: #ee3e23;
-}
 
-.confirm {
-  color: green;
+/*__________________css for register page________________*/
+.register-page{
+  .error {
+    color: #ee3e23;
+    display: block;
+    font-size: small;
+  }
+
+  .confirm {
+    color: green;
+    display: block;
+    font-size: small;
+  }
+
+  .input-with-alert{
+    margin-bottom: 0.5rem;
+  }
+
+  .display-alert{
+    margin-bottom: 0.5rem;
+  }
+
+  .register__wrapper{
+    display: flex;
+    gap: 2rem;
+  }
 }

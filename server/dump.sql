@@ -1,143 +1,354 @@
--- MariaDB dump 10.19  Distrib 10.4.24-MariaDB, for Win64 (AMD64)
 --
--- Host: 127.0.0.1    Database: gbay_db
--- ------------------------------------------------------
--- Server version	10.4.24-MariaDB
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `category`
+-- PostgreSQL database dump
 --
 
-DROP TABLE IF EXISTS `category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `category` (
-  `id` int(30) NOT NULL AUTO_INCREMENT,
-  `category` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- Dumped from database version 14.5
+-- Dumped by pg_dump version 14.5
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
 
 --
--- Dumping data for table `category`
+-- Name: category; Type: TABLE; Schema: public; Owner: lucas
 --
 
-LOCK TABLES `category` WRITE;
-/*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Trading cards'),(2,'Action figures'),(3,'Plushies'),(4,'Clothing'),(5,'Manga'),(6,'Light novels'),(7,'Accessoires ');
-/*!40000 ALTER TABLE `category` ENABLE KEYS */;
-UNLOCK TABLES;
+CREATE TABLE public.category (
+    id integer NOT NULL,
+    cetagory character varying(255) NOT NULL
+);
+
+
+ALTER TABLE public.category OWNER TO lucas;
 
 --
--- Table structure for table `product`
+-- Name: category_id_seq; Type: SEQUENCE; Schema: public; Owner: lucas
 --
 
-DROP TABLE IF EXISTS `product`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `product` (
-  `id` int(30) NOT NULL AUTO_INCREMENT,
-  `product_name` varchar(255) NOT NULL,
-  `amount` int(30) NOT NULL,
-  `price` int(30) NOT NULL,
-  `category_id` int(30) DEFAULT NULL,
-  `post_date` date NOT NULL,
-  `user_id` int(30) DEFAULT NULL,
-  `product_description` varchar(255) DEFAULT NULL,
-  `image` blob DEFAULT NULL,
-  `theme_id` int(30) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `product_user_id_fk` (`user_id`),
-  KEY `product_category_id_fk` (`category_id`),
-  KEY `product_theme_id_fk` (`theme_id`),
-  CONSTRAINT `product_category_id_fk` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`),
-  CONSTRAINT `product_theme_id_fk` FOREIGN KEY (`theme_id`) REFERENCES `theme` (`id`),
-  CONSTRAINT `product_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE SEQUENCE public.category_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.category_id_seq OWNER TO lucas;
 
 --
--- Dumping data for table `product`
+-- Name: category_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: lucas
 --
 
-LOCK TABLES `product` WRITE;
-/*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (3,'Doctor Strange action figure',2,9999,2,'2022-08-17',1,'An action figure of Doctor Strange.',NULL,8),(4,'Marvel mug',2,500,7,'2022-08-17',2,'A mug with Marvel comic panels.',NULL,8),(5,'One Piece volume 1 manga',4,1399,5,'2022-08-17',3,'The first volume of the beloved manga One Piece.',NULL,3);
-/*!40000 ALTER TABLE `product` ENABLE KEYS */;
-UNLOCK TABLES;
+ALTER SEQUENCE public.category_id_seq OWNED BY public.category.id;
+
 
 --
--- Table structure for table `theme`
+-- Name: product_seq; Type: SEQUENCE; Schema: public; Owner: lucas
 --
 
-DROP TABLE IF EXISTS `theme`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `theme` (
-  `id` int(30) NOT NULL AUTO_INCREMENT,
-  `theme_name` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `theme_id_uindex` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE SEQUENCE public.product_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.product_seq OWNER TO lucas;
 
 --
--- Dumping data for table `theme`
+-- Name: product; Type: TABLE; Schema: public; Owner: lucas
 --
 
-LOCK TABLES `theme` WRITE;
-/*!40000 ALTER TABLE `theme` DISABLE KEYS */;
-INSERT INTO `theme` VALUES (1,'Dragonball Z'),(2,'Naruto'),(3,'One piece'),(4,'Pokémon'),(5,'Hajime no Ippo'),(6,'Attack on titan'),(7,'DC'),(8,'Marvel'),(9,'Death note'),(10,'Black clover'),(11,'Chainsaw Man'),(12,'Jujutsu Kaisen'),(13,'Berserk'),(14,'Yakuza'),(15,'Elden ring');
-/*!40000 ALTER TABLE `theme` ENABLE KEYS */;
-UNLOCK TABLES;
+CREATE TABLE public.product (
+    id integer DEFAULT nextval('public.product_seq'::regclass) NOT NULL,
+    product_name character varying(255) NOT NULL,
+    amount integer NOT NULL,
+    price integer NOT NULL,
+    category_id integer,
+    post_date date NOT NULL,
+    user_id integer,
+    product_description character varying(255) DEFAULT NULL::character varying,
+    image bytea,
+    theme_id integer
+);
+
+
+ALTER TABLE public.product OWNER TO lucas;
 
 --
--- Table structure for table `user`
+-- Name: theme; Type: TABLE; Schema: public; Owner: lucas
 --
 
-DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user` (
-  `id` int(30) NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(255) NOT NULL,
-  `lastname` varchar(255) DEFAULT NULL,
-  `email` varchar(70) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `user_username_uindex` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE public.theme (
+    id integer NOT NULL,
+    theme_name character varying(255) NOT NULL
+);
+
+
+ALTER TABLE public.theme OWNER TO lucas;
 
 --
--- Dumping data for table `user`
+-- Name: theme_id_seq; Type: SEQUENCE; Schema: public; Owner: lucas
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Besart','Elezi','besartelezi@becode.org','Bigbez','ilovebecode'),(2,'Shiva','Mottaghi','shivamottaghi@becode.org','Shishi','ilovemyhusband'),(3,'Jelle','Van de Poel','jellevdp@becode.org','Snelle Jelle','ihatefish'),(4,'Lucas','Stocker','lucasstocker@becode.org','Gepoverlow','palomita'),(5,'Pablo','Garcia Plaza','Pablogp@becode.org','Pgp','ilikemate');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+CREATE SEQUENCE public.theme_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-17 14:24:27
+ALTER TABLE public.theme_id_seq OWNER TO lucas;
+
+--
+-- Name: theme_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: lucas
+--
+
+ALTER SEQUENCE public.theme_id_seq OWNED BY public.theme.id;
+
+
+--
+-- Name: user; Type: TABLE; Schema: public; Owner: lucas
+--
+
+CREATE TABLE public."user" (
+    id integer NOT NULL,
+    firstname character varying(255) NOT NULL,
+    lastname character varying(255),
+    email character varying(70) NOT NULL,
+    username character varying(30) NOT NULL,
+    password character varying(20) NOT NULL
+);
+
+
+ALTER TABLE public."user" OWNER TO lucas;
+
+--
+-- Name: user_id_seq; Type: SEQUENCE; Schema: public; Owner: lucas
+--
+
+CREATE SEQUENCE public.user_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.user_id_seq OWNER TO lucas;
+
+--
+-- Name: user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: lucas
+--
+
+ALTER SEQUENCE public.user_id_seq OWNED BY public."user".id;
+
+
+--
+-- Name: category id; Type: DEFAULT; Schema: public; Owner: lucas
+--
+
+ALTER TABLE ONLY public.category ALTER COLUMN id SET DEFAULT nextval('public.category_id_seq'::regclass);
+
+
+--
+-- Name: theme id; Type: DEFAULT; Schema: public; Owner: lucas
+--
+
+ALTER TABLE ONLY public.theme ALTER COLUMN id SET DEFAULT nextval('public.theme_id_seq'::regclass);
+
+
+--
+-- Name: user id; Type: DEFAULT; Schema: public; Owner: lucas
+--
+
+ALTER TABLE ONLY public."user" ALTER COLUMN id SET DEFAULT nextval('public.user_id_seq'::regclass);
+
+
+--
+-- Data for Name: category; Type: TABLE DATA; Schema: public; Owner: lucas
+--
+
+COPY public.category (id, cetagory) FROM stdin;
+1	Trading cards
+2	Action figures
+3	Plushies
+4	Clothing
+5	Manga
+6	Light novels
+7	Accessoires 
+\.
+
+
+--
+-- Data for Name: product; Type: TABLE DATA; Schema: public; Owner: lucas
+--
+
+COPY public.product (id, product_name, amount, price, category_id, post_date, user_id, product_description, image, theme_id) FROM stdin;
+3	Doctor Strange action figure	2	9999	2	2022-08-17	1	An action figure of Doctor Strange.	\N	8
+4	Marvel mug	2	500	7	2022-08-17	2	A mug with Marvel comic panels.	\N	8
+5	One Piece volume 1 manga	4	1399	5	2022-08-17	3	The first volume of the beloved manga One Piece.	\N	3
+\.
+
+
+--
+-- Data for Name: theme; Type: TABLE DATA; Schema: public; Owner: lucas
+--
+
+COPY public.theme (id, theme_name) FROM stdin;
+1	Dragonball Z
+2	Naruto
+3	One piece
+4	Pokémon
+5	Hajime no Ippo
+6	Attack on titan
+7	DC
+8	Marvel
+9	Death note
+10	Black clover
+11	Chainsaw Man
+12	Jujutsu Kaisen
+13	Berserk
+14	Yakuza
+15	Elden ring
+\.
+
+
+--
+-- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: lucas
+--
+
+COPY public."user" (id, firstname, lastname, email, username, password) FROM stdin;
+1	Besart	Elezi	besartelezi@becode.org	Bigbez	ilovebecode
+2	Shiva	Mottaghi	shivamottaghi@becode.org	Shishi	ilovemyhusband
+3	Jelle	Van de Poel	jellevdp@becode.org	Snelle Jelle	ihatefish
+4	Lucas	Stocker	lucasstocker@becode.org	Gepoverlow	palomita
+5	Pablo	Garcia Plaza	Pablogp@becode.org	Pgp	ilikemate
+\.
+
+
+--
+-- Name: category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: lucas
+--
+
+SELECT pg_catalog.setval('public.category_id_seq', 1, false);
+
+
+--
+-- Name: product_seq; Type: SEQUENCE SET; Schema: public; Owner: lucas
+--
+
+SELECT pg_catalog.setval('public.product_seq', 6, false);
+
+
+--
+-- Name: theme_id_seq; Type: SEQUENCE SET; Schema: public; Owner: lucas
+--
+
+SELECT pg_catalog.setval('public.theme_id_seq', 1, false);
+
+
+--
+-- Name: user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: lucas
+--
+
+SELECT pg_catalog.setval('public.user_id_seq', 1, true);
+
+
+--
+-- Name: category category_pk; Type: CONSTRAINT; Schema: public; Owner: lucas
+--
+
+ALTER TABLE ONLY public.category
+    ADD CONSTRAINT category_pk PRIMARY KEY (id);
+
+
+--
+-- Name: product product_pkey; Type: CONSTRAINT; Schema: public; Owner: lucas
+--
+
+ALTER TABLE ONLY public.product
+    ADD CONSTRAINT product_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: theme theme_pk; Type: CONSTRAINT; Schema: public; Owner: lucas
+--
+
+ALTER TABLE ONLY public.theme
+    ADD CONSTRAINT theme_pk PRIMARY KEY (id);
+
+
+--
+-- Name: user user_pk; Type: CONSTRAINT; Schema: public; Owner: lucas
+--
+
+ALTER TABLE ONLY public."user"
+    ADD CONSTRAINT user_pk PRIMARY KEY (id);
+
+
+--
+-- Name: product_category_id_fk; Type: INDEX; Schema: public; Owner: lucas
+--
+
+CREATE INDEX product_category_id_fk ON public.product USING btree (category_id);
+
+
+--
+-- Name: product_theme_id_fk; Type: INDEX; Schema: public; Owner: lucas
+--
+
+CREATE INDEX product_theme_id_fk ON public.product USING btree (theme_id);
+
+
+--
+-- Name: product_user_id_fk; Type: INDEX; Schema: public; Owner: lucas
+--
+
+CREATE INDEX product_user_id_fk ON public.product USING btree (user_id);
+
+
+--
+-- Name: product product_category_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: lucas
+--
+
+ALTER TABLE ONLY public.product
+    ADD CONSTRAINT product_category_id_fk FOREIGN KEY (category_id) REFERENCES public.category(id);
+
+
+--
+-- Name: product product_theme_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: lucas
+--
+
+ALTER TABLE ONLY public.product
+    ADD CONSTRAINT product_theme_id_fk FOREIGN KEY (theme_id) REFERENCES public.theme(id);
+
+
+--
+-- Name: product product_user_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: lucas
+--
+
+ALTER TABLE ONLY public.product
+    ADD CONSTRAINT product_user_id_fk FOREIGN KEY (user_id) REFERENCES public."user"(id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

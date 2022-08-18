@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 9000;
-const programmingLanguagesRouter = require("./routes/programmingLanguages");
+const usersRouter = require("./routes/Users");
 const path = require("path");
 
 app.use(express.json());
@@ -15,7 +15,8 @@ app.get("/", (req, res) => {
 });
 
 // API Routes
-app.use("/programming-languages", programmingLanguagesRouter);
+app.use("/users", usersRouter);
+app.use("/products", productsRouter);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {

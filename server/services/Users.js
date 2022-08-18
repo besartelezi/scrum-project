@@ -2,27 +2,22 @@ const db = require("./db");
 const helper = require("../helper");
 const config = require("../config");
 
-async function getMultiple(page = 1) {
+async function getUsers(page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
-  const rows = await db.query(
-    `SELECT id, name, released_year, githut_rank, pypl_rank, tiobe_rank 
-    FROM programming_languages LIMIT ${offset},${config.listPerPage}`
-  );
+  const rows = await db.query(`SELECT * FROM "user"`);
   const data = helper.emptyOrRows(rows);
   const meta = { page };
+  const response = data.rows;
 
   return {
-    data,
+    response,
     meta,
   };
 }
 
-async function create(programmingLanguage) {
+async function createUser(user) {
   const result = await db.query(
-    `INSERT INTO programming_languages 
-    (name, released_year, githut_rank, pypl_rank, tiobe_rank) 
-    VALUES 
-    ('${programmingLanguage.name}', ${programmingLanguage.released_year}, ${programmingLanguage.githut_rank}, ${programmingLanguage.pypl_rank}, ${programmingLanguage.tiobe_rank})`
+    `INSERT INTO "user" (firstname, lastname, email, username, password) VALUES (${user.firstname}, ${user.lastname}, ${user.email}, ${user.username}, ${user.password})`
   );
 
   let message = "Error in creating programming language";
@@ -64,8 +59,8 @@ async function remove(id) {
 }
 
 module.exports = {
-  getMultiple,
-  create,
+  getUsers,
+  createUser,
   update,
   remove,
 };
