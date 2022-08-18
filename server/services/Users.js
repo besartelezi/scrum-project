@@ -15,12 +15,9 @@ async function getUsers(page = 1) {
   };
 }
 
-async function create(programmingLanguage) {
+async function createUser(user) {
   const result = await db.query(
-    `INSERT INTO programming_languages 
-    (name, released_year, githut_rank, pypl_rank, tiobe_rank) 
-    VALUES 
-    ('${programmingLanguage.name}', ${programmingLanguage.released_year}, ${programmingLanguage.githut_rank}, ${programmingLanguage.pypl_rank}, ${programmingLanguage.tiobe_rank})`
+    `INSERT INTO "user" (firstname, lastname, email, username, password) VALUES (${user.firstname}, ${user.lastname}, ${user.email}, ${user.username}, ${user.password})`
   );
 
   let message = "Error in creating programming language";
@@ -63,7 +60,7 @@ async function remove(id) {
 
 module.exports = {
   getUsers,
-  create,
+  createUser,
   update,
   remove,
 };

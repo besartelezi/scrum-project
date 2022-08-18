@@ -12,10 +12,20 @@ router.get("/", async function (req, res, next) {
   }
 });
 
-/* POST programming language */
+// /* POST programming-language */
+// router.post("/", async function (req, res, next) {
+//   try {
+//     res.json(await users.create(req.body));
+//   } catch (err) {
+//     console.error(`Error while creating programming language`, err.message);
+//     next(err);
+//   }
+// });
+
+/* POST user */
 router.post("/", async function (req, res, next) {
   try {
-    res.json(await users.create(req.body));
+    res.json(await users.createUser(req.body));
   } catch (err) {
     console.error(`Error while creating programming language`, err.message);
     next(err);
