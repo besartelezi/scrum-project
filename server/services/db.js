@@ -1,13 +1,11 @@
-const mysql = require("mysql2/promise");
+// const mysql = require("mysql2/promise");
+const { Pool } = require("pg");
 const config = require("../config");
 
-async function query(sql, params) {
-  const connection = await mysql.createConnection(config.db);
-  const [results] = await connection.execute(sql, params);
-
-  return results;
-}
+const pool = new Pool(config.db);
 
 module.exports = {
-  query,
+  query: (text, params, callback) => {
+    return pool.query(text, params, callback);
+  },
 };
