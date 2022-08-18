@@ -1,5 +1,7 @@
 @import '../colorscheme.scss';
-
+body{
+  overflow-x: hidden;
+}
 label, input {
   width: 500px;
 }
@@ -18,8 +20,12 @@ input {
 
 .error {
   color: #ee3e23;
+  display: block;
+  font-size: small;
 }
 
 .confirm {
   color: green;
+  display: block;
+  font-size: small;
 }
