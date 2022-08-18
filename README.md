@@ -107,9 +107,9 @@ Because I need the confirmation in order to know nothing went wrong.
 ---
 
 ## Day-to-Day Summaries!
-Here we will write down all short summaries of what we did, how we did it, and how we did it.
+Here we will write down all short summaries of what we did, how we did it, and why we did it.
 
-### Day 1: Developer-Team Aligos has been born!
+### Day 1: "Developer-Team Aligos has been born!"
 After Pablo assembled the Aligo-vengers, we had our very first meeting.
 It was decided that we would prepare some questions for the client, since we only have one meeting with them every week and they respond slowly to emails.
 After that, we started to prepare how we would tackle the backend and the frontend.
@@ -130,7 +130,7 @@ All in all, it was a great first day!
 
 ![aligos-assemble](readme-images/aligos-assemble.png)
 
-### Day 2: Our Big G(b)ay International Logo
+### Day 2: "Our Big G(b)ay International Logo"
 The second day started out like all future days will start, with a meeting.
 We went over everything what was done, and what needed to be done. 
 An email was sent to the client for some additional information, the database was nearly done, and there was some huge progress made in the front end.
@@ -150,3 +150,23 @@ This caused a weird bug that made our logo look like this.
 ![our-logo](readme-images/wrong-logo.PNG)
 
 Luckily we were able to fix this issue in less than a minute (after ten minutes of constant laughter).
+
+### Day 3: "PostgreSQL V.S. MongoDB"
+The third day was a day of decision-making.
+After having a stand-up meeting in the morning, we decided we would swap our SQL database for a ProgreSQL database.
+The other option was to use a MongoDB database.
+We wanted to swap the database, because we wanted to use something that natively works with Heroku.
+
+The main advantage of MongoDB was that it is less time-consuming.
+But, if we change to MongoDB, we would waste a lot of time on creating a new database from scratch, and rewriting all the code from the backend.
+So it's main advantage is nullified **immediately**.
+However, this was a very nice lesson on databases.
+Through this we now understand that picking the correct database at the start of the project, is very essential.
+
+Eventually we decided on using ProgreSQL, which had its own fair share of a lot of advantages.
+We did not care for the fact that it might be harder to use and a bit more time-consuming.
+As a group, we decided early on that learning new stuff and learning how to work as profesionally as possible are the most important parts of this assignment.
+Pleasing the client is also important as well, but communicating well with the client is even more important.
+
+Our day ended the same way it started, with a meeting.
+This was needed since we wanted to check how much progress everyone made, and divide the work better if needed.
