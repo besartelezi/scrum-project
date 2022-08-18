@@ -2,17 +2,15 @@ const db = require("./db");
 const helper = require("../helper");
 const config = require("../config");
 
-async function getMultiple(page = 1) {
+async function getUsers(page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
-  const rows = await db.query(
-    `SELECT id, name, released_year, githut_rank, pypl_rank, tiobe_rank 
-    FROM programming_languages LIMIT ${offset},${config.listPerPage}`
-  );
+  const rows = await db.query(`SELECT * FROM "user"`);
   const data = helper.emptyOrRows(rows);
   const meta = { page };
+  const response = data.rows;
 
   return {
-    data,
+    response,
     meta,
   };
 }
@@ -64,7 +62,7 @@ async function remove(id) {
 }
 
 module.exports = {
-  getMultiple,
+  getUsers,
   create,
   update,
   remove,
