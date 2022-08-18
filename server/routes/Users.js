@@ -12,22 +12,12 @@ router.get("/", async function (req, res, next) {
   }
 });
 
-// /* POST programming-language */
-// router.post("/", async function (req, res, next) {
-//   try {
-//     res.json(await users.create(req.body));
-//   } catch (err) {
-//     console.error(`Error while creating programming language`, err.message);
-//     next(err);
-//   }
-// });
-
 /* POST user */
 router.post("/", async function (req, res, next) {
   try {
     res.json(await users.createUser(req.body));
   } catch (err) {
-    console.error(`Error while creating programming language`, err.message);
+    console.error(`Error while creating user`, err.message);
     next(err);
   }
 });
@@ -35,9 +25,9 @@ router.post("/", async function (req, res, next) {
 /* PUT programming language */
 router.put("/:id", async function (req, res, next) {
   try {
-    res.json(await users.update(req.params.id, req.body));
+    res.json(await users.updateUser(req.params.id, req.body));
   } catch (err) {
-    console.error(`Error while updating programming language`, err.message);
+    console.error(`Error while updating user`, err.message);
     next(err);
   }
 });
