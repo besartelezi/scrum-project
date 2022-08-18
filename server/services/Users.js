@@ -46,13 +46,13 @@ async function updateUser(id, user) {
   return { message };
 }
 
-async function remove(id) {
-  const result = await db.query(`DELETE FROM programming_languages WHERE id=${id}`);
+async function removeUser(id) {
+  const result = await db.query(`DELETE FROM "user" WHERE id=${id}`);
 
-  let message = "Error in deleting programming language";
+  let message = "Error in deleting user";
 
-  if (result.affectedRows) {
-    message = "Programming language deleted successfully";
+  if (result.rowCount) {
+    message = "User deleted successfully";
   }
 
   return { message };
@@ -62,5 +62,5 @@ module.exports = {
   getUsers,
   createUser,
   updateUser,
-  remove,
+  removeUser,
 };

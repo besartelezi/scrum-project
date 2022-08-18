@@ -34,9 +34,9 @@ router.put("/:id", async function (req, res, next) {
 /* DELETE programming language */
 router.delete("/:id", async function (req, res, next) {
   try {
-    res.json(await users.remove(req.params.id));
+    res.json(await users.removeUser(req.params.id));
   } catch (err) {
-    console.error(`Error while deleting programming language`, err.message);
+    console.error(`Error while deleting user`, err.message);
     next(err);
   }
 });
