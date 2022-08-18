@@ -1,7 +1,10 @@
 import { useContext } from 'react';
 import GbayContext from '../context/GbayContext';
+import { Link } from "react-router-dom";
 
 import "./HomePage.scss";
+
+import ProductItem from '../components/ProductItem';
 
 function HomePage() {
 
@@ -9,15 +12,12 @@ function HomePage() {
 
     return (
         <div className="container">
-            <h1>HOME</h1>
+            <h1>Home</h1>
             <section className="products-wrapper">
                 {products.map((product) => (
-                    <article key={crypto.randomUUID()} className="product">
-                        <img className="product__img" src={product.url} />
-                        <h3 className="product__name">{product.name}</h3>
-                        <p className="product__description">{product.description}</p>
-                        <p className="product__price">{product.price}</p>
-                    </article>
+                    <Link to={`/product/${product.id}`} state={product} key={crypto.randomUUID()}>
+                        <ProductItem product={product} />
+                    </Link>
                 ))}
             </section>
         </div>
