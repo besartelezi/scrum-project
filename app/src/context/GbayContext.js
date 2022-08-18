@@ -9,7 +9,7 @@ export const GbayProvider = ({ children }) => {
             id: 1,
             name: "Product 1",
             url: "../assets/images/1.jpg",
-            price: "€100",
+            price: "€20",
             category_id: 1,
             description: "Getting a leg hug from your girlfriend"
         },
@@ -19,13 +19,13 @@ export const GbayProvider = ({ children }) => {
             url: "../assets/images/2.jpg",
             price: "€50",
             category_id: 1,
-            description: "Happy birthday wishes"
+            description: "Photoshopped birthday wishes from J-Lo"
         },
         {
             id: 3,
             name: "Product 3",
             url: "../assets/images/3.jpg",
-            price: "€150",
+            price: "€350",
             category_id: 2,
             description: "Having a refreshing icecream with a dictator"
         },
@@ -43,7 +43,7 @@ export const GbayProvider = ({ children }) => {
             url: "../assets//images/5.jpg",
             price: "€15",
             category_id: 2,
-            description: "OG on multiple screens"
+            description: "Multiple screens with OG Putin"
         }
     ]);
 

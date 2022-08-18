@@ -8,6 +8,18 @@ header {
 
     svg {
         max-width: 200px;
+
+        .cls-1 {
+            fill: $c-light;
+        }
+
+        .cls-2 {
+            fill: $c-secondary;
+        }
+
+        .cls-3 {
+            fill: $c-dark;
+        }
     }
 
     nav {
@@ -20,7 +32,7 @@ header {
             display: flex;
 
             li:not(:last-child){
-                margin-right:1rem;
+                margin-right:2rem;
             }
             
             a {
@@ -40,9 +52,18 @@ header {
         display: flex;
         align-items: center;
         margin-left: 2rem;
+        background-color: $c-secondary;
+        color: $c-dark;
+        padding: 0.5rem 1rem;
+        margin-top:auto;
+        margin-bottom: auto;
 
         svg {
             margin-right: 0.5rem;
+        }
+
+        p {
+            font-weight: 700;
         }
     }
 }
