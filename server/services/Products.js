@@ -29,30 +29,29 @@ async function createProduct(product) {
     return { message };
 }
 
-async function updateUser(id, user) {
+async function updateProduct(id, product) {
     const result = await db.query(
-        `UPDATE "user" 
-    SET firstname = '${user.firstname}', lastname='${user.lastname}', email = '${user.email}', 
-    username = '${user.username}', password = '${user.password}'
+        `UPDATE "product" 
+    SET product_name = '${product.product_name}', amount='${product.amount}', price = '${product.price}', category_id = '${product.category_id}', post_date = '${product.post_date}', user_id = '${product.user_id}', product_description = '${product.product_description}', image = '${product.image}', theme_id = '${product.theme_id}'
     WHERE id=${id}`
     );
 
-    let message = "Error in updating user";
+    let message = "Error in updating product";
 
     if (result.rowCount) {
-        message = "User updated successfully";
+        message = "product updated successfully";
     }
 
     return { message };
 }
 
-async function removeUser(id) {
-    const result = await db.query(`DELETE FROM "user" WHERE id=${id}`);
+async function removeProduct(id) {
+    const result = await db.query(`DELETE FROM "product" WHERE id=${id}`);
 
-    let message = "Error in deleting user";
+    let message = "Error in deleting product";
 
     if (result.rowCount) {
-        message = "User deleted successfully";
+        message = "product deleted successfully";
     }
 
     return { message };
@@ -61,6 +60,6 @@ async function removeUser(id) {
 module.exports = {
     getProducts,
     createProduct,
-    updateUser,
-    removeUser,
+    updateProduct,
+    removeProduct,
 };
