@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,KAAK,EAAE,KAAK,CAAC;EACX,KAAK,EAAE,KAAK;CACb;;AAED,AAAA,KAAK,CAAC;EACJ,aAAa,EAAC,MAAM;CACrB;;AAED,AAAA,KAAK,CAAC;EACJ,aAAa,EAAC,IAAI;CACnB;;AAED,AAAA,UAAU,CAAC;EACT,YAAY,EAAC,IAAI;CAClB;;AAED,AAAA,MAAM,CAAC;EACL,KAAK,EAAE,OAAO;CACf;;AAED,AAAA,QAAQ,CAAC;EACP,KAAK,EAAE,KAAK;CACb",
+    "sources": [
+        "RegisterPage.scss",
+        "../colorscheme.scss"
+    ],
+    "names": [],
+    "file": "RegisterPage.css"
+}

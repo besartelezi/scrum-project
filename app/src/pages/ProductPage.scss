@@ -1,0 +1,15 @@
+@import '../colorscheme.scss';
+
+.product-page {
+
+    .product__img {
+        max-width:30%;
+        margin:0 1rem 1rem 0;
+        float:left;
+    }
+
+    .product__price {
+        font-size:2rem;
+        font-weight: 700;
+    }
+}

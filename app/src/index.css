@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,800;1,100;1,200;1,400;1,500;1,600;1,700;1,800&display=swap");
+@font-face {
+  font-family: "GBay";
+  src: url("./assets/fonts/FontsFree-Net-uni05_63.ttf");
+}
+
+h1 {
+  font-family: "GBay";
+  font-size: 6rem;
+  line-height: normal;
+  color: #2a2928;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
+}
+
+fieldset {
+  border: 0;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+}
+
+button, input {
+  padding: 0.5rem 0.8rem;
+}
+
+button {
+  background-color: #ed831d;
+  color: #fff;
+  position: relative;
+}
+
+button:hover {
+  -webkit-filter: contrast(80%);
+          filter: contrast(80%);
+}
+
+button::before {
+  position: absolute;
+  left: -6px;
+  top: 0;
+  content: "";
+  background-image: url("./assets/images/gbay-button-left-edge.svg");
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+button::after {
+  position: absolute;
+  right: -6px;
+  top: 0;
+  content: "";
+  background-image: url("./assets/images/gbay-button-right-edge.svg");
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 6px;
+}
+
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffea00;
+  overflow-x: hidden;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1180px) {
+  .container {
+    max-width: calc(1080px - 4rem);
+  }
+}
+
+@media (max-width: 1180px) {
+  .container {
+    max-width: calc(100vw - 40px);
+  }
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 2rem 0;
+}
+/*# sourceMappingURL=index.css.map */

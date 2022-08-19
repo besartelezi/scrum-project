@@ -1,15 +1,23 @@
-import { useContext } from 'react';
-import GbayContext from '../context/GbayContext';
+import { useLocation } from 'react-router-dom';
 
 import "./ProductPage.scss";
 
 function ProductPage() {
 
-    const { products } = useContext(GbayContext);
+    const location = useLocation();
+    let product = location.state;
+    console.log(product);
 
     return (
-        <div className="container">
-            
+        <div className="container product-page">
+            <h1>{product.name}</h1>
+            <div>
+                <img className="product__img" src={product.url} />
+                <h3>{product.shortDescription}</h3>
+                <p>{product.longDescription}</p>
+                <p className="product__price">{product.price}</p>
+                <button><span>Buy</span></button>
+            </div>
         </div>
     )
 }
