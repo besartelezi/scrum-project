@@ -69,7 +69,7 @@ export const GbayProvider = ({ children }) => {
     return <GbayContext.Provider value={{
         products,
         users,
-        setUser, 
+        setUsers,
         loggedInUser,
         setLoggedInUser
     }}>{children}</GbayContext.Provider>;
