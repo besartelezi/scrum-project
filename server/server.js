@@ -3,9 +3,11 @@ const app = express();
 const port = process.env.PORT || 9000;
 const usersRouter = require("./routes/Users");
 const path = require("path");
+const cors = require("cors");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, "../app/build")));
