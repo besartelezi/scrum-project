@@ -9,6 +9,7 @@ function UserPage() {
     console.log('UserPage');
 
     const { products, users, loggedInUser } = useContext(GbayContext);
+    console.log("loggedInUser", loggedInUser);
 
     return (
         <div className="container">
