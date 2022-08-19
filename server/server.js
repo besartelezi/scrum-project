@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 9000;
 const usersRouter = require("./routes/Users");
+const productsRouter = require("./routes/Products");
 const path = require("path");
 const cors = require("cors");
 
@@ -18,6 +19,8 @@ app.get("/", (req, res) => {
 
 // API Routes
 app.use("/users", usersRouter);
+app.use("/products", productsRouter);
+
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {

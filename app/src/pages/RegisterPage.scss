@@ -1,24 +1,14 @@
 @import '../colorscheme.scss';
-
-label, input {
-  width: 500px;
-}
-
-label {
-  margin-bottom:0.4rem;
-}
-
-input {
-  margin-bottom:1rem;
-}
-
-.login-btn {
-  margin-right:auto;
-}
-
-
 /*__________________css for register page________________*/
 .register-page{
+  label {
+    margin-bottom:0.4rem;
+  }
+  
+  input {
+    margin-bottom:1rem;
+  }
+
   .error {
     color: #ee3e23;
     display: block;
@@ -42,5 +32,26 @@ input {
   .register__wrapper{
     display: flex;
     gap: 2rem;
+
+    > div {
+      width: calc(50% - 1rem);
+    }
+  }
+
+  .register__wrapper-right 
+  {
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+  }
+
+  .register__element--small{
+    width: 30%;
+    display:flex;
+    flex-direction: column;
+
+    input {
+      width: 100%;
+    }
   }
 }

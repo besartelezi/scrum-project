@@ -1,0 +1,24 @@
+.user-page .user__welcome {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.user-page .user__welcome b {
+  position: relative;
+}
+
+.user-page .user__welcome b::after {
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  content: "";
+  background-color: #ed831d;
+  height: 7px;
+  width: 100%;
+}
+
+.user-page h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+/*# sourceMappingURL=UserPage.css.map */

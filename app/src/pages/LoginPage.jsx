@@ -15,8 +15,8 @@ function LoginPage() {
         const password = document.getElementById('password').value;
         const user = users.find(user => user.username === username && user.password === password);
         if (user) {
-            setLoggedInUser(username);
-            navigate('/');
+            setLoggedInUser(user);
+            navigate(`/user/${user.id}`);
         } else {
             alert('Login failed');
         }
