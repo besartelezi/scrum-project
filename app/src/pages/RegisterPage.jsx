@@ -144,7 +144,7 @@ function RegisterPage() {
                     </div>
                 </div>
             </div>
-            <button className="login-btn">Register</button>
+            <button className="login-btn" click={handleRegister}>Register</button>
         </div>
 
     )

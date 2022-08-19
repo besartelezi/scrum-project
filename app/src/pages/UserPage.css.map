@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "UserPage.scss",
+        "../colorscheme.scss"
+    ],
+    "names": [],
+    "file": "UserPage.css"
+}
