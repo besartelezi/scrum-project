@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,KAAK,EAAE,KAAK,CAAC;EACT,KAAK,EAAE,KAAK;CACf;;AAED,AAAA,KAAK,CAAC;EACF,aAAa,EAAC,MAAM;CACvB;;AAED,AAAA,KAAK,CAAC;EACF,aAAa,EAAC,IAAI;CACrB;;AAED,AAAA,UAAU,CAAC;EACP,YAAY,EAAC,IAAI;CACpB",
+    "sources": [
+        "LoginPage.scss",
+        "../colorscheme.scss"
+    ],
+    "names": [],
+    "file": "LoginPage.css"
+}

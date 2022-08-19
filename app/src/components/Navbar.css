@@ -1,0 +1,78 @@
+header {
+  background-color: #2a2928;
+  color: #ffea00;
+  padding: 1rem 0;
+  width: 100vw;
+}
+
+header svg {
+  max-width: 200px;
+}
+
+header svg .cls-1 {
+  fill: #ffea00;
+}
+
+header svg .cls-2 {
+  fill: #ed831d;
+}
+
+header svg .cls-3 {
+  fill: #2a2928;
+}
+
+header nav {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header nav ul li:not(:last-child) {
+  margin-right: 2rem;
+}
+
+header nav ul a {
+  color: #ffea00;
+  text-decoration: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+header nav ul a:hover {
+  color: #ccbb00;
+}
+
+header .navbar__user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 2rem;
+  background-color: #ed831d;
+  color: #2a2928;
+  padding: 0.5rem 1rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+header .navbar__user-info svg {
+  margin-right: 0.5rem;
+}
+
+header .navbar__user-info p {
+  font-weight: 700;
+}
+/*# sourceMappingURL=Navbar.css.map */

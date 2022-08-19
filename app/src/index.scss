@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "GBay";
-  src: url("./assets/fonts/8-bit_Arcade_In.ttf");
+  src: url("./assets/fonts/FontsFree-Net-uni05_63.ttf");
 }
 
 h1 {
@@ -41,9 +41,32 @@ button, input {
 button {
   background-color: $c-secondary;
   color:#fff;
+  position:relative;
 
   &:hover {
-    background-color: darken($c-secondary, 10%);
+    filter: contrast(80%);
+  }
+
+  &::before {
+    position: absolute;
+    left:-6px;
+    top:0;
+    content:"";
+    background-image: url("./assets/images/gbay-button-left-edge.svg");
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+  }
+
+  &::after {
+    position: absolute;
+    right:-6px;
+    top:0;
+    content:"";
+    background-image: url("./assets/images/gbay-button-right-edge.svg");
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 6px;
   }
 }
 
@@ -61,6 +84,7 @@ body {
     flex-direction: column;
     min-height:100vh;
     background-color: $c-light;
+    overflow-x: hidden;
 }
 
 .container {
