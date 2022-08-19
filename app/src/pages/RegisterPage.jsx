@@ -25,6 +25,11 @@ function RegisterPage() {
         tag: <span className='display-alert'></span>
     });
 
+    const [street , setStreet] = useState('');
+    const [zipCode , setZipCode] = useState(0);
+    const [city , setCity] = useState('');
+    const [houseNum , setHouseNum] = useState(0);
+
     //_________________variables_________________
 
     const errorEmptyPass = <span
@@ -38,7 +43,7 @@ function RegisterPage() {
         setUserName({value: input});
         let errortemp = users.find(user => user.username === input);
         if (input === '') {
-            setUserName({value: input,error: false, tag: <span className='display-alert'></span>});
+            setUserName({value: input, error: false, tag: <span className='display-alert'></span>});
         } else if (errortemp !== undefined) {
             setUserName({
                 value: input,
@@ -46,7 +51,11 @@ function RegisterPage() {
                 tag: <span className='error display-alert'><FaTimes/>This username is already taken </span>
             });
         } else {
-            setUserName({value: input, tag: <span className='confirm display-alert'><FaCheck/>Good!</span>});
+            setUserName({
+                value: input,
+                error: true,
+                tag: <span className='confirm display-alert'><FaCheck/>Good!</span>
+            });
         }
     }
 
@@ -54,11 +63,11 @@ function RegisterPage() {
         let input = event.target.value;
         setPass(input);
         if (passConfirm.value === input && input !== '') {
-            setPassConfirm({value: passConfirm.value, error: true ,tag: passConfirmed});
+            setPassConfirm({value: passConfirm.value, error: true, tag: passConfirmed});
         } else if (passConfirm.value !== input && input !== '' && passConfirm.value !== '') {
-            setPassConfirm({value: passConfirm.value, error: true ,tag: errorPassNotMatch});
+            setPassConfirm({value: passConfirm.value, error: true, tag: errorPassNotMatch});
         } else if (passConfirm.value !== '' && input === '') {
-            setPassConfirm({value: passConfirm.value,error: true, tag: errorEmptyPass});
+            setPassConfirm({value: passConfirm.value, error: true, tag: errorEmptyPass});
         }
     }
 
@@ -66,13 +75,13 @@ function RegisterPage() {
         let input = event.target.value;
 
         if (input === pass && pass !== '') {
-            setPassConfirm({value: input, error:true , tag: passConfirmed});
+            setPassConfirm({value: input, error: true, tag: passConfirmed});
         } else if (pass === '' && input !== '') {
-            setPassConfirm({value: input, error: true ,tag: errorEmptyPass});
+            setPassConfirm({value: input, error: true, tag: errorEmptyPass});
         } else if (input === '') {
-            setPassConfirm({value: input, error: false ,tag: <span className='display-alert'></span>});
+            setPassConfirm({value: input, error: false, tag: <span className='display-alert'></span>});
         } else {
-            setPassConfirm({value: input, error: true ,tag: errorPassNotMatch});
+            setPassConfirm({value: input, error: true, tag: errorPassNotMatch});
         }
     }
 
@@ -96,7 +105,8 @@ function RegisterPage() {
                            value={email} onChange={(event) => setFirstName(event.target.value)}/>
 
                     <label htmlFor="username">Username</label>
-                    <input type="text" placeholder="Username" id="username" className={userName.error?'input-with-alert':''}
+                    <input type="text" placeholder="Username" id="username"
+                           className={userName.error ? 'input-with-alert' : ''}
                            value={userName.value} onChange={handleUserName}/>
                     {userName.tag}
 
@@ -106,18 +116,32 @@ function RegisterPage() {
                            value={pass} onChange={handlePass}/>
 
                     <label htmlFor="confirmpassword">Confirm Password</label>
-                    <input type="password" placeholder="Password" id="confirmpassword" className={passConfirm.error?'input-with-alert':''}
+                    <input type="password" placeholder="Password" id="confirmpassword"
+                           className={passConfirm.error ? 'input-with-alert' : ''}
                            value={passConfirm.value} onChange={handlePassConf}/>
                     {passConfirm.tag}
                 </div>
                 <div className='register__right'>
-                    <label htmlFor="firstname">First Name</label>
-                    <input type="text" placeholder="First Name" id="firstname"
-                           value={firstName} onChange={(event) => setFirstName(event.target.value)}/>
-
-                    <label htmlFor="lastname">Last Name</label>
-                    <input type="text" placeholder="Last Name" id="lastname"
-                           value={lastName} onChange={(event) => setLastName(event.target.value)}/>
+                    <label htmlFor="street">Street</label>
+                    <input type="text" placeholder="Street" id="street"
+                           value={street} onChange={(event) => setStreet(event.target.value)}/>
+                    <div className="register__wrapper">
+                        <div>
+                            <label htmlFor="zip-code">Zip-code</label>
+                            <input type="number" placeholder="Zip-Code" id="zip-code" className='register__small_input'
+                                   value={zipCode} onChange={(event) => setZipCode(event.target.value)}/>
+                        </div>
+                        <div>
+                            <label htmlFor="city">City</label>
+                            <input type="text" placeholder="City" id="city" className='register__small_input'
+                                   value={city} onChange={(event) => setCity(event.target.value)}/>
+                        </div>
+                        <div>
+                            <label htmlFor="house-num">House Number</label>
+                            <input type="number" placeholder="House Number" id="house-num" className='register__small_input'
+                                   value={houseNum} onChange={(event) => setHouseNum(event.target.value)}/>
+                        </div>
+                    </div>
                 </div>
             </div>
             <button className="login-btn">Register</button>
