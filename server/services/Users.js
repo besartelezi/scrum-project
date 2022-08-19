@@ -17,42 +17,42 @@ async function getUsers(page = 1) {
 
 async function createUser(user) {
   const result = await db.query(
-    `INSERT INTO "user" (firstname, lastname, email, username, password) VALUES (${user.firstname}, ${user.lastname}, ${user.email}, ${user.username}, ${user.password})`
+    `INSERT INTO "user" VALUES (default,'${user.firstname}','${user.lastname}','${user.email}','${user.username}','${user.password}')`
   );
 
-  let message = "Error in creating programming language";
+  let message = "Error in creating user";
 
-  if (result.affectedRows) {
-    message = "Programming language created successfully";
+  if (result.rowCount) {
+    message = "User created successfully";
   }
 
   return { message };
 }
 
-async function update(id, programmingLanguage) {
+async function updateUser(id, user) {
   const result = await db.query(
-    `UPDATE programming_languages 
-    SET name="${programmingLanguage.name}", released_year=${programmingLanguage.released_year}, githut_rank=${programmingLanguage.githut_rank}, 
-    pypl_rank=${programmingLanguage.pypl_rank}, tiobe_rank=${programmingLanguage.tiobe_rank} 
+    `UPDATE "user" 
+    SET firstname = '${user.firstname}', lastname='${user.lastname}', email = '${user.email}', 
+    username = '${user.username}', password = '${user.password}'
     WHERE id=${id}`
   );
 
-  let message = "Error in updating programming language";
+  let message = "Error in updating user";
 
-  if (result.affectedRows) {
-    message = "Programming language updated successfully";
+  if (result.rowCount) {
+    message = "User updated successfully";
   }
 
   return { message };
 }
 
-async function remove(id) {
-  const result = await db.query(`DELETE FROM programming_languages WHERE id=${id}`);
+async function removeUser(id) {
+  const result = await db.query(`DELETE FROM "user" WHERE id=${id}`);
 
-  let message = "Error in deleting programming language";
+  let message = "Error in deleting user";
 
-  if (result.affectedRows) {
-    message = "Programming language deleted successfully";
+  if (result.rowCount) {
+    message = "User deleted successfully";
   }
 
   return { message };
@@ -61,6 +61,6 @@ async function remove(id) {
 module.exports = {
   getUsers,
   createUser,
-  update,
-  remove,
+  updateUser,
+  removeUser,
 };
