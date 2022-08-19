@@ -17,7 +17,7 @@ async function getUsers(page = 1) {
 
 async function createUser(user) {
   const result = await db.query(
-    `INSERT INTO "user" VALUES (default,'${user.firstname}','${user.lastname}','${user.email}','${user.username}','${user.password}')`
+      `INSERT INTO "user" (firstname, lastname, email, username, password) VALUES ('${user.firstname}','${user.lastname}','${user.email}','${user.username}','${user.password}')`
   );
 
   let message = "Error in creating user";

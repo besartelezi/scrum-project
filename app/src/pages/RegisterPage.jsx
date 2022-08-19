@@ -1,13 +1,14 @@
 import {useContext, useEffect} from 'react';
 import GbayContext from '../context/GbayContext';
-
+import { useNavigate } from 'react-router-dom';
 import "./RegisterPage.scss";
 import React, {useState} from 'react';
 import {FaCheck, FaTimes} from 'react-icons/fa';
 
 function RegisterPage() {
-    //_________________load context_________________
-    const {users, setUsers} = useContext(GbayContext);
+    //_________________load context , navigate_________________
+    const {users , setUsers} = useContext(GbayContext);
+    const navigate = useNavigate();
 
     //_________________states_________________
     const [firstName, setFirstName] = useState('');
@@ -37,8 +38,20 @@ function RegisterPage() {
     const errorPassNotMatch = <span className='error display-alert'><FaTimes/>Password doesn't match</span>;
     const passConfirmed = <span className='confirm display-alert'><FaCheck/>Password confirmed</span>;
 
+
     //_________________functions_________________
 
+    const handleRegister = () => {
+        const newUser = {
+            id : users.length + 1,
+            username : userName.value,
+            password : pass
+        }
+        console.log('users' , users);
+        console.log('new' , newUser);
+        setUsers([...users , newUser]);
+        navigate(`/login`);
+    }
     const handleUserName = (event) => {
         let input = event.target.value;
         setUserName({value: input});
@@ -145,7 +158,7 @@ function RegisterPage() {
                     </div>
                 </div>
             </div>
-            <button className="login-btn">Register</button>
+            <button className="login-btn" onClick={handleRegister}>Register</button>
         </div>
 
     )
