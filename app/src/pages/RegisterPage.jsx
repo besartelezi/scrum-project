@@ -102,7 +102,7 @@ function RegisterPage() {
 
                     <label htmlFor="email">E-mail</label>
                     <input type="email" placeholder="example@email.com" id="email"
-                           value={email} onChange={(event) => setFirstName(event.target.value)}/>
+                           value={email} onChange={(event) => setEmail(event.target.value)}/>
 
                     <label htmlFor="username">Username</label>
                     <input type="text" placeholder="Username" id="username"
