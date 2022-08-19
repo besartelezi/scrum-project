@@ -40,6 +40,7 @@ function RegisterPage() {
 
 
     //_________________functions_________________
+
     const handleRegister = () => {
         const newUser = {
             id : users.length + 1,
@@ -138,20 +139,20 @@ function RegisterPage() {
                     <label htmlFor="street">Street</label>
                     <input type="text" placeholder="Street" id="street"
                            value={street} onChange={(event) => setStreet(event.target.value)}/>
-                    <div className="register__wrapper">
-                        <div>
+                    <div className="register__wrapper-right">
+                        <div className='register__element--small'>
                             <label htmlFor="zip-code">Zip-code</label>
-                            <input type="number" placeholder="Zip-Code" id="zip-code" className='register__small_input'
+                            <input type="number" placeholder="Zip-Code" id="zip-code"
                                    value={zipCode} onChange={(event) => setZipCode(event.target.value)}/>
                         </div>
-                        <div>
+                        <div className='register__element--small'>
                             <label htmlFor="city">City</label>
-                            <input type="text" placeholder="City" id="city" className='register__small_input'
+                            <input type="text" placeholder="City" id="city" min="0"
                                    value={city} onChange={(event) => setCity(event.target.value)}/>
                         </div>
-                        <div>
+                        <div className='register__element--small'>
                             <label htmlFor="house-num">House Number</label>
-                            <input type="number" placeholder="House Number" id="house-num" className='register__small_input'
+                            <input type="number" placeholder="House Number" id="house-num" min="0"
                                    value={houseNum} onChange={(event) => setHouseNum(event.target.value)}/>
                         </div>
                     </div>
