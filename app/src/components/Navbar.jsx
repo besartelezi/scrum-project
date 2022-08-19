@@ -35,7 +35,7 @@ function Navbar() {
                         </li>
                     </ul>
                 </nav>
-                {loggedInUser ? (<div className="navbar__user-info"><FaUserCircle /><p>{loggedInUser}</p></div>) : null}
+                {/* {loggedInUser ? (<Link to=`/user/${loggedInUser.id}`><div className="navbar__user-info"><FaUserCircle /><p>{loggedInUser.username}</p></div></Link>) : null} */}
                 
             </div>
         </header>
