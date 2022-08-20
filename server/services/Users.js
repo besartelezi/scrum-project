@@ -1,9 +1,8 @@
-const db = require("./db");
+const db = require("./dbConfig");
 const helper = require("../helper");
-const config = require("../config");
+const bcrypt = require("bcrypt");
 
-async function getUsers(page = 1) {
-  const offset = helper.getOffset(page, config.listPerPage);
+async function getUsers() {
   const rows = await db.query(`SELECT * FROM "user"`);
   const data = helper.emptyOrRows(rows);
   const meta = { page };
@@ -17,7 +16,7 @@ async function getUsers(page = 1) {
 
 async function createUser(user) {
   const result = await db.query(
-    `INSERT INTO "user" (firstname, lastname, email, username, password) VALUES ('${user.firstname}','${user.lastname}','${user.email}','${user.username}','${user.password}')`
+    `INSERT INTO users (firstname, lastname, email, username, password) VALUES ('${user.firstname}','${user.lastname}','${user.email}','${user.username}','${user.password}')`
   );
 
   let message = "Error in creating user";
@@ -58,9 +57,29 @@ async function removeUser(id) {
   return { message };
 }
 
+async function registerUser(user) {
+  let { firstname, lastname, email, username, password, confirmPassword } = user;
+  let errorsMsg = helper.validateFields(firstname, lastname, email, username, password, confirmPassword);
+
+  if (!errorsMsg.length) {
+    errorsMsg.push({ message: "All Fields are valid!" });
+
+    let hashedPassword = await bcrypt.hash(password, 10);
+
+    const result = await db.query(`SELECT * FROM users WHERE email = $1`, [email]);
+
+    if (result.rows.length) {
+      errorsMsg.push({ message: "Email already exists" });
+    }
+  }
+
+  return { errorsMsg };
+}
+
 module.exports = {
   getUsers,
   createUser,
   updateUser,
   removeUser,
+  registerUser,
 };
