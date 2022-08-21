@@ -53,6 +53,6 @@ router.post("/register", async function (req, res, next) {
 });
 
 /* LOGIN functionality */
-router.post("/login", async function (req, res, next) {});
+// router.post("/login", async function (req, res, next) {});
 
 module.exports = router;

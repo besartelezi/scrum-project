@@ -6,6 +6,10 @@ const productsRouter = require("./routes/Products");
 const path = require("path");
 const cors = require("cors");
 const session = require("express-session");
+const passport = require("passport");
+
+const initializePassport = require("./services/passportConfig");
+initializePassport(passport);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +22,9 @@ app.use(
   })
 );
 
+app.use(passport.session());
+app.use(passport.initialize());
+
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, "../app/build")));
 
@@ -28,6 +35,26 @@ app.get("/", (req, res) => {
 // API Routes
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
+
+////////////////////////////////////////////////////////
+//TESTING
+app.post(
+  "/testinglogin",
+  passport.authenticate("local", {
+    successRedirect: "/login/success",
+    failureRedirect: "/login/fail",
+    failureMessage: true,
+  })
+);
+
+app.get("/login/success", (req, res) => {
+  res.json({ status: "success", user: req.user });
+});
+app.get("/login/fail", (req, res) => {
+  res.json({ status: "fail", error: req.session.messages });
+});
+//TESTING
+////////////////////////////////////////////////////////
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
