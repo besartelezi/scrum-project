@@ -5,10 +5,18 @@ const usersRouter = require("./routes/Users");
 const productsRouter = require("./routes/Products");
 const path = require("path");
 const cors = require("cors");
+const session = require("express-session");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, "../app/build")));

@@ -70,6 +70,17 @@ async function registerUser(user) {
 
     if (result.rows.length) {
       errorsMsg.push({ message: "Email already exists" });
+    } else {
+      const result = await db.query(
+        `INSERT INTO users (firstname, lastname, email, username, password)
+       VALUES($1, $2, $3, $4, $5)
+        RETURNING id, password`,
+        [firstname, lastname, email, username, hashedPassword]
+      );
+
+      if (result.rowCount) {
+        errorsMsg.push({ message: "Registered succesfully" });
+      }
     }
   }
 
