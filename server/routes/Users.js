@@ -42,17 +42,4 @@ router.delete("/:id", async function (req, res, next) {
   }
 });
 
-/* REGISTER functionality */
-router.post("/register", async function (req, res, next) {
-  try {
-    res.json(await users.registerUser(req.body));
-  } catch (err) {
-    console.error(`Error while registering user`, err.message);
-    next(err);
-  }
-});
-
-/* LOGIN functionality */
-// router.post("/login", async function (req, res, next) {});
-
 module.exports = router;

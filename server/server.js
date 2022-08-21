@@ -3,27 +3,32 @@ const app = express();
 const port = process.env.PORT || 9000;
 const usersRouter = require("./routes/Users");
 const productsRouter = require("./routes/Products");
+const authRouter = require("./routes/Auth");
+const dashboardRouter = require("./routes/Dashboard");
+
 const path = require("path");
 const cors = require("cors");
-const session = require("express-session");
-const passport = require("passport");
+/* OLD WAY*/
 
-const initializePassport = require("./services/passportConfig");
-initializePassport(passport);
+// const session = require("express-session");
+// const passport = require("passport");
+// const initializePassport = require("./services/passportConfig");
+// initializePassport(passport);
+// app.use(
+//   session({
+//     secret: "secret",
+//     resave: false,
+//     saveUninitialized: false,
+//   })
+// );
+// app.use(passport.session());
+// app.use(passport.initialize());
+
+/* OLD WAY*/
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(
-  session({
-    secret: "secret",
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-
-app.use(passport.session());
-app.use(passport.initialize());
 
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, "../app/build")));
@@ -35,24 +40,23 @@ app.get("/", (req, res) => {
 // API Routes
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
+app.use("/auth", authRouter);
+app.use("/dashboard", dashboardRouter);
 
 ////////////////////////////////////////////////////////
 //TESTING
-app.post(
-  "/testinglogin",
-  passport.authenticate("local", {
-    successRedirect: "/login/success",
-    failureRedirect: "/login/fail",
-    failureMessage: true,
-  })
-);
+/* OLD WAY */
 
-app.get("/login/success", (req, res) => {
-  res.json({ status: "success", user: req.user });
-});
-app.get("/login/fail", (req, res) => {
-  res.json({ status: "fail", error: req.session.messages });
-});
+// app.post(
+//   "/auth",
+//   passport.authenticate("local", {
+//     successRedirect: "/auth/success",
+//     failureRedirect: "/auth/fail",
+//     failureMessage: true,
+//   })
+// );
+
+/* OLD WAY */
 //TESTING
 ////////////////////////////////////////////////////////
 
