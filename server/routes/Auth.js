@@ -23,6 +23,7 @@ router.post("/login", async function (req, res, next) {
   }
 });
 
+/* VERIFY functionality */
 router.post("/verify", authorize, async function (req, res) {
   try {
     res.json(await auth.verifyUser());
