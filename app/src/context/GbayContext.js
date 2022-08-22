@@ -53,10 +53,6 @@ export const GbayProvider = ({ children }) => {
             user_id: 1,
             shortDescription: "Multiple screens with OG Putin",
             longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ligula sem, pellentesque et elementum non, luctus sit amet arcu. Duis faucibus, ipsum vel interdum faucibus, nunc velit porta magna, vitae pellentesque purus urna vitae libero. Proin mattis lorem non nisi dictum facilisis. Morbi et nibh turpis. Nunc ultricies nulla diam, vel bibendum justo vehicula quis. Donec ut felis id dolor faucibus placerat. Vivamus facilisis ligula in scelerisque dapibus. Duis sagittis consequat pulvinar. Phasellus pharetra luctus nulla, ut dictum lacus eleifend consectetur. Duis in molestie mauris. Quisque auctor dolor et arcu molestie, ornare aliquam lorem pulvinar. Nam mattis est at nulla tincidunt semper. Aenean nec facilisis nibh, a elementum urna."
-        },
-        {
-            id: 6,
-            name: "Product 6"
         }
     ]);
 
@@ -69,7 +65,25 @@ export const GbayProvider = ({ children }) => {
     ]);
 
     const [cart , setCart] = useState([
-
+        {
+            id: 3,
+            name: "Product 3",
+            url: "../assets/images/3.jpg",
+            price: "€350",
+            category_id: 2,
+            user_id: 1,
+            shortDescription: "Having a refreshing icecream with a dictator"
+        },
+        {
+            id: 5,
+            name: "Product 5",
+            url: "../assets//images/5.jpg",
+            price: "€15",
+            category_id: 2,
+            user_id: 1,
+            shortDescription: "Multiple screens with OG Putin",
+            longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ligula sem, pellentesque et elementum non, luctus sit amet arcu. Duis faucibus, ipsum vel interdum faucibus, nunc velit porta magna, vitae pellentesque purus urna vitae libero. Proin mattis lorem non nisi dictum facilisis. Morbi et nibh turpis. Nunc ultricies nulla diam, vel bibendum justo vehicula quis. Donec ut felis id dolor faucibus placerat. Vivamus facilisis ligula in scelerisque dapibus. Duis sagittis consequat pulvinar. Phasellus pharetra luctus nulla, ut dictum lacus eleifend consectetur. Duis in molestie mauris. Quisque auctor dolor et arcu molestie, ornare aliquam lorem pulvinar. Nam mattis est at nulla tincidunt semper. Aenean nec facilisis nibh, a elementum urna."
+        }
     ])
 
     const [loggedInUser, setLoggedInUser] = useState(null);
@@ -79,7 +93,9 @@ export const GbayProvider = ({ children }) => {
         users,
         setUsers,
         loggedInUser,
-        setLoggedInUser
+        setLoggedInUser,
+        cart,
+        setCart
     }}>{children}</GbayContext.Provider>;
 }
 
