@@ -1,9 +1,7 @@
-const db = require("./db");
+const db = require("./dbConfig");
 const helper = require("../helper");
-const config = require("../config");
 
-async function getUsers(page = 1) {
-  const offset = helper.getOffset(page, config.listPerPage);
+async function getUsers() {
   const rows = await db.query(`SELECT * FROM "user"`);
   const data = helper.emptyOrRows(rows);
   const meta = { page };
@@ -17,7 +15,7 @@ async function getUsers(page = 1) {
 
 async function createUser(user) {
   const result = await db.query(
-      `INSERT INTO "user" (firstname, lastname, email, username, password) VALUES ('${user.firstname}','${user.lastname}','${user.email}','${user.username}','${user.password}')`
+    `INSERT INTO users (firstname, lastname, email, username, password) VALUES ('${user.firstname}','${user.lastname}','${user.email}','${user.username}','${user.password}')`
   );
 
   let message = "Error in creating user";

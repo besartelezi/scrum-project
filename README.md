@@ -35,11 +35,11 @@ Here we have written down the notes we made when we had our first talk with the 
 ### Must-Haves 
 
 * Ebay, main difference, Geeky kind of version.
-* categories: Marvel, Pokemon, ATLA, DBZ,...
+* Categories: Marvel, Pokemon, ATLA, DBZ,...
 * People log in and sell/buy
 * product with price, pic, description
-* work smoothly on email, email confirmation to seller
-* seller: your product ahs been bought, send to this ...
+* Work smoothly on email, email confirmation to seller
+* seller: your product had been bought, send to this ...
 * Shopping cart, add multiple products and remove them
 
 ### Nice-to-haves
@@ -150,6 +150,12 @@ This caused a weird bug that made our logo look like this.
 ![our-logo](readme-images/wrong-logo.PNG)
 
 Luckily we were able to fix this issue in less than a minute (after ten minutes of constant laughter).
+This is how the logo was supposed to look like.
+
+![our-actual-logo](readme-images/fixed-logo.PNG)
+
+This was a valuable lesson to always double-check my files before committing them to GitHub.
+A funny lesson, but a lesson nonetheless!
 
 ### Day 3: "PostgreSQL V.S. MongoDB"
 The third day was a day of decision-making.
@@ -165,8 +171,33 @@ Through this we now understand that picking the correct database at the start of
 
 Eventually we decided on using ProgreSQL, which had its own fair share of a lot of advantages.
 We did not care for the fact that it might be harder to use and a bit more time-consuming.
-As a group, we decided early on that learning new stuff and learning how to work as profesionally as possible are the most important parts of this assignment.
+As a group, we decided early on that learning new stuff and learning how to work as professionally as possible are the most important parts of this assignment.
 Pleasing the client is also important as well, but communicating well with the client is even more important.
 
 Our day ended the same way it started, with a meeting.
 This was needed since we wanted to check how much progress everyone made, and divide the work better if needed.
+
+### Day 4: "Oh CRUD, it's finally the weekend!"
+At the start of the project, we had set one major goal for ourselves: "To have set up a database connection".
+We finished that goal on the end of day 3, and decided on a new goal the next day.
+So our new goal was to have the front- and back end communicate with each other.
+This is a **very** big deal, and something we will focus on from the new week onwards.
+
+Day 4 was all about planning, and communication.
+We set up yet another small goal for monday, since mondays are client-days!
+The front end was looking great, so we wanted to show what we have to the client on monday.
+Questions were also prepared so we can get as much information as possible from the client.
+
+With the weekend nearing, and every single one of our members being raging workaholics, we decided to create some guidelines for us all to follow.
+
+When working in the weekends:
+* Make sure to use Trello, let everyone know who's working on what.
+  * Also mention it in the discord chat
+* When you're working, join the discord voice channel, even when you're not going to talk with anyone.
+  * So if another member sees you working, you can help each other out!
+* COMMUNICATION!!
+  * Communicate with team-members and the SCRUM master when you're taking a ticket and when you're done with a ticket.
+
+With communication being key, we have prepared yet another meme to show just how important communication is to us.
+
+![scrum-meme](readme-images/scrum-meme.png)
