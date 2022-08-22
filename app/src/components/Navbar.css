@@ -53,26 +53,35 @@ header nav ul a:hover {
   color: #ccbb00;
 }
 
-header .navbar__user-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+header .link-userpage {
   margin-left: 2rem;
   background-color: #ed831d;
   color: #2a2928;
   padding: 0.5rem 1rem;
   margin-top: auto;
   margin-bottom: auto;
+  text-decoration: none;
 }
 
-header .navbar__user-info svg {
+header .link-userpage:hover {
+  background-color: #df7612;
+}
+
+header .link-userpage .navbar__user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .link-userpage .navbar__user-info svg {
   margin-right: 0.5rem;
 }
 
-header .navbar__user-info p {
+header .link-userpage .navbar__user-info p {
   font-weight: 700;
+  padding-top: 0.2rem;
 }
 /*# sourceMappingURL=Navbar.css.map */
