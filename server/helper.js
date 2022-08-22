@@ -13,14 +13,14 @@ function validEmail(userEmail) {
   return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail);
 }
 
-function validateFields(firstname, lastname, email, username, password, confirmPassword) {
+function validateFields(firstname, lastname, email, username, password, confirmPassword, address) {
   const errors = [];
 
   if (!validEmail(email)) {
     errors.push({ message: "Email is not valid" });
   }
 
-  if (!firstname || !lastname || !email || !username || !password || !confirmPassword) {
+  if (!firstname || !lastname || !email || !username || !password || !confirmPassword || !address) {
     errors.push({ message: "One or more fields are empty" });
   }
 
