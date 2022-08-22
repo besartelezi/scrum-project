@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import UserPage from "./pages/UserPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
+import RedirectBuy from "./pages/RedirectBuy";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -26,7 +27,7 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/user/:id" element={<UserPage />} />
             <Route path="/shopping-cart" element={<ShoppingCartPage />} />
-
+            <Route path="/redirect" element={<RedirectBuy />} />
           </Routes>
         </main> 
         <Footer />
