@@ -1,1 +1,127 @@
 @import '../colorscheme.scss';
+$c-cart-back : #ffd000;
+$c-cart-delete: #ba181b;
+$c-cart-subtext: #BF7D40;
+.cart-container {
+  background-color: $c-cart-back;
+  width: 70%;
+  height: 85%;
+  border-radius: 20px;
+  box-shadow: 0px 25px 40px #1687d933;
+  .empty-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cart-header {
+    margin: auto;
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    .cart-remove-all {
+      font-size: 14px;
+      font-weight: 600;
+      color: $c-cart-delete;
+      cursor: pointer;
+      border-bottom: 1px solid $c-cart-delete;
+      margin-top: 2%;
+      margin-bottom: 2%;
+    }
+  }
+
+  .cart-item {
+    margin: auto;
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .cart-item-img {
+      width: 15%;
+      text-align: center;
+
+      img {
+        height: 120px;
+      }
+    }
+
+    .cart-item-about {
+      height: 100%;
+      width: 40%;
+
+      .cart-item-title {
+        margin-bottom: 1rem;
+        padding-top: 5px;
+        line-height: 10px;
+        font-weight: 800;
+        color: #202020;
+      }
+
+      .cart-item-subtitle {
+        font-weight: 600;
+        color: $c-cart-subtext;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .cart-item-remove-icon {
+    width: 15%;
+    color: $c-cart-delete;
+    cursor: pointer;
+  }
+
+  .cart-item-price {
+    width: 15%;
+  }
+
+  hr {
+    width: 100%;
+    color: $c-cart-subtext;
+    //float: right;
+    //margin-right: 5%;
+    margin-bottom: 2%;
+    margin-top: 20px;
+  }
+
+  .cart-checkout {
+    float: right;
+    margin-right: 5%;
+    width: 28%;
+
+    .cart-total {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .cart-number-of-items {
+        font-size: 16px;
+        font-weight: 500;
+        color: $c-cart-subtext;
+        line-height: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .cart-total-amount{
+        font-size: 36px;
+        font-weight: 900;
+        color: #202020;
+        display: flex;
+        align-items: center;
+      }
+
+    }
+
+    button{
+      margin: 1rem;
+      //float: right;
+    }
+  }
+
+}
+
