@@ -3,10 +3,15 @@ const app = express();
 const port = process.env.PORT || 9000;
 const usersRouter = require("./routes/Users");
 const productsRouter = require("./routes/Products");
+const authRouter = require("./routes/Auth");
+const dashboardRouter = require("./routes/Dashboard");
+
 const path = require("path");
+const cors = require("cors");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, "../app/build")));
@@ -18,13 +23,15 @@ app.get("/", (req, res) => {
 // API Routes
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
-
+app.use("/auth", authRouter);
+app.use("/dashboard", dashboardRouter);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   console.error(err.message, err.stack);
   res.status(statusCode).json({ message: err.message });
+
   return;
 });
 
