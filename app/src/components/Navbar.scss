@@ -48,22 +48,31 @@ header {
         }
     }
 
-    .navbar__user-info {
-        display: flex;
-        align-items: center;
+    .link-userpage {
         margin-left: 2rem;
         background-color: $c-secondary;
         color: $c-dark;
         padding: 0.5rem 1rem;
         margin-top:auto;
         margin-bottom: auto;
+        text-decoration: none;
 
-        svg {
-            margin-right: 0.5rem;
+        &:hover {
+            background-color: darken($c-secondary, 5%);
         }
 
-        p {
-            font-weight: 700;
+        .navbar__user-info {
+            display:flex;
+            align-items: center;
+                
+            svg {
+                margin-right: 0.5rem;
+            }
+
+            p {
+                font-weight: 700;
+                padding-top:0.2rem;
+            }
         }
     }
 }
