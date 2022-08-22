@@ -1,13 +1,12 @@
 @import '../colorscheme.scss';
-$c-cart-back : #ffd000;
-$c-cart-delete: #ba181b;
-$c-cart-subtext: #BF7D40;
+
+
 .cart-container {
-  background-color: $c-cart-back;
+  background-color: $c-dark;
   width: 70%;
   height: 85%;
-  border-radius: 20px;
-  box-shadow: 0px 25px 40px #1687d933;
+  //border-radius: 20px;
+  box-shadow: 3px 3px $c-light, 10px 10px $c-secondary;
   .empty-cart{
     display: flex;
     align-items: center;
@@ -24,9 +23,9 @@ $c-cart-subtext: #BF7D40;
     .cart-remove-all {
       font-size: 14px;
       font-weight: 600;
-      color: $c-cart-delete;
+      color: $c-secondary;
       cursor: pointer;
-      border-bottom: 1px solid $c-cart-delete;
+      border-bottom: 1px solid $c-secondary;
       margin-top: 2%;
       margin-bottom: 2%;
     }
@@ -58,12 +57,12 @@ $c-cart-subtext: #BF7D40;
         padding-top: 5px;
         line-height: 10px;
         font-weight: 800;
-        color: #202020;
+        color: $c-light;
       }
 
       .cart-item-subtitle {
         font-weight: 600;
-        color: $c-cart-subtext;
+        color: $c-secondary;
         line-height: 1.6;
       }
     }
@@ -71,17 +70,18 @@ $c-cart-subtext: #BF7D40;
 
   .cart-item-remove-icon {
     width: 15%;
-    color: $c-cart-delete;
+    color: $c-secondary;
     cursor: pointer;
   }
 
   .cart-item-price {
+    color: $c-light;
     width: 15%;
   }
 
   hr {
     width: 100%;
-    color: $c-cart-subtext;
+    color: $c-secondary;
     //float: right;
     //margin-right: 5%;
     margin-bottom: 2%;
@@ -101,7 +101,7 @@ $c-cart-subtext: #BF7D40;
       .cart-number-of-items {
         font-size: 16px;
         font-weight: 500;
-        color: $c-cart-subtext;
+        color: $c-secondary;
         line-height: 10px;
         display: flex;
         align-items: center;
@@ -110,7 +110,7 @@ $c-cart-subtext: #BF7D40;
       .cart-total-amount{
         font-size: 36px;
         font-weight: 900;
-        color: #202020;
+        color: $c-light;
         display: flex;
         align-items: center;
       }
