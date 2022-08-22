@@ -17,9 +17,12 @@ async function registerUser(user) {
     let hashedPassword = await bcrypt.hash(password, 10);
 
     const result = await db.query(`SELECT * FROM users WHERE email = $1`, [email]);
+    const resultUser = await db.query(`SELECT * FROM users WHERE username = $1`, [username]);
 
     if (result.rows.length) {
       resultInfo.statusInfo.push({ message: "Email already exists" });
+    } else if (resultUser.rows.length) {
+      resultInfo.statusInfo.push({ message: "Username already exists" });
     } else {
       const result = await db.query(
         `INSERT INTO users (firstname, lastname, email, username, password, address)
