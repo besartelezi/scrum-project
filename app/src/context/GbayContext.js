@@ -64,6 +64,44 @@ export const GbayProvider = ({ children }) => {
         }
     ]);
 
+    const [categories, setCategories] = useState([
+        {
+            id: 1, 
+            name: "Art"
+        },
+        {
+            id: 2,
+            name: "Shrimps"
+        },
+        {
+            id: 3,
+            name: "Coffee"
+        },
+        {
+            id: 4,
+            name: "Marvel"
+        },
+    ]);
+
+    const [themes, setThemes] = useState([
+        {
+            id: 1, 
+            name: "React"
+        },
+        {
+            id: 2,
+            name: "Javascript"
+        },
+        {
+            id: 3,
+            name: "Coffeescript"
+        },
+        {
+            id: 4,
+            name: "Shrimpstack"
+        },
+    ]);
+
     const [loggedInUser, setLoggedInUser] = useState(null);
 
     return <GbayContext.Provider value={{
@@ -71,7 +109,9 @@ export const GbayProvider = ({ children }) => {
         users,
         setUsers,
         loggedInUser,
-        setLoggedInUser
+        setLoggedInUser,
+        themes,
+        categories
     }}>{children}</GbayContext.Provider>;
 }
 

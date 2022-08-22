@@ -10,20 +10,31 @@ function LoginPage() {
 
     const { users, setLoggedInUser } = useContext(GbayContext);
 
+    const checkDB = async (username, password) => {
+        fetch('http://localhost:9000/auth/login', {method: 'POST', body: JSON.stringify({username, password}), mode: 'no-cors', headers: {'Content-Type': 'application/json'}})
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => console.log(err));
+
+    }
+
     const checkLogin = () => {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
-        const user = users.find(user => user.username === username && user.password === password);
-        if (user) {
-            setLoggedInUser(user);
-            navigate(`/user/${user.id}`);
-        } else {
-            alert('Login failed');
-        }
+        checkDB(username, password);
+        // const user = users.find(user => user.username === username && user.password === password);
+        // if (user) {
+        //     setLoggedInUser(user);
+        //     navigate(`/user/${user.id}`);
+        // } else {
+        //     alert('Login failed');
+        // }
     }
 
     return (
-        <div className="container">
+        <div className="container login-page">
             <h1>Login</h1>
             <label htmlFor="username">Username</label>
             <input type="text" placeholder="Username" id="username" />

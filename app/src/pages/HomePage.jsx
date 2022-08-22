@@ -15,7 +15,7 @@ function HomePage() {
             <h1>Home</h1>
             <section className="products-wrapper">
                 {products.map((product) => (
-                    <Link to={`/product/${product.id}`} state={product} key={crypto.randomUUID()}>
+                    <Link to={`/product/${product.id}`} state={{product, hoverable: "true"}} key={crypto.randomUUID()}>
                         <ProductItem product={product} />
                     </Link>
                 ))}

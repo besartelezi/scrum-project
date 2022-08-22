@@ -7,6 +7,7 @@ import AboutUsPage from "./pages/AboutUsPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import UserPage from "./pages/UserPage";
+import AddProductPage from './pages/AddProductPage';
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -24,6 +25,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/user/:id" element={<UserPage />} />
+            <Route path="/user/:id/add-product" element={<AddProductPage />} />
           </Routes>
         </main> 
         <Footer />
