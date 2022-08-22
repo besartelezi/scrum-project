@@ -9,8 +9,16 @@ function emptyOrRows(rows) {
   return rows;
 }
 
+function validEmail(userEmail) {
+  return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail);
+}
+
 function validateFields(firstname, lastname, email, username, password, confirmPassword) {
   const errors = [];
+
+  if (!validEmail(email)) {
+    errors.push({ message: "Email is not valid" });
+  }
 
   if (!firstname || !lastname || !email || !username || !password || !confirmPassword) {
     errors.push({ message: "One or more fields are empty" });

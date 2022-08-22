@@ -8,23 +8,6 @@ const dashboardRouter = require("./routes/Dashboard");
 
 const path = require("path");
 const cors = require("cors");
-/* OLD WAY*/
-
-// const session = require("express-session");
-// const passport = require("passport");
-// const initializePassport = require("./services/passportConfig");
-// initializePassport(passport);
-// app.use(
-//   session({
-//     secret: "secret",
-//     resave: false,
-//     saveUninitialized: false,
-//   })
-// );
-// app.use(passport.session());
-// app.use(passport.initialize());
-
-/* OLD WAY*/
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -42,23 +25,6 @@ app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 app.use("/auth", authRouter);
 app.use("/dashboard", dashboardRouter);
-
-////////////////////////////////////////////////////////
-//TESTING
-/* OLD WAY */
-
-// app.post(
-//   "/auth",
-//   passport.authenticate("local", {
-//     successRedirect: "/auth/success",
-//     failureRedirect: "/auth/fail",
-//     failureMessage: true,
-//   })
-// );
-
-/* OLD WAY */
-//TESTING
-////////////////////////////////////////////////////////
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
