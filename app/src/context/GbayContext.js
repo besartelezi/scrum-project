@@ -56,11 +56,30 @@ export const GbayProvider = ({ children }) => {
         }
     ]);
 
+    // const fetchUser = (username) => {
+    //     const url = "http://localhost:9000/users/" + username;
+    //     fetch(url)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             if(data.results.length !== 0) {
+    //             setQuestions(data.results);
+    //             setFaultyFetch(false);
+    //             setNewGameComponent(false);
+    //             } else {
+    //             setFaultyFetch(true);
+    //             setNewGameComponent(true);
+    //             }
+    //             setAPIcalled(true);
+    //         })
+    //         .catch(err => console.log(err));
+    // }
+
     const [users, setUsers] = useState([
         {
-            id: 1, 
-            username: "becode",
-            password: "becode"
+            id: 1,
+            username: "Test", 
+            email: "test@test.com",
+            password: "testtest"
         }
     ]);
 

@@ -108,7 +108,7 @@ body {
   }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 600px) {
   .container {
     max-width: calc(100vw - 40px);
   }

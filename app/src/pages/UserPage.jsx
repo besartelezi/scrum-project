@@ -25,14 +25,11 @@ function UserPage() {
                 <h3>These are your current listings:</h3>
                 <section className="products-wrapper">
                     {products.map((product) => {
-                        console.log(product.user_id, loggedInUser.id);
                         if (product.user_id === loggedInUser.id) {
                             return (
-                                <>
-                                    <Link to={`/product/${product.id}`} state={product} key={crypto.randomUUID()}>
-                                        <ProductItem product={product} />
-                                    </Link>
-                                </>
+                                <div className="user__current-listing">
+                                    <ProductItem product={product} hoverable={false} rud={true} />
+                                </div>
                             )
                         }
                     })}

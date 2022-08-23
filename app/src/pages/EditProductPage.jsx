@@ -1,28 +1,37 @@
 import { useContext } from 'react';
 import GbayContext from '../context/GbayContext';
 
-import "./AddProductPage.scss";
+import {useLocation} from 'react-router-dom';
 
-function AddProductPage() {
+import "./EditProductPage.scss";
+
+function EditProductPage() {
 
     const { categories, themes } = useContext(GbayContext);
 
+    const location = useLocation();
+    const product = location.state;
+
     return (
         <div className="container addproduct-page">
-            <h1>Add a new product</h1>
+            <h1>Edit {product.name}</h1>
             <label htmlFor="product__name">Product name:</label>
-            <input type="text" placeholder="Product name" id="product__name" />
+            <input type="text" placeholder="Product name" id="product__name" value={product.name}/>
             <label htmlFor="product__description--short">Short product description (max. 50 characters):</label>
-            <input type="text" placeholder="Short product description" maxlength="50" id="product__description--short" />
+            <input type="text" placeholder="Product description (short)" maxlength="50" id="product__description--short" value={product.shortDescription} />
             <label htmlFor="product__description--long">Long product description:</label>
-            <textarea placeholder="Long product description" maxlength="50" id="product__description--long" />
+            <textarea placeholder="Product name" maxlength="50" id="product__description--long" value={product.longDescription} />
             <label htmlFor="product__price">Product price:</label>
-            <input type="text" placeholder="Product price" id="product__price" />
+            <input type="text" placeholder="Product price" id="product__price" value={product.price} />
             <label htmlFor="product__category">Product category:</label>
             <select id="product__category">
                 {categories.map((category) => {
+
+                    console.log("categoryid", category.id)
+                    console.log("productcategoryid", product.category_id);
+
                     return (
-                        <option key={category.id} value={category.name}>{category.name}</option>
+                        <option key={category.id} value={category.name} selected={product.category_id === category.id}>{category.name}</option>
                     )
                 }
                 )}
@@ -41,4 +50,4 @@ function AddProductPage() {
         </div>
     )
 }
-export default AddProductPage
+export default EditProductPage

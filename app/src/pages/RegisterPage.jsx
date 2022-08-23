@@ -41,6 +41,15 @@ function RegisterPage() {
 
     //_________________functions_________________
 
+    const checkDB = async (username, password) => {
+        fetch('http://localhost:9000/auth/register', {method: 'POST', body: JSON.stringify({firstname: "test", lastname: "test", email: "test2@test.com", username: "test2", password: "testtest", confirmPassword: "testtest", address: "test"}), mode: 'cors', headers: {'Content-Type': 'application/json'}})
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => console.log(err));
+    }
+
     const handleRegister = () => {
         const newUser = {
             id : users.length + 1,
@@ -49,7 +58,9 @@ function RegisterPage() {
         }
         console.log('users' , users);
         console.log('new' , newUser);
-        setUsers([...users , newUser]);
+        // setUsers([...users , newUser]);
+        checkDB();
+
         navigate(`/login`);
     }
     const handleUserName = (event) => {
