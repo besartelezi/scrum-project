@@ -13,7 +13,7 @@ router.get("/", async function (req, res, next) {
 });
 
 /* GET product by id. */
-router.get("/:id", async function (req, res, next) {
+router.get("/byid/:id", async function (req, res, next) {
     try {
         res.json(await products.getProductById(req.params.id));
     } catch (err) {
@@ -23,8 +23,8 @@ router.get("/:id", async function (req, res, next) {
 });
 
 /* GET product by name. */
-router.get("/:name", async function (req, res, next) {
-    console.log(req.params);
+router.get("/byname/:name", async function (req, res, next) {
+    console.log(req.params.name);
     try {
         res.json(await products.getProductByName(req.params.name));
     } catch (err) {
