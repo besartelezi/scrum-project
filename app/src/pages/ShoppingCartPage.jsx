@@ -10,7 +10,7 @@ function ShoppingCartPage() {
     const {cart, setCart} = useContext(GbayContext);
 
     //____________________hooks__________________
-    const [emtyCart, setEmptyCart] = useState(false);
+    const [emptyCart, setEmptyCart] = useState(false);
 
     //_________________useEffect_________________
     useEffect(() => {
@@ -48,12 +48,12 @@ function ShoppingCartPage() {
         <div className='container shopping-cart-page'>
             <h1>Your Cart</h1>
             <div className='cart-container'>
-                {emtyCart ? (<span></span>) : (
+                {emptyCart ? (<span></span>) : (
                     <div className='cart-header cart-border'>
                         <h5 className='cart-remove-all' onClick={removeAll}>Remove all</h5>
                     </div>
                 )}
-                {emtyCart ? (<div className='empty-cart cart-border'><p>Your Shopping Cart Is Empty!</p></div>) :
+                {emptyCart ? (<div className='empty-cart cart-border'><p>Your Shopping Cart Is Empty!</p></div>) :
                     (cart.map((product) =>
                             <article className='cart-item cart-border'>
                                 <div className='cart-item-img'>
@@ -78,7 +78,7 @@ function ShoppingCartPage() {
                             prices are type string at this point.
                             after connection to the database the code below needs to change
                             */}
-                        {emtyCart ? (0) : cart[0].price}
+                        {emptyCart ? (0) : cart[0].price}
                     </div>
                     <button className='login-btn'>Proceed to payment</button>
                 </div>

@@ -105,7 +105,7 @@ export const GbayProvider = ({ children }) => {
         {
             id: 4,
             name: "Marvel"
-        },
+        }
     ]);
 
     const [themes, setThemes] = useState([
@@ -157,7 +157,7 @@ export const GbayProvider = ({ children }) => {
         loggedInUser,
         setLoggedInUser,
         themes,
-        categories
+        categories,
         cart,
         setCart
     }}>{children}</GbayContext.Provider>;
