@@ -62,8 +62,7 @@ function RegisterPage() {
         }
         // setUsers([...users , newUser]);
         checkDB(newUser).then(()=>{
-            
-            //navigate(`/login`);
+            navigate(`/login`);
         });
     }
     const handleUserName = (event) => {
