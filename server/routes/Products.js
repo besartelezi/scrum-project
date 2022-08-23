@@ -5,12 +5,36 @@ const products = require("../services/Products");
 /* GET products. */
 router.get("/", async function (req, res, next) {
   try {
-    res.json(await products.getProducts(req.query.page));
+    res.json(await products.getProducts());
   } catch (err) {
     console.log(err);
     next(err);
   }
 });
+
+/* GET product by id. */
+router.get("/:id", async function (req, res, next) {
+  try {
+    res.json(await products.getProductById(req.params.id));
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+});
+
+/* GET product by name. */
+router.get("/:name", async function (req, res, next) {
+  console.log(req.params);
+  try {
+    res.json(await products.getProductByName(req.params.name));
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+});
+
+/* GET product by userID. */
+// in working process
 
 /* POST product */
 router.post("/", async function (req, res, next) {
@@ -31,6 +55,7 @@ router.put("/:id", async function (req, res, next) {
     next(err);
   }
 });
+
 /* DELETE product */
 router.delete("/:id", async function (req, res, next) {
   try {
