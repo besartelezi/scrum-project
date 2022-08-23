@@ -5,8 +5,7 @@ import "./ProductPage.scss";
 function ProductPage() {
 
     const location = useLocation();
-    let product = location.state;
-    console.log(product);
+    let product = location.state.product;
 
     return (
         <div className="container product-page">
