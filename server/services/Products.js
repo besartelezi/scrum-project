@@ -31,6 +31,16 @@ async function getProductByName(name){
     };
 }
 
+async function getProductsByUserId(id){
+    const result = await db.query(`SELECT product_name, amount, price, post_date, long_description, short_description, image FROM products
+                                   WHERE users_id = $1`, [id]);
+    const response = result.rows;
+
+    return {
+        response
+    };
+}
+
 async function createProduct(product) {
     const result = await db.query(
         `INSERT INTO "products" (product_name, amount, price, category_id, post_date,
@@ -92,6 +102,7 @@ module.exports = {
     getProducts,
     getProductById,
     getProductByName,
+    getProductsByUserId,
     createProduct,
     updateProduct,
     removeProduct,
