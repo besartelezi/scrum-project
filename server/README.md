@@ -189,7 +189,7 @@ TODO: HANDLE ERROR
 
 ## PUT
 
-### Update a specific product => "product/${id}"
+### Update a specific product => "/product/${id}"
 
 1. Body example:
 
@@ -234,7 +234,7 @@ TODO: HANDLE ERROR
 
 ## DELETE
 
-### Delete a specific product => "products/${id}"
+### Delete a specific product => "/products/${id}"
 
 On Success:
 
@@ -254,7 +254,7 @@ TODO: HANDLE ERROR
 
 ## POST
 
-### Register a new user => "auth/register"
+### Register a new user => "/auth/register"
 
 1. Body example:
 
@@ -304,7 +304,7 @@ On Error:
 }
 ```
 
-### Log in user => "auth/login"
+### Log in user => "/auth/login"
 
 1. Body example:
 
@@ -346,7 +346,7 @@ On Error:
 }
 ```
 
-### Verify user => "auth/verify"
+### Verify user => "/auth/verify"
 
 1. Headers example:
 
