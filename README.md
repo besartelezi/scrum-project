@@ -24,7 +24,7 @@ The best way to describe this assignment, is by adding my favourite BeCode meme 
 
 ## Q&A with the Client
 Here we have written down the notes we made when we had our first talk with the client.
-
+ 
 ### Name of the site: G-Bay
 
 * Cool font, G-Bay as logo, color and design: very geeky, fun, interactive, flashy,...
@@ -235,3 +235,24 @@ And lastly, after finishing tons of research, planning and SCRUM tickets, our SC
 This made him so happy, that he made a meme about this special occasion.
 
 ![titanic-meme](readme-images/scrum-meme-2.png)
+
+### Day 6: "Front end V.S. Back end: Civil War!"
+First of all, we'd like to apologize for the title.
+There was no civil war in our group, since our SCRUM Master is a ruthless dictator who rules with an iron fist and brings fear to the hearts of developers nation-wide.
+Second of all, today's topic: Front and Back end!
+
+Our back end crew used Postman!
+Postman is a helpful tool that lets the back end team work without having to rely on the front end for any input.
+Meanwhile, the front end very rarely needs any back end to be able to work and finish tickets.
+
+Today we also discussed a little about the different functionalities we need to add.
+There's a clear hierarchy needed when creating functionalities.
+You can't purchase something without having an account, and you can't have an account without a register functionality.
+That's why we came together and made this very helpful roadmap!
+
+![nice-roadmap](readme-images/workflow-project.png)
+
+With this, we were able to write out some tickets.
+These were the tickets that would bring us the closest to our MVP.
+So as of right now, group Aligos is still going strong.
+The communication be communicating, everyone's content with what they're doing, and all complaints are getting shut down by the great SCRUM Master Overlord!
