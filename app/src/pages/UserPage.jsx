@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import GbayContext from '../context/GbayContext';
 import { Link } from "react-router-dom";
+import { IoMdAddCircleOutline } from "react-icons/io";
 
 import "./UserPage.scss";
 
 import ProductItem from '../components/ProductItem';
-import { FaLongArrowAltRight } from 'react-icons/fa';
 
 function UserPage() {
 
@@ -15,20 +15,25 @@ function UserPage() {
         <div className="container user-page">
             <h1>Your profile</h1>
             <p className="user__welcome">Welcome <b>{loggedInUser.username}</b></p>
-            <h3>These are your current listings:</h3>
-            <section className="products-wrapper">
-                {products.map((product) => {
-                    console.log(product.user_id, loggedInUser.id);
-                    if (product.user_id === loggedInUser.id) {
-                        return (
-                            <>
-                                <Link to={`/product/${product.id}`} state={product} key={crypto.randomUUID()}>
-                                    <ProductItem product={product} />
-                                </Link>
-                            </>
-                        )
-                    }
-                })}
+            <section>
+                <h3>Add a new product</h3>
+                <Link className="user__add-new-product" to="./add-product">
+                    <IoMdAddCircleOutline />
+                </Link>
+            </section>
+            <section>
+                <h3>These are your current listings:</h3>
+                <section className="products-wrapper">
+                    {products.map((product) => {
+                        if (product.user_id === loggedInUser.id) {
+                            return (
+                                <div className="user__current-listing">
+                                    <ProductItem product={product} hoverable={false} rud={true} />
+                                </div>
+                            )
+                        }
+                    })}
+                </section>
             </section>
         </div>
     )

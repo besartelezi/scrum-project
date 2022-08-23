@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 
 import { useContext } from 'react';
 import GbayContext from '../context/GbayContext';
+
 
 import { ReactComponent as Logo } from '../assets/images/gbay-logo-yellow.svg';
 
@@ -12,9 +12,11 @@ import "./Navbar.scss";
 function Navbar() {
     
     const { loggedInUser, setLoggedInUser } = useContext(GbayContext);
+    const navigate = useNavigate();
 
     const logout = () => {
         setLoggedInUser(null);
+        navigate("/");
     }
 
     return (

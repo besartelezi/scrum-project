@@ -14,6 +14,9 @@
   text-align: center;
   -webkit-box-shadow: 3px 3px #ffea00, 10px 10px #ed831d;
           box-shadow: 3px 3px #ffea00, 10px 10px #ed831d;
+}
+
+.product--hoverable {
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
   transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
@@ -21,9 +24,53 @@
   cursor: pointer;
 }
 
-.product:hover {
+.product--hoverable:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+}
+
+.product--rud {
+  position: relative;
+}
+
+.product--rud .product__rud-column {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+  background-color: #ed831d;
+  border-right: 1px solid #2a2928;
+  border-bottom: 1px solid #2a2928;
+}
+
+.product--rud .product__rud-column > *:not(:last-child) {
+  border-bottom: 1px dashed #2a2928;
+}
+
+.product--rud .product__rud-column .product__edit-btn, .product--rud .product__rud-column .product__delete-btn {
+  color: #2a2928;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.6rem;
+}
+
+.product--rud .product__rud-column .product__edit-btn svg, .product--rud .product__rud-column .product__delete-btn svg {
+  font-size: 2rem;
+  margin: auto;
 }
 
 .product__img {

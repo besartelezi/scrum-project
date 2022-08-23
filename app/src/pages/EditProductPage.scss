@@ -1,0 +1,67 @@
+@import '../colorscheme.scss';
+
+.addproduct-page {
+    label, input, textarea, select, img {
+        max-width: 500px;
+    }
+
+    label, p {
+        margin-bottom:0.4rem;
+    }
+
+    input, textarea, select, img {
+        margin-bottom:1rem;
+    }
+
+    textarea {
+        height: 200px;
+    }
+
+    .product__image {
+        font-size: 15rem;
+        background-color: $c-secondary;
+        color: $c-dark;
+        padding:2rem;
+        border: 0.4rem solid $c-dark;
+        border-radius: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten($c-secondary, 10%);
+        }
+    }
+
+    .login-btn {
+        margin-right:auto;
+    }
+
+    .product__image-wrapper {
+        position:relative;
+        max-width: 500px;
+        max-height:500px;
+
+
+        input, svg {
+            position: absolute;
+            bottom:0;
+            right:0;
+            width: 100px;
+            height: 100px;
+        }
+
+        input {
+            opacity: 0;
+            z-index: 9999;
+            cursor: pointer;
+
+            &:hover + svg {
+                background-color: lighten($c-secondary, 10%);
+            }
+        }
+
+        svg {
+            background-color: $c-secondary;
+            padding:0.2rem;
+        }
+    }
+}

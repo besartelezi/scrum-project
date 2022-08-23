@@ -1,16 +1,16 @@
-label, input {
-  width: 500px;
+.login-page label, .login-page input {
+  max-width: 500px;
 }
 
-label {
+.login-page label {
   margin-bottom: 0.4rem;
 }
 
-input {
+.login-page input {
   margin-bottom: 1rem;
 }
 
-.login-btn {
+.login-page .login-btn {
   margin-right: auto;
 }
 /*# sourceMappingURL=LoginPage.css.map */

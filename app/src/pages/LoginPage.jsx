@@ -10,11 +10,24 @@ function LoginPage() {
 
     const { users, setLoggedInUser } = useContext(GbayContext);
 
+    const checkDB = async (email, password) => {
+        fetch('http://localhost:9000/auth/login', {method: 'POST', body: JSON.stringify({email, password}), mode: 'cors', headers: {'Content-Type': 'application/json'}})
+            .then(res => res.json())
+            .then(data => {
+                if(data.status === "Success!"){
+                    return true;
+                } else {
+                    return false;
+                };
+            })
+            .catch(err => console.log(err));
+    }
+
     const checkLogin = () => {
-        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
-        const user = users.find(user => user.username === username && user.password === password);
-        if (user) {
+        const user = users.find(user => user.email === email && user.password === password);
+        if (checkDB(email, password)) {
             setLoggedInUser(user);
             navigate(`/user/${user.id}`);
         } else {
@@ -23,10 +36,10 @@ function LoginPage() {
     }
 
     return (
-        <div className="container">
+        <div className="container login-page">
             <h1>Login</h1>
-            <label htmlFor="username">Username</label>
-            <input type="text" placeholder="Username" id="username" />
+            <label htmlFor="email">E-mail</label>
+            <input type="text" placeholder="E-mail" id="email" />
             <label htmlFor="password">Password</label>
             <input type="password" placeholder="Password" id="password" />
             <button onClick={checkLogin} className="login-btn">Login</button>
