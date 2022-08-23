@@ -201,3 +201,37 @@ When working in the weekends:
 With communication being key, we have prepared yet another meme to show just how important communication is to us.
 
 ![scrum-meme](readme-images/scrum-meme.png)
+
+### The Weekend
+Before the weekend started, we made as many small tickets as possible.
+Some people like working in the weekend, while others would rather charge up their mental batteries so they can 'go ham' on the weekdays.
+It all depends on the person.
+The only thing that matters is to communicate properly with your team if you're working on the weekend.
+
+We made those tickets with the people who like to work in the weekends in mind.
+This way, they wouldn't accidentally work on someone else's ticket.
+And because the tickets aren't big ginormous tasks, they wouldn't overwork themselves either.
+Working toward your goals is important, but taking breaks is sometimes even more important.
+This project is a marathon, not a race!
+
+![ladies-and-gentlemen](readme-images/the-weekend.gif)
+
+### Day 5: "The Return of The Client"
+Today the client visited us once more.
+We showed them the frond end and they loved it, they had no complaints.
+Then we talked about the MVP for a bit.
+This was important so the client knows what to expect when the deadline is due.
+We also talked a bit about what could be scrapped in case our team has run out of time and won't be able to finish the MVP.
+Personally, we believe that the MVP is very achievable, but our team believes in Murphy's Law.
+If something can go wrong, it will go wrong.
+So it's better to communicate and plan too much, than to not properly communicate with the client and mess things up.
+
+Today's highlight: We made the front end, back end, and database communicate with each other properly!
+The very first version of our log-in feature has been finished, but it must be first tweaked a bit and finalized.
+This is one of the biggest steps of the project, and we're darn' tootin' proud that we tried so hard and got so far.
+Because in the end, it definitely even mattered!
+
+And lastly, after finishing tons of research, planning and SCRUM tickets, our SCRUM Master was also finally able to touch some code again.
+This made him so happy, that he made a meme about this special occasion.
+
+![titanic-meme](readme-images/scrum-meme-2.png)

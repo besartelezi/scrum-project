@@ -1,0 +1,127 @@
+@import '../colorscheme.scss';
+
+
+.cart-container {
+  background-color: $c-dark;
+  width: 70%;
+  height: 85%;
+  //border-radius: 20px;
+  box-shadow: 3px 3px $c-light, 10px 10px $c-secondary;
+  .empty-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cart-header {
+    margin: auto;
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    .cart-remove-all {
+      font-size: 14px;
+      font-weight: 600;
+      color: $c-secondary;
+      cursor: pointer;
+      border-bottom: 1px solid $c-secondary;
+      margin-top: 2%;
+      margin-bottom: 2%;
+    }
+  }
+
+  .cart-item {
+    margin: auto;
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .cart-item-img {
+      width: 15%;
+      text-align: center;
+
+      img {
+        height: 120px;
+      }
+    }
+
+    .cart-item-about {
+      height: 100%;
+      width: 40%;
+
+      .cart-item-title {
+        margin-bottom: 1rem;
+        padding-top: 5px;
+        line-height: 10px;
+        font-weight: 800;
+        color: $c-light;
+      }
+
+      .cart-item-subtitle {
+        font-weight: 600;
+        color: $c-secondary;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .cart-item-remove-icon {
+    width: 15%;
+    color: $c-secondary;
+    cursor: pointer;
+  }
+
+  .cart-item-price {
+    color: $c-light;
+    width: 15%;
+  }
+
+  hr {
+    width: 100%;
+    color: $c-secondary;
+    //float: right;
+    //margin-right: 5%;
+    margin-bottom: 2%;
+    margin-top: 20px;
+  }
+
+  .cart-checkout {
+    float: right;
+    margin-right: 5%;
+    width: 28%;
+
+    .cart-total {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .cart-number-of-items {
+        font-size: 16px;
+        font-weight: 500;
+        color: $c-secondary;
+        line-height: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .cart-total-amount{
+        font-size: 36px;
+        font-weight: 900;
+        color: $c-light;
+        display: flex;
+        align-items: center;
+      }
+
+    }
+
+    button{
+      margin: 1rem;
+      //float: right;
+    }
+  }
+
+}
+

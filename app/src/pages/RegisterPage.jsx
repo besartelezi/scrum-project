@@ -10,7 +10,7 @@ function RegisterPage() {
     const {users , setUsers} = useContext(GbayContext);
     const navigate = useNavigate();
 
-    //_________________states_________________
+    //_________________hooks_________________
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
