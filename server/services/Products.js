@@ -13,7 +13,7 @@ async function getProducts() {
 
 async function getProductById(id){
     const result = await db.query(`SELECT product_name, amount, price, long_description, short_description, image FROM products
-                                   WHERE product_name = $1`, [id]);
+                                   WHERE id = $1`, [id]);
     const response = result.rows[0];
 
     return {
