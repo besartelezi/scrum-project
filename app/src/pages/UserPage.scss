@@ -1,6 +1,11 @@
 @import '../colorscheme.scss';
 
 .user-page {
+
+    section:not(:last-child){
+        margin-bottom:3rem;
+    }
+
     .user__welcome {
         font-size:2.5rem;
         margin-bottom:3rem;
@@ -16,6 +21,21 @@
                 background-color: $c-secondary;
                 height: 7px;
                 width: 100%;
+            }
+        }
+    }
+
+    .user__add-new-product {
+        svg {
+            font-size: 15rem;
+            background-color: $c-secondary;
+            color: $c-dark;
+            padding:2rem;
+            border: 0.4rem solid $c-dark;
+            border-radius: 1rem;
+
+            &:hover {
+                background-color: lighten($c-secondary, 10%);
             }
         }
     }

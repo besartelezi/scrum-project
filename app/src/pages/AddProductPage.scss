@@ -1,0 +1,37 @@
+@import '../colorscheme.scss';
+
+.addproduct-page {
+    label, input, textarea, select {
+        max-width: 500px;
+    }
+
+    label {
+        margin-bottom:0.4rem;
+    }
+
+    input, textarea, select {
+        margin-bottom:1rem;
+    }
+
+    textarea {
+        height: 200px;
+    }
+
+    .product__image {
+        font-size: 15rem;
+        background-color: $c-secondary;
+        color: $c-dark;
+        padding:2rem;
+        border: 0.4rem solid $c-dark;
+        border-radius: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten($c-secondary, 10%);
+        }
+    }
+
+    .login-btn {
+        margin-right:auto;
+    }
+}

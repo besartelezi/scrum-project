@@ -56,14 +56,70 @@ export const GbayProvider = ({ children }) => {
         }
     ]);
 
+    // const fetchUser = (username) => {
+    //     const url = "http://localhost:9000/users/" + username;
+    //     fetch(url)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             if(data.results.length !== 0) {
+    //             setQuestions(data.results);
+    //             setFaultyFetch(false);
+    //             setNewGameComponent(false);
+    //             } else {
+    //             setFaultyFetch(true);
+    //             setNewGameComponent(true);
+    //             }
+    //             setAPIcalled(true);
+    //         })
+    //         .catch(err => console.log(err));
+    // }
+
     const [users, setUsers] = useState([
         {
-            id: 1, 
-            username: "becode",
-            password: "becode"
+            id: 1,
+            username: "Test", 
+            email: "test@test.com",
+            password: "testtest"
         }
     ]);
 
+    const [categories, setCategories] = useState([
+        {
+            id: 1, 
+            name: "Art"
+        },
+        {
+            id: 2,
+            name: "Shrimps"
+        },
+        {
+            id: 3,
+            name: "Coffee"
+        },
+        {
+            id: 4,
+            name: "Marvel"
+        },
+    ]);
+
+    const [themes, setThemes] = useState([
+        {
+            id: 1, 
+            name: "React"
+        },
+        {
+            id: 2,
+            name: "Javascript"
+        },
+        {
+            id: 3,
+            name: "Coffeescript"
+        },
+        {
+            id: 4,
+            name: "Shrimpstack"
+        },
+    ]);
     const [cart , setCart] = useState([
         {
             id: 3,
@@ -94,6 +150,8 @@ export const GbayProvider = ({ children }) => {
         setUsers,
         loggedInUser,
         setLoggedInUser,
+        themes,
+        categories
         cart,
         setCart
     }}>{children}</GbayContext.Provider>;

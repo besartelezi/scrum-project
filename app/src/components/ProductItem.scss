@@ -8,11 +8,49 @@
     color:$c-light;
     text-align:center;
     box-shadow: 3px 3px $c-light, 10px 10px $c-secondary;
-    transition: transform 0.5s ease-in-out;
-    cursor:pointer;
 
-    &:hover {
-        transform: scale(1.05);
+    &--hoverable {    
+        transition: transform 0.5s ease-in-out;
+        cursor:pointer;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    &--rud {
+        position: relative;
+
+        .product {
+            &__rud-column {
+                position: absolute;
+                top:0;
+                left:0;
+                display:flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom:1rem;
+                background-color: $c-secondary;
+                border-right: 1px solid $c-dark;
+                border-bottom: 1px solid $c-dark;
+
+                > *:not(:last-child){
+                    border-bottom: 1px dashed $c-dark;
+                }
+
+                .product__edit-btn, .product__delete-btn {
+                    color: $c-dark;
+                    display: flex;
+                    padding:0.6rem;
+                    
+                    svg {
+                        font-size:2rem;
+                        margin:auto;
+                    }
+                }
+            }
+        }
     }
 
     &__img {
