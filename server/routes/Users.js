@@ -5,7 +5,7 @@ const users = require("../services/Users");
 /* GET users. */
 router.get("/", async function (req, res, next) {
   try {
-    res.json(await users.getUsers(req.query.page));
+    res.json(await users.getUsers());
   } catch (err) {
     console.log(err);
     next(err);
