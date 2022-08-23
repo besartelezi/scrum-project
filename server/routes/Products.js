@@ -26,7 +26,7 @@ router.get("/:id", async function (req, res, next) {
 router.get("/:name", async function (req, res, next) {
     console.log(req.params);
     try {
-        res.json(await products.getProductById(req.params.name));
+        res.json(await products.getProductByName(req.params.name));
     } catch (err) {
         console.log(err);
         next(err);
