@@ -1,0 +1,129 @@
+@import '../colorscheme.scss';
+
+
+.cart-container {
+  width: 70%;
+  height: 85%;
+  //_____________________The message displayed when cart is empty__________________
+  .empty-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $c-light;
+    background-color: $c-dark;
+  }
+
+
+  //_________________Header____________________
+  .cart-header {
+    background-color: $c-dark;
+    margin: auto;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 10px;
+
+    .cart-remove-all {
+      font-size: 14px;
+      font-weight: 600;
+      color: $c-secondary;
+      cursor: pointer;
+      border-bottom: 1px solid $c-light;
+      margin-top: 2%;
+      margin-bottom: 2%;
+    }
+  }
+
+
+  //___________________________The articles______________________________
+  .cart-item {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $c-dark;
+    padding: 10px;
+
+    //____product image_____
+    .cart-item-img {
+      width: 15%;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    //_____product name and short description_____
+    .cart-item-about {
+      height: 100%;
+      width: 40%;
+
+      .cart-item-title {
+        margin-bottom: 1rem;
+        line-height: 10px;
+        font-weight: 800;
+        color: $c-secondary;
+      }
+
+      .cart-item-subtitle {
+        color: $c-light;
+        line-height: 1.6;
+      }
+    }
+
+    //___trash can Icon___
+    .cart-item-remove-icon {
+      width: 15%;
+      color: $c-secondary;
+      cursor: pointer;
+    }
+
+    //___product price___
+    .cart-item-price {
+      color: $c-light;
+      width: 15%;
+    }
+  }
+
+  //_______________________Footer, number of items in cart and total amount___________________
+  .cart-checkout {
+    padding: 10px;
+    background-color: $c-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+
+    .cart-number-of-items {
+      font-size: 16px;
+      font-weight: 500;
+      color: $c-secondary;
+      margin-left: auto;
+    }
+
+    .cart-total-amount {
+      font-size: 36px;
+      font-weight: 900;
+      color: $c-light;
+      margin-left: auto;
+    }
+
+    button {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+
+  //__________________________To Add Shadow Effect_______________________
+  .cart-border {
+    margin-bottom: 1rem;
+    box-shadow: 3px 3px $c-light, 10px 10px $c-secondary;
+  }
+
+}
+
