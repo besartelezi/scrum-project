@@ -4,12 +4,10 @@ const helper = require("../helper");
 async function getUsers() {
   const rows = await db.query(`SELECT * FROM "users"`);
   const data = helper.emptyOrRows(rows);
-  const meta = { page };
   const response = data.rows;
 
   return {
-    response,
-    meta,
+    response
   };
 }
 
