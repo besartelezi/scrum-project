@@ -41,8 +41,8 @@ function RegisterPage() {
 
     //_________________functions_________________
 
-    const checkDB = async (username, password) => {
-        fetch('http://localhost:9000/auth/register', {method: 'POST', body: JSON.stringify({firstname: "test", lastname: "test", email: "test2@test.com", username: "test2", password: "testtest", confirmPassword: "testtest", address: "test"}), mode: 'cors', headers: {'Content-Type': 'application/json'}})
+    const checkDB = async (user) => {
+        fetch('http://localhost:9000/auth/register', {method: 'POST', body: JSON.stringify({firstname: user.firstname, lastname: user.lastname, email: user.email, username: user.username, password: user.password, confirmPassword: user.confirmpassword, address: user.address}), mode: 'cors', headers: {'Content-Type': 'application/json'}})
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -52,16 +52,18 @@ function RegisterPage() {
 
     const handleRegister = () => {
         const newUser = {
-            id : users.length + 1,
+            firstname: firstName,
+            lastname: lastName,
+            email: email,
             username : userName.value,
-            password : pass
+            password : pass,
+            confirmpassword : passConfirm.value,
+            address: street + ', ' + houseNum + ', ' + city + ', ' + zipCode
         }
-        console.log('users' , users);
-        console.log('new' , newUser);
         // setUsers([...users , newUser]);
-        checkDB();
-
-        navigate(`/login`);
+        checkDB(newUser).then(()=>{
+            navigate(`/login`);
+        });
     }
     const handleUserName = (event) => {
         let input = event.target.value;
@@ -118,7 +120,7 @@ function RegisterPage() {
             <div className='register__wrapper'>
                 <div className='register__left'>
                     <label htmlFor="firstname">First Name</label>
-                    <input type="text" placeholder="First Name" id="firstname"
+                    <input type="text" placeholder="First Name" id="firstname" required
                            value={firstName} onChange={(event) => setFirstName(event.target.value)}/>
 
                     <label htmlFor="lastname">Last Name</label>
