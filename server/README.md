@@ -20,7 +20,7 @@
     "users_id": 1,
     "long_description": "testLongDesc",
     "short_description": "testShortDesc",
-    "image": "testImg",
+    "image": 1,
     "theme_id": 1
 }
 ```
@@ -185,11 +185,46 @@ On Error:
 TODO: HANDLE ERROR
 ```
 
+### Get products by user ID => "/products/byuser/${id}"
+
+On Success:
+
+```js
+{
+    "response": [
+        {
+            "product_name": "testProductName",
+            "amount": 10,
+            "price": 101,
+            "post_date": "2022-08-22T22:00:00.000Z",
+            "long_description": "testLongDesc",
+            "short_description": "testShortDesc",
+            "image": 1
+        },
+        {
+            "product_name": "testProductName",
+            "amount": 10,
+            "price": 101,
+            "post_date": "2022-08-22T22:00:00.000Z",
+            "long_description": "testLongDesc",
+            "short_description": "testShortDesc",
+            "image": 1
+        }
+    ]
+}
+```
+
+On Error:
+
+```js
+TODO: HANDLE ERRORS
+```
+
 ---
 
 ## PUT
 
-### Update a specific product => "/product/${id}"
+### Update a specific product => "/products/${id}"
 
 1. Body example:
 

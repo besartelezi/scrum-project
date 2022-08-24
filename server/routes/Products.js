@@ -34,15 +34,13 @@ router.get("/byname/:name", async function (req, res, next) {
 
 /* GET product by userID. */
 router.get("/byuser/:id", async function (req, res, next) {
-    console.log(req.params.id);
-    try {
-        res.json(await products.getProductsByUserId(req.params.id));
-    } catch (err) {
-        console.log(err);
-        next(err);
-    }
+  try {
+    res.json(await products.getProductsByUserId(req.params.id));
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
 });
-
 
 /* POST product */
 router.post("/", async function (req, res, next) {
