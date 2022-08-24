@@ -14,6 +14,7 @@ function LoginPage() {
         fetch('http://localhost:9000/auth/login', {method: 'POST', body: JSON.stringify({email, password}), mode: 'cors', headers: {'Content-Type': 'application/json'}})
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 if(data.status === "Success!"){
                     return true;
                 } else {
@@ -26,10 +27,11 @@ function LoginPage() {
     const checkLogin = () => {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
-        const user = users.find(user => user.email === email && user.password === password);
+        // const user = users.find(user => user.email === email && user.password === password);
+        // console.log(user);
         if (checkDB(email, password)) {
-            setLoggedInUser(user);
-            navigate(`/user/${user.id}`);
+            // setLoggedInUser(user);
+            // navigate(`/user/${user.id}`);
         } else {
             alert('Login failed');
         }
