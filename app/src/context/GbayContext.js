@@ -157,7 +157,7 @@ export const GbayProvider = ({ children }) => {
         loggedInUser,
         setLoggedInUser,
         themes,
-        categories
+        categories,
         cart,
         setCart
     }}>{children}</GbayContext.Provider>;

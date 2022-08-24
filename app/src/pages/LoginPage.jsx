@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import GbayContext from '../context/GbayContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import "./LoginPage.scss";
 
@@ -42,7 +42,8 @@ function LoginPage() {
             <input type="text" placeholder="E-mail" id="email" />
             <label htmlFor="password">Password</label>
             <input type="password" placeholder="Password" id="password" />
-            <button onClick={checkLogin} className="login-btn">Login</button>
+            <button onClick={checkLogin} className="login-btn btn--cta"><span>Login</span></button>
+            <p>Not registered yet? <Link to={"/register"}>Register here</Link></p>
         </div>
     )
 }

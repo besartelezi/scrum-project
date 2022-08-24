@@ -35,7 +35,7 @@ function RedirectBuy() {
 
             <div className="redirect__wrapper__register">
                 <p className="redirect__text">If you don't have an account, then you can register here!</p>
-                <button onClick={goToRegisterPage}>Register now!</button>
+                <button class="btn--cta" onClick={goToRegisterPage}>Register now!</button>
             </div>
 
         </div>
