@@ -119,26 +119,21 @@ TODO: HANDLE ERROR
 
 ### Get product by Id => "/products/byid/${id}"
 
-On Success:
+On Success: 
 
 ```js
 {
-    "response": {
-        "product_name": "testProductName",
-        "amount": 10,
-        "price": 101,
-        "long_description": "testLongDesc",
-        "short_description": "testShortDesc",
-        "image": {
+    "status": "success",
+        "resultData": {
+        "product_name": "ole",
+            "amount": 1,
+            "price": 30000,
+            "long_description": "short",
+            "short_description": "Long",
+            "image": {
             "type": "Buffer",
-            "data": [
-                116,
-                101,
-                115,
-                116,
-                73,
-                109,
-                103
+                "data": [
+                47
             ]
         }
     }
@@ -148,7 +143,9 @@ On Success:
 On Error:
 
 ```js
-TODO: HANDLE ERROR
+{
+    "status": "failed, given information is not enough"
+}
 ```
 
 ### Get product by name => "/products/byname/${name}"
@@ -157,32 +154,30 @@ On Success:
 
 ```js
 {
-    "response": {
-        "product_name": "testProductName",
-        "amount": 10,
-        "price": 101,
-        "long_description": "testLongDesc",
-        "short_description": "testShortDesc",
-        "image": {
+    {
+        "status": "success",
+        "resultData": {
+        "product_name": "ole",
+            "amount": 1,
+            "price": 30000,
+            "long_description": "short",
+            "short_description": "Long",
+            "image": {
             "type": "Buffer",
-            "data": [
-                116,
-                101,
-                115,
-                116,
-                73,
-                109,
-                103
+                "data": [
+                47
             ]
         }
     }
-}
+    }
 ```
 
 On Error:
 
 ```js
-TODO: HANDLE ERROR
+{
+    "status": "failed, given information is not enough"
+}
 ```
 
 ### Get products by user ID => "/products/byuser/${id}"
@@ -191,24 +186,35 @@ On Success:
 
 ```js
 {
-    "response": [
+    "status": "success",
+        "resultData": [
         {
-            "product_name": "testProductName",
-            "amount": 10,
-            "price": 101,
+            "product_name": "ole",
+            "amount": 1,
+            "price": 30000,
             "post_date": "2022-08-22T22:00:00.000Z",
-            "long_description": "testLongDesc",
-            "short_description": "testShortDesc",
-            "image": 1
+            "long_description": "short",
+            "short_description": "Long",
+            "image": {
+                "type": "Buffer",
+                "data": [
+                    47
+                ]
+            }
         },
         {
-            "product_name": "testProductName",
-            "amount": 10,
-            "price": 101,
-            "post_date": "2022-08-22T22:00:00.000Z",
-            "long_description": "testLongDesc",
-            "short_description": "testShortDesc",
-            "image": 1
+            "product_name": "ola",
+            "amount": 1,
+            "price": 20000,
+            "post_date": "2022-08-23T22:00:00.000Z",
+            "long_description": "short",
+            "short_description": "long",
+            "image": {
+                "type": "Buffer",
+                "data": [
+                    47
+                ]
+            }
         }
     ]
 }
@@ -217,7 +223,10 @@ On Success:
 On Error:
 
 ```js
-TODO: HANDLE ERRORS
+{
+    "status": "failed, given information is not enough",
+        "resultData": []
+}
 ```
 
 ---
