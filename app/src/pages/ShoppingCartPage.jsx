@@ -6,35 +6,36 @@ import './ShoppingCartPage.scss';
 import {FaTrashAlt} from 'react-icons/fa';
 
 function ShoppingCartPage() {
-    // load context
+    //________________load context_______________
     const {cart, setCart} = useContext(GbayContext);
 
-    //hooks
-    const [emtyCart, setEmptyCart] = useState(false);
+    //____________________hooks__________________
+    const [emptyCart, setEmptyCart] = useState(false);
 
-    //useEffect
+    //_________________useEffect_________________
     useEffect(() => {
         if (!cart.length) {
             setEmptyCart(true);
         }
     }, [])
 
-    //functions
+    //_________________functions_________________
     const removeItem = (id) => {
         let filtered = cart.filter(el => {
             return el.id !== id;
         })
-        if (filtered.length === 0){
+        if (filtered.length === 0) {
             setEmptyCart(true);
         }
         setCart(filtered);
-        //console.log(cart);
     }
 
     const removeAll = () => {
         setCart([]);
         setEmptyCart(true);
     }
+
+    //*******************CALCULATION FUNCTION*******************
     //This function needs to be modified after database connection
     const calculatePrice = () => {
         let total = 0;
@@ -42,17 +43,19 @@ function ShoppingCartPage() {
         return total;
     }
 
-    // return
+    //__________________________return____________________________
     return (
         <div className='container shopping-cart-page'>
             <h1>Your Cart</h1>
             <div className='cart-container'>
-                <div className='cart-header'>
-                    <h5 className='cart-remove-all' onClick={removeAll}>Remove all</h5>
-                </div>
-                {emtyCart ? (<div className='empty-cart'><p>Your Shopping Cart Is Empty!</p></div>) :
+                {emptyCart ? (<span></span>) : (
+                    <div className='cart-header cart-border'>
+                        <h5 className='cart-remove-all' onClick={removeAll}>Remove all</h5>
+                    </div>
+                )}
+                {emptyCart ? (<div className='empty-cart cart-border'><p>Your Shopping Cart Is Empty!</p></div>) :
                     (cart.map((product) =>
-                            <article className='cart-item'>
+                            <article className='cart-item cart-border'>
                                 <div className='cart-item-img'>
                                     <img src={product.url} alt=""/>
                                 </div>
@@ -67,18 +70,15 @@ function ShoppingCartPage() {
                         )
                     )
                 }
-                <hr/>
-                <div className='cart-checkout'>
-                    <div className='cart-total'>
-                        <div className='cart-number-of-items'><span>{cart.length} item(s)</span></div>
-                        <div className='cart-total-amount'>
-                            {/*
+                <div className='cart-checkout cart-border'>
+                    <div className='cart-number-of-items'>{cart.length} item(s)</div>
+                    <div className='cart-total-amount'>
+                        {/*
                             There is a calculate function defined but can't work with it since the
                             prices are type string at this point.
                             after connection to the database the code below needs to change
                             */}
-                            <span>  {emtyCart ? (0) : cart[0].price}</span>
-                        </div>
+                        {emptyCart ? (0) : cart[0].price}
                     </div>
                     <button className='login-btn'>Proceed to payment</button>
                 </div>

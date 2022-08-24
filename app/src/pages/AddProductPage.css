@@ -1,0 +1,34 @@
+.addproduct-page label, .addproduct-page input, .addproduct-page textarea, .addproduct-page select {
+  max-width: 500px;
+}
+
+.addproduct-page label {
+  margin-bottom: 0.4rem;
+}
+
+.addproduct-page input, .addproduct-page textarea, .addproduct-page select {
+  margin-bottom: 1rem;
+}
+
+.addproduct-page textarea {
+  height: 200px;
+}
+
+.addproduct-page .product__image {
+  font-size: 15rem;
+  background-color: #ed831d;
+  color: #2a2928;
+  padding: 2rem;
+  border: 0.4rem solid #2a2928;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.addproduct-page .product__image:hover {
+  background-color: #f19d4c;
+}
+
+.addproduct-page .login-btn {
+  margin-right: auto;
+}
+/*# sourceMappingURL=AddProductPage.css.map */
