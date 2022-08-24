@@ -16,10 +16,13 @@ function LoginPage() {
             .then(data => {
                 console.log(data);
                 if(data.status === "Success!"){
-                    return true;
+                    const user = data.statusInfo.user;
+                    console.log("user", user);
+                    setLoggedInUser(user);
+                    navigate(`/user/${user.id}`);
                 } else {
-                    return false;
-                };
+                    alert('Login failed');
+                }
             })
             .catch(err => console.log(err));
     }
@@ -27,14 +30,7 @@ function LoginPage() {
     const checkLogin = () => {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
-        // const user = users.find(user => user.email === email && user.password === password);
-        // console.log(user);
-        if (checkDB(email, password)) {
-            // setLoggedInUser(user);
-            // navigate(`/user/${user.id}`);
-        } else {
-            alert('Login failed');
-        }
+        checkDB(email, password)();
     }
 
     return (
