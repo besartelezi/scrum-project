@@ -9,7 +9,15 @@ import ProductItem from '../components/ProductItem';
 
 function UserPage() {
 
-    const { products, loggedInUser } = useContext(GbayContext);
+    const { products, loggedInUser, userProducts, setUserProducts } = useContext(GbayContext);
+
+    fetch("http://localhost:9000/products/byuser/" + loggedInUser.id)
+        .then(res => res.json())
+        .then(data => {
+            console.log("producten", data);
+            setUserProducts(data);
+        })
+        .catch(err => console.log(err));
 
     return (
         <div className="container user-page">

@@ -18,6 +18,7 @@ function LoginPage() {
                 if(data.status === "Success!"){
                     const user = data.statusInfo.user;
                     console.log("user", user);
+                    localStorage.setItem('auth-token', data.token);
                     setLoggedInUser(user);
                     navigate(`/user/${user.id}`);
                 } else {
