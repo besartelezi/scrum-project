@@ -105,7 +105,7 @@ export const GbayProvider = ({ children }) => {
         {
             id: 4,
             name: "Marvel"
-        },
+        }
     ]);
 
     const [themes, setThemes] = useState([
