@@ -2,42 +2,41 @@ const helper = require("../helper");
 const db = require("./dbConfig");
 
 async function getProducts() {
-    const rows = await db.query(`SELECT * FROM "products"`);
-    const data = helper.emptyOrRows(rows);
-    const response = data.rows;
-
+    const result = await db.query(`SELECT * FROM "products"`);
+    const status = helper.catchError(result.rows.length);
     return {
-        response
+        status,
+        resultData : result.rows
     };
 }
 
 async function getProductById(id){
     const result = await db.query(`SELECT product_name, amount, price, long_description, short_description, image FROM products
                                    WHERE id = $1`, [id]);
-    const response = result.rows[0];
-
+    const status = helper.catchError(result.rows.length);
     return {
-        response
+        status,
+        resultData : result.rows[0]
     };
 }
 
 async function getProductByName(name){
     const result = await db.query(`SELECT product_name, amount, price, long_description, short_description, image FROM products
                                    WHERE product_name = $1`, [name]);
-    const response = result.rows[0];
-
+    const status = helper.catchError(result.rows.length);
     return {
-        response
+        status,
+        resultData : result.rows[0]
     };
 }
 
 async function getProductsByUserId(id){
     const result = await db.query(`SELECT product_name, amount, price, post_date, long_description, short_description, image FROM products
                                    WHERE users_id = $1`, [id]);
-    const response = result.rows;
-
+    const status = helper.catchError(result.rows.length);
     return {
-        response
+        status,
+        resultData : result.rows
     };
 }
 
