@@ -72,4 +72,15 @@ router.delete("/:id", async function (req, res, next) {
   }
 });
 
+/* SELECT products by category */
+router.get("/bycategory/:id", async function (req, res, next) {
+  try {
+    console.log(req.params.id)
+    res.json(await products.getProductsByCategory(req.params.id));
+  } catch (err) {
+    console.error(`Error while selecting products by category`, err.message);
+    next(err);
+  }
+});
+
 module.exports = router;

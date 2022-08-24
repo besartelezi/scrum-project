@@ -98,6 +98,20 @@ async function removeProduct(id) {
     return {message};
 }
 
+async function getProductsByCategory (id) {
+    const result = await db.query('SELECT * FROM products WHERE category_id = $1', [id]);
+
+    const data = result.rows;
+
+    let message = "Error in getting products by category";
+
+    if (result.rowCount) {
+        message = "An error occurred while trying to select the category you requested.";
+    }
+
+    return {data, message};
+}
+
 module.exports = {
     getProducts,
     getProductById,
@@ -106,5 +120,6 @@ module.exports = {
     createProduct,
     updateProduct,
     removeProduct,
+    getProductsByCategory,
 
 };
