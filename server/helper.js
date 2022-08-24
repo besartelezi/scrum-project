@@ -1,3 +1,13 @@
+function catchError(rowsAffected){
+  let message = "";
+  if(rowsAffected > 0){
+    message = "success"
+  } else {
+    message = "failed, given information is not enough"
+  }
+  return message
+}
+
 function getOffset(currentPage = 1, listPerPage) {
   return (currentPage - 1) * [listPerPage];
 }
@@ -36,7 +46,7 @@ function validateFields(firstname, lastname, email, username, password, confirmP
 }
 
 module.exports = {
-  getOffset,
   emptyOrRows,
   validateFields,
+  catchError
 };
