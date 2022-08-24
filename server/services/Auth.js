@@ -47,6 +47,7 @@ async function logInUser(user) {
   let resultInfo = { status: "Failed", statusInfo: [], token: undefined };
 
   const result = await db.query(`SELECT * FROM users WHERE email=$1`, [email]);
+  console.log(result.rows);
 
   if (!result.rows.length) {
     resultInfo.statusInfo.push({ message: "Email is not registered" });
@@ -57,7 +58,15 @@ async function logInUser(user) {
       resultInfo.statusInfo.push({ message: "Password is incorrect" });
     } else {
       resultInfo.status = "Success!";
-      resultInfo.statusInfo = [];
+      resultInfo.statusInfo = {
+        user: {
+          id: result.rows[0].id,
+          firstname: result.rows[0].firstname,
+          lastname: result.rows[0].lastname,
+          email: result.rows[0].email,
+          address: result.rows[0].address,
+        },
+      };
       resultInfo.token = jwtGenerator(result.rows[0].id);
     }
   }

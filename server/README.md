@@ -328,8 +328,16 @@ On Success:
 ```js
 {
     "status": "Success!",
-    "statusInfo": [],
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiMSJ9LCJpYXQiOjE2NjEyNTIwODksImV4cCI6MTY2MTI1NTY4OX0.J4c2ZWATfwk-JJqPSovr0i-nzrmBHAojugZtl5Usn1s"
+    "statusInfo": {
+        "user": {
+            "id": "1",
+            "firstname": "testFirstName",
+            "lastname": "testLastName",
+            "email": "test@becode.org",
+            "address": "testAddress"
+        }
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiMSJ9LCJpYXQiOjE2NjEzMzU0NjIsImV4cCI6MTY2MTMzOTA2Mn0.8p6WNJhjYvRZwdggVHOSBWTxpG7czffvWaUaDElJ9UE"
 }
 ```
 
