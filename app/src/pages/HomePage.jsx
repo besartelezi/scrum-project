@@ -17,7 +17,7 @@ function HomePage() {
             .then(res => res.json())
             .then(data => {
                 console.log(data.response)
-                setAllProducts(data.response);
+                setAllProducts(data.resultData);
             })
             .catch(err=> console.log(err))
     }
