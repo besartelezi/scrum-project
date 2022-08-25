@@ -31,19 +31,6 @@ app.use("/products", productsRouter);
 app.use("/auth", authRouter);
 app.use("/dashboard", dashboardRouter);
 
-////////////////////////////////////////////////////////////////////
-const multer = require("multer");
-
-// Create multer object
-const imageUpload = multer({
-  dest: "images",
-});
-
-// Image Upload Routes
-app.post("/image", (req, res) => {
-  res.json("/image api");
-});
-
 // Image Get Routes
 app.get("/image/:filename", (req, res) => {
   res.json("/image/:filename api");
