@@ -51,6 +51,117 @@ TODO: HANDLE ERROR
 
 ## GET:
 
+### Get all themes => "/themes"
+
+On Success:
+
+```js
+{
+    "status": "success",
+    "resultData": [
+        {
+            "id": 1,
+            "theme_name": "Dragonball Z"
+        },
+        {
+            "id": 2,
+            "theme_name": "Naruto"
+        },
+        {
+            "id": 3,
+            "theme_name": "One piece"
+        },
+        {
+            "id": 4,
+            "theme_name": "Pokémon"
+        },
+        {
+            "id": 5,
+            "theme_name": "Hajime no Ippo"
+        },
+        {
+            "id": 6,
+            "theme_name": "Attack on titan"
+        },
+        {
+            "id": 7,
+            "theme_name": "DC"
+        },
+        {
+            "id": 8,
+            "theme_name": "Marvel"
+        },
+        {
+            "id": 9,
+            "theme_name": "Death note"
+        },
+        {
+            "id": 10,
+            "theme_name": "Black clover"
+        },
+        {
+            "id": 11,
+            "theme_name": "Chainsaw Man"
+        },
+        {
+            "id": 12,
+            "theme_name": "Jujutsu Kaisen"
+        },
+        {
+            "id": 13,
+            "theme_name": "Berserk"
+        },
+        {
+            "id": 14,
+            "theme_name": "Yakuza"
+        },
+        {
+            "id": 15,
+            "theme_name": "Elden ring"
+        }
+    ]
+}
+```
+### Get all categories => "/categories"
+
+On Success:
+
+```js
+{
+    "status": "success",
+        "resultData": [
+        {
+            "id": 1,
+            "category": "Trading cards"
+        },
+        {
+            "id": 2,
+            "category": "Action figures"
+        },
+        {
+            "id": 3,
+            "category": "Plushies"
+        },
+        {
+            "id": 4,
+            "category": "Clothing"
+        },
+        {
+            "id": 5,
+            "category": "Manga"
+        },
+        {
+            "id": 6,
+            "category": "Light novels"
+        },
+        {
+            "id": 7,
+            "category": "Accessoires "
+        }
+    ]
+}
+```
+
 ### Get all products => "/products"
 
 On Success:
