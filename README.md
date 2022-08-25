@@ -256,3 +256,15 @@ With this, we were able to write out some tickets.
 These were the tickets that would bring us the closest to our MVP.
 So as of right now, group Aligos is still going strong.
 The communication be communicating, everyone's content with what they're doing, and all complaints are getting shut down by the great SCRUM Master Overlord!
+
+### Day 7: "Database Strange: Image-Verse of Madness"
+After our daily morning meeting, it was decided really quick that we need to find a way to add images to the database.
+This was something that wasn't a priority, until now.
+It was also more of a difficult task than we previously thought.
+
+On the day itself we still haven't determined a clear way on how to do the images, but we were doing **a ton** of researching and experimenting.
+But we did have some progress on other ends.
+
+This day we mixed it upa  bit, by giving out some back end tasks to the developers that were more busy with the front end, and vice versa.
+We thought this was essential, since we wanted all developers to understand how the project works.
+It might have consumed some time, but we're confident we'll still be able to give the client a fine result at the end!

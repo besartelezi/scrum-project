@@ -34,15 +34,13 @@ router.get("/byname/:name", async function (req, res, next) {
 
 /* GET product by userID. */
 router.get("/byuser/:id", async function (req, res, next) {
-    console.log(req.params.id);
-    try {
-        res.json(await products.getProductsByUserId(req.params.id));
-    } catch (err) {
-        console.log(err);
-        next(err);
-    }
+  try {
+    res.json(await products.getProductsByUserId(req.params.id));
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
 });
-
 
 /* POST product */
 router.post("/", async function (req, res, next) {
@@ -73,5 +71,27 @@ router.delete("/:id", async function (req, res, next) {
     next(err);
   }
 });
+
+/* SELECT products by category */
+router.get("/bycategory/:id", async function (req, res, next) {
+  try {
+    console.log(req.params.id)
+    res.json(await products.getProductsByCategory(req.params.id));
+  } catch (err) {
+    console.error(`Error while selecting products by category`, err.message);
+    next(err);
+  }
+});
+
+// ___ select product by theme ___
+
+router.get('/bytheme/:id' , async function (req , res , next){
+  try {
+    res.json(await products.getProductByTheme(req.params.id));
+  } catch (err) {
+    console.error('Error while selecting products by theme', err.message);
+    next(err);
+  }
+})
 
 module.exports = router;

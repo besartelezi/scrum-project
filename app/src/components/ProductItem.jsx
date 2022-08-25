@@ -20,10 +20,11 @@ function ProductItem({product, hoverable, rud}) {
   
   return (
     <article className={`product${hoverable? ' product--hoverable' : ''}${rud? ' product--rud' : ''}`}>
-      <img className="product__img" src={product.url} />
-      <h3 className="product__name">{product.name}</h3>
-      <p className="product__description">{product.shortDescription}</p>
-      <button className="product__price btn--cta btn--light btn--hover-disabled"><span>{product.price}</span></button>
+
+      <img className="product__img" src="/assets/images/5.jpg"/>
+      <h3 className="product__name">{product.product_name}</h3>
+      <p className="product__description">{product.short_description}</p>
+      <p className="product__price">&euro;{parseFloat(product.price/100).toFixed(2)}</p>
       {rud && 
       ( <div class="product__rud-column">
           <button className="product__edit-btn btn--no-border" onClick={() => editProduct({id})}><FaEdit /></button>

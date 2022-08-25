@@ -9,12 +9,12 @@ function ProductPage() {
 
     return (
         <div className="container product-page">
-            <h1>{product.name}</h1>
+            <h1>{product.product_name}</h1>
             <div>
-                <img className="product__img" src={product.url} />
-                <h3>{product.shortDescription}</h3>
-                <p>{product.longDescription}</p>
-                <p className="product__price">{product.price}</p>
+                <img className="product__img" src="/assets/images/5.jpg" />
+                <h3>{product.short_description}</h3>
+                <p>{product.long_description}</p>
+                <p className="product__price">&euro;{parseFloat(product.price/100).toFixed(2)}</p>
                 <button><span>Buy</span></button>
             </div>
         </div>
