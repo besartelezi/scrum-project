@@ -1,9 +1,13 @@
 import { useContext } from 'react';
 import GbayContext from '../context/GbayContext';
+import { useNavigate } from 'react-router-dom';
 
+import '../colorscheme.scss';
 import "./AddProductPage.scss";
 
 function AddProductPage() {
+
+    const navigate = useNavigate();
 
     const { categories, themes, userProducts, setUserProducts, loggedInUser } = useContext(GbayContext);
 
@@ -33,19 +37,19 @@ function AddProductPage() {
             long_description: document.getElementById("product__description--long").value,
             price: parseInt(document.getElementById("product__price").value),
             amount: 1,
-            image: 2,
+            image: 3,
             post_date: "2022-08-23",
             category_id: idSelectedCategory,
             theme_id: idSelectedTheme,
-            user_id: parseInt(loggedInUser.id)
+            users_id: parseInt(loggedInUser.id)
         }
-
-        console.log(newProduct);
 
         fetch('http://localhost:9000/products', {method: 'POST', body: JSON.stringify( newProduct ), mode: 'cors', headers: {'Content-Type': 'application/json'}})
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                if(data.message === "Product created successfully"){
+                    navigate(`/user/${loggedInUser.id}`);
+                };
             })
             .catch(err => console.log(err));
     }
@@ -80,7 +84,7 @@ function AddProductPage() {
                 )}
             </select>
             <label htmlFor="product__picture">Choose a product picture:</label>
-            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+            <input type="file" id="product__picture" accept="image/png, image/jpeg" />
             <button onClick={addProduct} className="addproduct-btn">Add product</button>
         </div>
     )
