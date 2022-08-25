@@ -29,6 +29,11 @@
     margin-bottom: 0.5rem;
   }
 
+  .register__form-group {
+    display:flex;
+    flex-direction: column;
+  }
+
   .register__wrapper{
     display: flex;
     gap: 2rem;

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import GbayContext from '../context/GbayContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import "./LoginPage.scss";
 
@@ -14,11 +14,16 @@ function LoginPage() {
         fetch('http://localhost:9000/auth/login', {method: 'POST', body: JSON.stringify({email, password}), mode: 'cors', headers: {'Content-Type': 'application/json'}})
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 if(data.status === "Success!"){
-                    return true;
+                    const user = data.statusInfo.user;
+                    console.log("user", user);
+                    localStorage.setItem('auth-token', data.token);
+                    setLoggedInUser(user);
+                    navigate(`/user/${user.id}`);
                 } else {
-                    return false;
-                };
+                    alert('Login failed');
+                }
             })
             .catch(err => console.log(err));
     }
@@ -26,13 +31,7 @@ function LoginPage() {
     const checkLogin = () => {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
-        const user = users.find(user => user.email === email && user.password === password);
-        if (checkDB(email, password)) {
-            setLoggedInUser(user);
-            navigate(`/user/${user.id}`);
-        } else {
-            alert('Login failed');
-        }
+        checkDB(email, password)();
     }
 
     return (
@@ -42,7 +41,8 @@ function LoginPage() {
             <input type="text" placeholder="E-mail" id="email" />
             <label htmlFor="password">Password</label>
             <input type="password" placeholder="Password" id="password" />
-            <button onClick={checkLogin} className="login-btn">Login</button>
+            <button onClick={checkLogin} className="login-btn btn--cta"><span>Login</span></button>
+            <p>Not registered yet? <Link to={"/register"}>Register here</Link></p>
         </div>
     )
 }

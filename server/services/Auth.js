@@ -63,8 +63,9 @@ async function logInUser(user) {
           id: result.rows[0].id,
           firstname: result.rows[0].firstname,
           lastname: result.rows[0].lastname,
+          username: result.rows[0].username,
           email: result.rows[0].email,
-          address: result.rows[0].address,
+          address: result.rows[0].address
         },
       };
       resultInfo.token = jwtGenerator(result.rows[0].id);
