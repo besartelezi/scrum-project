@@ -6,7 +6,6 @@ function ProductPage() {
 
     const location = useLocation();
     let product = location.state.product;
-    console.log(product);
 
     return (
         <div className="container product-page">

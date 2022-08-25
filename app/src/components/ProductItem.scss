@@ -30,10 +30,8 @@
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom:1rem;
                 background-color: $c-secondary;
-                border-right: 1px solid $c-dark;
-                border-bottom: 1px solid $c-dark;
+                border: 1px solid $c-dark;
 
                 > *:not(:last-child){
                     border-bottom: 1px dashed $c-dark;
