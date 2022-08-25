@@ -39,35 +39,51 @@ button, input:not([type="file"]), textarea, select {
 
 button {
   background-color: #ed831d;
-  color: #fff;
+  font-size: 1.4rem;
+  color: #2a2928;
   position: relative;
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
-button:hover {
-  -webkit-filter: contrast(80%);
-          filter: contrast(80%);
+button:not(.btn--no-border) {
+  margin-left: 10px;
 }
 
-button::before {
-  position: absolute;
-  left: -6px;
-  top: 0;
-  content: "";
-  background-image: url("./assets/images/gbay-button-left-edge.svg");
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
+button.btn--cta {
+  -webkit-box-shadow: 10px 0px 0px -5px #ed831d, 20px 0px 0px -10px #ed831d, -10px 0px 0px -5px #ed831d, -20px 0px 0px -10px #ed831d;
+          box-shadow: 10px 0px 0px -5px #ed831d, 20px 0px 0px -10px #ed831d, -10px 0px 0px -5px #ed831d, -20px 0px 0px -10px #ed831d;
 }
 
-button::after {
-  position: absolute;
-  right: -6px;
-  top: 0;
-  content: "";
-  background-image: url("./assets/images/gbay-button-right-edge.svg");
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 6px;
+button.btn--cta:not(.btn--hover-disabled):hover {
+  background-color: #c76a10;
+  -webkit-box-shadow: 10px 0px 0px -5px #c76a10, 20px 0px 0px -10px #c76a10, -10px 0px 0px -5px #c76a10, -20px 0px 0px -10px #c76a10;
+          box-shadow: 10px 0px 0px -5px #c76a10, 20px 0px 0px -10px #c76a10, -10px 0px 0px -5px #c76a10, -20px 0px 0px -10px #c76a10;
+}
+
+button.btn--light {
+  background-color: #ffea00;
+  -webkit-box-shadow: 10px 0px 0px -5px #ffea00, 20px 0px 0px -10px #ffea00, -10px 0px 0px -5px #ffea00, -20px 0px 0px -10px #ffea00;
+          box-shadow: 10px 0px 0px -5px #ffea00, 20px 0px 0px -10px #ffea00, -10px 0px 0px -5px #ffea00, -20px 0px 0px -10px #ffea00;
+}
+
+button.btn--light:not(.btn--hover-disabled):hover {
+  background-color: #ccbb00;
+  -webkit-box-shadow: 10px 0px 0px -5px #ccbb00, 20px 0px 0px -10px #ccbb00, -10px 0px 0px -5px #ccbb00, -20px 0px 0px -10px #ccbb00;
+          box-shadow: 10px 0px 0px -5px #ccbb00, 20px 0px 0px -10px #ccbb00, -10px 0px 0px -5px #ccbb00, -20px 0px 0px -10px #ccbb00;
+}
+
+button.btn--no-border {
+  background-color: #ed831d;
+}
+
+button.btn--no-border:hover {
+  background-color: #c76a10;
+}
+
+button span {
+  font-family: "GBay";
+  margin-top: -2rem;
 }
 
 .link {
@@ -119,5 +135,14 @@ main {
       -ms-flex: 1;
           flex: 1;
   padding: 2rem 0;
+}
+
+.btn-border {
+  fill: red !important;
+}
+
+.test {
+  -webkit-box-shadow: 0px 20px 0px -10px #888888, 0px 40px 0px -20px #888;
+          box-shadow: 0px 20px 0px -10px #888888, 0px 40px 0px -20px #888;
 }
 /*# sourceMappingURL=index.css.map */

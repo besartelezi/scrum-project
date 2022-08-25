@@ -15,5 +15,17 @@
 
     .login-btn {
         margin-right:auto;
+        margin-bottom:1rem;
+    }
+
+    p {
+        a {
+            text-decoration: underline;
+            color:currentColor;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 }

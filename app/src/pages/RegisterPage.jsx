@@ -119,39 +119,54 @@ function RegisterPage() {
             <h1>Register</h1>
             <div className='register__wrapper'>
                 <div className='register__left'>
-                    <label htmlFor="firstname">First Name</label>
-                    <input type="text" placeholder="First Name" id="firstname" required
-                           value={firstName} onChange={(event) => setFirstName(event.target.value)}/>
 
-                    <label htmlFor="lastname">Last Name</label>
-                    <input type="text" placeholder="Last Name" id="lastname"
-                           value={lastName} onChange={(event) => setLastName(event.target.value)}/>
-
-                    <label htmlFor="email">E-mail</label>
-                    <input type="email" placeholder="example@email.com" id="email"
-                           value={email} onChange={(event) => setEmail(event.target.value)}/>
-
-                    <label htmlFor="username">Username</label>
-                    <input type="text" placeholder="Username" id="username"
-                           className={userName.error ? 'input-with-alert' : ''}
-                           value={userName.value} onChange={handleUserName}/>
-                    {userName.tag}
+                    <div className="register__form-group">
+                        <label htmlFor="firstname">First Name</label>
+                        <input type="text" placeholder="First Name" id="firstname"
+                            value={firstName} onChange={(event) => setFirstName(event.target.value)}/>
+                    </div>
 
 
-                    <label htmlFor="password">Password</label>
-                    <input type="password" placeholder="Password" id="password"
-                           value={pass} onChange={handlePass}/>
+                    <div className="register__form-group">
+                        <label htmlFor="lastname">Last Name</label>
+                        <input type="text" placeholder="Last Name" id="lastname"
+                            value={lastName} onChange={(event) => setLastName(event.target.value)}/>
+                    </div>
 
-                    <label htmlFor="confirmpassword">Confirm Password</label>
-                    <input type="password" placeholder="Password" id="confirmpassword"
-                           className={passConfirm.error ? 'input-with-alert' : ''}
-                           value={passConfirm.value} onChange={handlePassConf}/>
-                    {passConfirm.tag}
+                    <div className="register__form-group">
+                        <label htmlFor="email">E-mail</label>
+                        <input type="email" placeholder="example@email.com" id="email"
+                            value={email} onChange={(event) => setEmail(event.target.value)}/>
+                    </div>
+
+                    <div className="register__form-group">
+                        <label htmlFor="username">Username</label>
+                        <input type="text" placeholder="Username" id="username"
+                            className={userName.error ? 'input-with-alert' : ''}
+                            value={userName.value} onChange={handleUserName}/>
+                        {userName.tag}
+                    </div>
+
+                    <div className="register__form-group">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" placeholder="Password" id="password"
+                            value={pass} onChange={handlePass}/>
+                    </div>
+
+                    <div className="register__form-group">
+                        <label htmlFor="confirmpassword">Confirm Password</label>
+                        <input type="password" placeholder="Password" id="confirmpassword"
+                            className={passConfirm.error ? 'input-with-alert' : ''}
+                            value={passConfirm.value} onChange={handlePassConf}/>
+                        {passConfirm.tag}
+                    </div>
                 </div>
                 <div className='register__right'>
-                    <label htmlFor="street">Street</label>
-                    <input type="text" placeholder="Street" id="street"
-                           value={street} onChange={(event) => setStreet(event.target.value)}/>
+                    <div className="register__form-group">
+                        <label htmlFor="street">Street</label>
+                        <input type="text" placeholder="Street" id="street"
+                            value={street} onChange={(event) => setStreet(event.target.value)}/>
+                    </div>
                     <div className="register__wrapper-right">
                         <div className='register__element--small'>
                             <label htmlFor="zip-code">Zip-code</label>
@@ -171,7 +186,7 @@ function RegisterPage() {
                     </div>
                 </div>
             </div>
-            <button className="login-btn" onClick={handleRegister}>Register</button>
+            <button className="login-btn btn--cta" onClick={handleRegister}><span>Register</span></button>
         </div>
 
     )

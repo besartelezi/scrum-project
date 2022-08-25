@@ -83,4 +83,15 @@ router.get("/bycategory/:id", async function (req, res, next) {
   }
 });
 
+// ___ select product by theme ___
+
+router.get('/bytheme/:id' , async function (req , res , next){
+  try {
+    res.json(await products.getProductByTheme(req.params.id));
+  } catch (err) {
+    console.error('Error while selecting products by theme', err.message);
+    next(err);
+  }
+})
+
 module.exports = router;

@@ -89,6 +89,8 @@ export const GbayProvider = ({ children }) => {
         }
     ]);
 
+    const [userProducts, setUserProducts] = useState([]);
+
     const [categories, setCategories] = useState([
         {
             id: 1, 
@@ -159,7 +161,9 @@ export const GbayProvider = ({ children }) => {
         themes,
         categories,
         cart,
-        setCart
+        setCart,
+        userProducts,
+        setUserProducts
     }}>{children}</GbayContext.Provider>;
 }
 

@@ -18,7 +18,7 @@ function EditProductPage() {
 
 
     return (
-        <div className="container addproduct-page">
+        <div className="container editproduct-page">
             <h1>Edit {product.name}</h1>
             <label htmlFor="product__name">Product name:</label>
             <input type="text" placeholder="Product name" id="product__name" value={product.name}/>

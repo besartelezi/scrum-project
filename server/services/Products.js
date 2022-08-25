@@ -116,11 +116,26 @@ async function getProductsByCategory (id) {
     let message = "Error in getting products by category";
 
     if (result.rowCount) {
-        message = "An error occurred while trying to select the category you requested.";
+        message = "Fetching products by category was successful.";
     }
 
     return {data, message};
 }
+
+// Get Product By Theme
+async function getProductByTheme (id){
+    const result = await db.query ('SELECT * FROM products WHERE theme_id = $1',[id]);
+
+    const data = result.rows;
+
+    let message = 'Error in getting products by theme';
+
+    if (result.rowCount){
+        message = 'Fetching products by theme was successful.';
+    }
+    return {data , message}
+}
+
 
 module.exports = {
     getProducts,
@@ -131,5 +146,6 @@ module.exports = {
     updateProduct,
     removeProduct,
     getProductsByCategory,
+    getProductByTheme
 
 };
