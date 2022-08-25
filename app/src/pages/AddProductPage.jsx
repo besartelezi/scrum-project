@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import GbayContext from '../context/GbayContext';
 
+import '../colorscheme.scss';
 import "./AddProductPage.scss";
 
 function AddProductPage() {
@@ -37,7 +38,7 @@ function AddProductPage() {
             post_date: "2022-08-23",
             category_id: idSelectedCategory,
             theme_id: idSelectedTheme,
-            user_id: parseInt(loggedInUser.id)
+            users_id: parseInt(loggedInUser.id)
         }
 
         console.log(newProduct);
@@ -80,7 +81,7 @@ function AddProductPage() {
                 )}
             </select>
             <label htmlFor="product__picture">Choose a product picture:</label>
-            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+            <input type="file" id="product__picture" accept="image/png, image/jpeg" />
             <button onClick={addProduct} className="addproduct-btn">Add product</button>
         </div>
     )
