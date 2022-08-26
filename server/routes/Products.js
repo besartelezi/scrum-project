@@ -4,6 +4,7 @@ const products = require("../services/Products");
 // const helper = require("../helper");
 
 const multer = require("multer");
+const cloudinary = require("cloudinary").v2;
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -12,6 +13,12 @@ const storage = multer.diskStorage({
   filename: function (req, file, cb) {
     cb(null, file.originalname);
   },
+});
+
+cloudinary.config({
+  cloud_name: "dpchxrbum",
+  api_key: "329367831935658",
+  api_secret: "pJVAthbkoggqLbiHJbBDkEknZWg",
 });
 
 /* GET products. */
@@ -64,12 +71,6 @@ router.post("/", async function (req, res, next) {
         return res.send(err);
       }
       // SEND FILE TO CLOUDINARY
-      const cloudinary = require("cloudinary").v2;
-      cloudinary.config({
-        cloud_name: "dpchxrbum",
-        api_key: "329367831935658",
-        api_secret: "pJVAthbkoggqLbiHJbBDkEknZWg",
-      });
       const path = req.file.path;
       const uniqueFilename = new Date().toISOString();
       cloudinary.uploader.upload(
@@ -95,7 +96,32 @@ router.post("/", async function (req, res, next) {
 /* PUT product */
 router.put("/:id", async function (req, res, next) {
   try {
-    res.json(await products.updateProduct(req.params.id, req.body));
+    const imageData = { url: "error" };
+    const productId = req.params.id;
+    const upload = multer({ storage }).single("image_url");
+
+    upload(req, res, function (err) {
+      if (err) {
+        return res.send(err);
+      }
+      // SEND FILE TO CLOUDINARY
+      const path = req.file.path;
+      const uniqueFilename = new Date().toISOString();
+      cloudinary.uploader.upload(
+        path,
+        { public_id: `project/${uniqueFilename}`, tags: `project` }, // directory and tags are optional
+        async function (err, image) {
+          if (err) return res.send(err);
+          // remove file from server
+          const fs = require("fs");
+          fs.unlinkSync(path);
+          // return image details
+          imageData.url = image.url;
+          res.json(await products.updateProduct(productId, req.body, imageData.url));
+        }
+      );
+    });
+    // res.json(await products.updateProduct(req.params.id, req.body));
   } catch (err) {
     console.error(`Error while updating product`, err.message);
     next(err);
@@ -115,7 +141,7 @@ router.delete("/:id", async function (req, res, next) {
 /* SELECT products by category */
 router.get("/bycategory/:id", async function (req, res, next) {
   try {
-    console.log(req.params.id)
+    console.log(req.params.id);
     res.json(await products.getProductsByCategory(req.params.id));
   } catch (err) {
     console.error(`Error while selecting products by category`, err.message);
@@ -125,13 +151,13 @@ router.get("/bycategory/:id", async function (req, res, next) {
 
 // ___ select product by theme ___
 
-router.get('/bytheme/:id' , async function (req , res , next){
+router.get("/bytheme/:id", async function (req, res, next) {
   try {
     res.json(await products.getProductByTheme(req.params.id));
   } catch (err) {
-    console.error('Error while selecting products by theme', err.message);
+    console.error("Error while selecting products by theme", err.message);
     next(err);
   }
-})
+});
 
 module.exports = router;
