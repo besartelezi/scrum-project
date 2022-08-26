@@ -68,17 +68,15 @@ async function createProduct(product, imageUrl) {
   return { message };
 }
 
-async function updateProduct(id, product) {
+async function updateProduct(id, product, imageUrl) {
   const result = await db.query(
     `UPDATE "products"
          SET product_name = '${product.product_name}',
-             amount='${product.amount}',
              price = '${product.price}',
-             category_id = '${product.category_id}',
-             post_date = '${product.post_date}',
-             users_id = '${product.users_id}',
+             category_id = '${product.category_id}',           
              short_description = '${product.short_description}',
-             image = '${product.image}',
+             long_description = '${product.long_description}',
+             image = '${imageUrl}',
              theme_id = '${product.theme_id}'
          WHERE id = ${id}`
   );
