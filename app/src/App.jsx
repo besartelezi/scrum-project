@@ -11,6 +11,7 @@ import AddProductPage from './pages/AddProductPage';
 import EditProductPage from './pages/EditProductPage';
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import RedirectBuy from "./pages/RedirectBuy";
+import SubNavbar from "./components/SubNavbar";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
