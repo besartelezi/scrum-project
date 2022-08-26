@@ -10,17 +10,6 @@ async function getProducts() {
     };
 }
 
-async function getThemes() {
-    const result = await db.query(`SELECT * FROM "theme"`);
-    const status = helper.catchError(result.rows.length);
-    console.log(result)
-    return {
-        status,
-        resultData : result.rows
-    };
-}
-
-
 async function getProductById(id){
     const result = await db.query(`SELECT product_name, amount, price, long_description, short_description, image FROM products
                                    WHERE id = $1`, [id]);
