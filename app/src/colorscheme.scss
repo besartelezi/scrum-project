@@ -1,3 +1,16 @@
+:root {
+    --c-light: #ffea00;
+    --c-dark: #2a2928;
+    --c-secondary: #ed831d;
+  }
+  
+  [data-theme='dark'] {
+    --background: black;
+    --text-primary: white;
+    --text-secondary: grey;
+    --accent: darkred;
+  }
+
 $c-light : #ffea00;
 $c-dark : #2a2928;
 $c-secondary: #ed831d;
