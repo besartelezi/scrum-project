@@ -4,6 +4,8 @@ import { FaUserCircle } from "react-icons/fa";
 import { useContext } from 'react';
 import GbayContext from '../context/GbayContext';
 
+import {FaShoppingCart} from "react-icons/fa";
+
 
 import { ReactComponent as Logo } from '../assets/images/gbay-logo-yellow.svg';
 
@@ -34,6 +36,9 @@ function Navbar() {
                         </li>
                         <li>
                             {loggedInUser ? (<a onClick={logout}>Logout</a>) : (<Link to="/login">Login</Link>)}
+                        </li>
+                        <li>
+                            <Link to="/shopping-cart"><FaShoppingCart></FaShoppingCart></Link>
                         </li>
                     </ul>
                 </nav>

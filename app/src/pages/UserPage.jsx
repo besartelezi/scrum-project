@@ -12,7 +12,7 @@ function UserPage() {
     const {products, loggedInUser, userProducts, setUserProducts} = useContext(GbayContext);
 
     useEffect(() => {
-        fetch("http://localhost:9000/products/byuser/" + 1 /*loggedInUser.id*/)
+        fetch("http://localhost:9000/products/byuser/" + loggedInUser.id)
             .then(res => res.json())
             .then(data => {
                 console.log("product", data.resultData);
@@ -25,7 +25,7 @@ function UserPage() {
     return (
         <div className="container user-page">
             <h1>Your profile</h1>
-            <p className="user__welcome">Welcome <b>{/*loggedInUser.username*/}</b></p>
+            <p className="user__welcome">Welcome <b>{loggedInUser.username}</b></p>
             <section>
                 <h3>Add a new product</h3>
                 <Link className="user__add-new-product" to="./add-product">

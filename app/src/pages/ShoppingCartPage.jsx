@@ -10,15 +10,19 @@ function ShoppingCartPage() {
     const {cart, setCart} = useContext(GbayContext);
 
     //____________________hooks__________________
-    const [emptyCart, setEmptyCart] = useState(false);
-
+    const [emptyCart, setEmptyCart] = useState(true);
+    const [totalAmount , setTotalAmount] = useState(0);
     //_________________useEffect_________________
     useEffect(() => {
-        if (!cart.length) {
-            setEmptyCart(true);
+        if (cart.length) {
+            setEmptyCart(false);
         }
+        calculatePrice();
     }, [])
 
+    useEffect(()=>{
+        calculatePrice();
+    },[cart])
     //_________________functions_________________
     const removeItem = (id) => {
         let filtered = cart.filter(el => {
@@ -35,12 +39,12 @@ function ShoppingCartPage() {
         setEmptyCart(true);
     }
 
+
     //*******************CALCULATION FUNCTION*******************
-    //This function needs to be modified after database connection
     const calculatePrice = () => {
         let total = 0;
-        cart.forEach(product => total += product.price)
-        return total;
+        cart.forEach(product => total += product.price);
+        setTotalAmount(total);
     }
 
     //__________________________return____________________________
@@ -57,15 +61,15 @@ function ShoppingCartPage() {
                     (cart.map((product) =>
                             <article className='cart-item cart-border'>
                                 <div className='cart-item-img'>
-                                    <img src={product.url} alt=""/>
+                                    <img src="/assets/images/5.jpg" alt=""/>
                                 </div>
                                 <div className='cart-item-about'>
-                                    <p className='cart-item-title'>{product.name}</p>
-                                    <p className='cart-item-subtitle'>{product.shortDescription}</p>
+                                    <p className='cart-item-title'>{product.product_name}</p>
+                                    <p className='cart-item-subtitle'>{product.short_description}</p>
                                 </div>
                                 <div className='cart-item-remove-icon'><FaTrashAlt
                                     onClick={() => removeItem(product.id)}/></div>
-                                <div className='cart-item-price'>{product.price}</div>
+                                <div className='cart-item-price'>&euro;{parseFloat(product.price/100).toFixed(2)}</div>
                             </article>
                         )
                     )
@@ -73,12 +77,7 @@ function ShoppingCartPage() {
                 <div className='cart-checkout cart-border'>
                     <div className='cart-number-of-items'>{cart.length} item(s)</div>
                     <div className='cart-total-amount'>
-                        {/*
-                            There is a calculate function defined but can't work with it since the
-                            prices are type string at this point.
-                            after connection to the database the code below needs to change
-                            */}
-                        {emptyCart ? (0) : cart[0].price}
+                        &euro;{emptyCart ? (0) : (parseFloat(totalAmount/100).toFixed(2))}
                     </div>
                     <button className='login-btn'>Proceed to payment</button>
                 </div>
