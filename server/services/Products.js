@@ -10,17 +10,6 @@ async function getProducts() {
     };
 }
 
-async function getThemes() {
-    const result = await db.query(`SELECT * FROM "theme"`);
-    const status = helper.catchError(result.rows.length);
-    console.log(result)
-    return {
-        status,
-        resultData : result.rows
-    };
-}
-
-
 async function getProductById(id){
     const result = await db.query(`SELECT product_name, amount, price, long_description, short_description, image FROM products
                                    WHERE id = $1`, [id]);
@@ -51,23 +40,23 @@ async function getProductsByUserId(id){
     };
 }
 
-async function createProduct(product) {
-    const result = await db.query(
-        `INSERT INTO "products" (product_name, amount, price, category_id, post_date,
+async function createProduct(product, imageUrl) {
+  const result = await db.query(
+    `INSERT INTO "products" (product_name, amount, price, category_id, post_date,
                                  users_id, long_description, short_description, image, theme_id)
          VALUES ('${product.product_name}', '${product.amount}', '${product.price}', '${product.category_id}',
                  '${product.post_date}', '${product.users_id}',
-                 '${product.long_description}', '${product.short_description}', '${product.image}', '${product.theme_id}
+                 '${product.long_description}', '${product.short_description}', '${imageUrl}', '${product.theme_id}
                  ')`
-    );
+  );
 
-    let message = "Error in creating product";
+  let message = "Error in creating product";
 
-    if (result.rowCount) {
-        message = "Product created successfully";
-    }
+  if (result.rowCount) {
+    message = "Product created successfully";
+  }
 
-    return {message};
+  return { message };
 }
 
 async function updateProduct(id, product) {
