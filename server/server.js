@@ -31,12 +31,6 @@ app.use("/products", productsRouter);
 app.use("/auth", authRouter);
 app.use("/dashboard", dashboardRouter);
 
-// Image Get Routes
-app.get("/image/:filename", (req, res) => {
-  res.json("/image/:filename api");
-});
-////////////////////////////////////////////////////////////////////
-
 /* Error handler middleware */
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
