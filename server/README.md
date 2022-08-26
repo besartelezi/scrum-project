@@ -51,6 +51,117 @@ TODO: HANDLE ERROR
 
 ## GET:
 
+### Get all themes => "/themes"
+
+On Success:
+
+```js
+{
+    "status": "success",
+    "resultData": [
+        {
+            "id": 1,
+            "theme_name": "Dragonball Z"
+        },
+        {
+            "id": 2,
+            "theme_name": "Naruto"
+        },
+        {
+            "id": 3,
+            "theme_name": "One piece"
+        },
+        {
+            "id": 4,
+            "theme_name": "Pokémon"
+        },
+        {
+            "id": 5,
+            "theme_name": "Hajime no Ippo"
+        },
+        {
+            "id": 6,
+            "theme_name": "Attack on titan"
+        },
+        {
+            "id": 7,
+            "theme_name": "DC"
+        },
+        {
+            "id": 8,
+            "theme_name": "Marvel"
+        },
+        {
+            "id": 9,
+            "theme_name": "Death note"
+        },
+        {
+            "id": 10,
+            "theme_name": "Black clover"
+        },
+        {
+            "id": 11,
+            "theme_name": "Chainsaw Man"
+        },
+        {
+            "id": 12,
+            "theme_name": "Jujutsu Kaisen"
+        },
+        {
+            "id": 13,
+            "theme_name": "Berserk"
+        },
+        {
+            "id": 14,
+            "theme_name": "Yakuza"
+        },
+        {
+            "id": 15,
+            "theme_name": "Elden ring"
+        }
+    ]
+}
+```
+### Get all categories => "/categories"
+
+On Success:
+
+```js
+{
+    "status": "success",
+        "resultData": [
+        {
+            "id": 1,
+            "category": "Trading cards"
+        },
+        {
+            "id": 2,
+            "category": "Action figures"
+        },
+        {
+            "id": 3,
+            "category": "Plushies"
+        },
+        {
+            "id": 4,
+            "category": "Clothing"
+        },
+        {
+            "id": 5,
+            "category": "Manga"
+        },
+        {
+            "id": 6,
+            "category": "Light novels"
+        },
+        {
+            "id": 7,
+            "category": "Accessoires "
+        }
+    ]
+}
+```
+
 ### Get all products => "/products"
 
 On Success:
@@ -119,26 +230,21 @@ TODO: HANDLE ERROR
 
 ### Get product by Id => "/products/byid/${id}"
 
-On Success:
+On Success: 
 
 ```js
 {
-    "response": {
-        "product_name": "testProductName",
-        "amount": 10,
-        "price": 101,
-        "long_description": "testLongDesc",
-        "short_description": "testShortDesc",
-        "image": {
+    "status": "success",
+        "resultData": {
+        "product_name": "ole",
+            "amount": 1,
+            "price": 30000,
+            "long_description": "short",
+            "short_description": "Long",
+            "image": {
             "type": "Buffer",
-            "data": [
-                116,
-                101,
-                115,
-                116,
-                73,
-                109,
-                103
+                "data": [
+                47
             ]
         }
     }
@@ -148,7 +254,9 @@ On Success:
 On Error:
 
 ```js
-TODO: HANDLE ERROR
+{
+    "status": "failed, given information is not enough"
+}
 ```
 
 ### Get product by name => "/products/byname/${name}"
@@ -157,32 +265,30 @@ On Success:
 
 ```js
 {
-    "response": {
-        "product_name": "testProductName",
-        "amount": 10,
-        "price": 101,
-        "long_description": "testLongDesc",
-        "short_description": "testShortDesc",
-        "image": {
+    {
+        "status": "success",
+        "resultData": {
+        "product_name": "ole",
+            "amount": 1,
+            "price": 30000,
+            "long_description": "short",
+            "short_description": "Long",
+            "image": {
             "type": "Buffer",
-            "data": [
-                116,
-                101,
-                115,
-                116,
-                73,
-                109,
-                103
+                "data": [
+                47
             ]
         }
     }
-}
+    }
 ```
 
 On Error:
 
 ```js
-TODO: HANDLE ERROR
+{
+    "status": "failed, given information is not enough"
+}
 ```
 
 ### Get products by user ID => "/products/byuser/${id}"
@@ -191,24 +297,35 @@ On Success:
 
 ```js
 {
-    "response": [
+    "status": "success",
+        "resultData": [
         {
-            "product_name": "testProductName",
-            "amount": 10,
-            "price": 101,
+            "product_name": "ole",
+            "amount": 1,
+            "price": 30000,
             "post_date": "2022-08-22T22:00:00.000Z",
-            "long_description": "testLongDesc",
-            "short_description": "testShortDesc",
-            "image": 1
+            "long_description": "short",
+            "short_description": "Long",
+            "image": {
+                "type": "Buffer",
+                "data": [
+                    47
+                ]
+            }
         },
         {
-            "product_name": "testProductName",
-            "amount": 10,
-            "price": 101,
-            "post_date": "2022-08-22T22:00:00.000Z",
-            "long_description": "testLongDesc",
-            "short_description": "testShortDesc",
-            "image": 1
+            "product_name": "ola",
+            "amount": 1,
+            "price": 20000,
+            "post_date": "2022-08-23T22:00:00.000Z",
+            "long_description": "short",
+            "short_description": "long",
+            "image": {
+                "type": "Buffer",
+                "data": [
+                    47
+                ]
+            }
         }
     ]
 }
@@ -217,7 +334,10 @@ On Success:
 On Error:
 
 ```js
-TODO: HANDLE ERRORS
+{
+    "status": "failed, given information is not enough",
+        "resultData": []
+}
 ```
 
 ---

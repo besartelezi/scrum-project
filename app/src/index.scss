@@ -40,34 +40,57 @@ button, input:not([type="file"]), textarea, select {
 
 button {
   background-color: $c-secondary;
-  color:#fff;
+  font-size: 1.4rem;
+  color:$c-dark;
   position:relative;
+  text-transform: uppercase;
+  font-weight: 800;
 
-  &:hover {
-    filter: contrast(80%);
+  &:not(.btn--no-border){
+    margin-left:10px;
   }
 
-  &::before {
-    position: absolute;
-    left:-6px;
-    top:0;
-    content:"";
-    background-image: url("./assets/images/gbay-button-left-edge.svg");
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
+  &.btn--cta {
+    box-shadow: 10px 0px 0px -5px $c-secondary,
+                20px 0px 0px -10px $c-secondary,
+                -10px 0px 0px -5px $c-secondary,
+                -20px 0px 0px -10px $c-secondary;
+
+      &:not(.btn--hover-disabled):hover {
+        background-color: darken($c-secondary, 10%);
+        box-shadow: 10px 0px 0px -5px darken($c-secondary, 10%),
+                    20px 0px 0px -10px darken($c-secondary, 10%),
+                    -10px 0px 0px -5px darken($c-secondary, 10%),
+                    -20px 0px 0px -10px darken($c-secondary, 10%);
+      }
+    }
+
+    &.btn--light {
+    background-color: $c-light;
+    box-shadow: 10px 0px 0px -5px $c-light,
+                20px 0px 0px -10px $c-light,
+                -10px 0px 0px -5px $c-light,
+                -20px 0px 0px -10px $c-light;
+    &:not(.btn--hover-disabled):hover {
+      background-color: darken($c-light, 10%);
+      box-shadow: 10px 0px 0px -5px darken($c-light, 10%),
+                  20px 0px 0px -10px darken($c-light, 10%),
+                  -10px 0px 0px -5px darken($c-light, 10%),
+                  -20px 0px 0px -10px darken($c-light, 10%);
+    }
   }
 
-  &::after {
-    position: absolute;
-    right:-6px;
-    top:0;
-    content:"";
-    background-image: url("./assets/images/gbay-button-right-edge.svg");
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 6px;
+  &.btn--no-border {
+    background-color: $c-secondary;
+    &:hover {
+      background-color: darken($c-secondary, 10%);
+    }
   }
+
+    span {
+      font-family: "GBay";
+      margin-top: -2rem;
+    }
 }
 
 .link {
@@ -106,4 +129,12 @@ body {
 main {
   flex:1;
   padding: 2rem 0;
+}
+
+.btn-border {
+  fill:red !important;
+}
+
+.test {
+  box-shadow: 0px 20px 0px -10px #888888, 0px 40px 0px -20px #888;
 }

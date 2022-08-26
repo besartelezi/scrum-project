@@ -5,6 +5,8 @@ const usersRouter = require("./routes/Users");
 const productsRouter = require("./routes/Products");
 const authRouter = require("./routes/Auth");
 const dashboardRouter = require("./routes/Dashboard");
+const themesRouter = require("./routes/Themes");
+const categoriesRouter = require("./routes/Categories");
 
 //
 const morgan = require("morgan");
@@ -30,6 +32,8 @@ app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 app.use("/auth", authRouter);
 app.use("/dashboard", dashboardRouter);
+app.use("/categories", categoriesRouter);
+app.use("/themes", themesRouter);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {

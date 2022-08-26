@@ -20,14 +20,15 @@ function ProductItem({product, hoverable, rud}) {
   
   return (
     <article className={`product${hoverable? ' product--hoverable' : ''}${rud? ' product--rud' : ''}`}>
-      <img className="product__img" src={product.url} />
-      <h3 className="product__name">{product.name}</h3>
-      <p className="product__description">{product.shortDescription}</p>
-      <p className="product__price">{product.price}</p>
+
+      <img className="product__img" src="/assets/images/5.jpg"/>
+      <h3 className="product__name">{product.product_name}</h3>
+      <p className="product__description">{product.short_description}</p>
+      <p className="product__price">&euro;{parseFloat(product.price/100).toFixed(2)}</p>
       {rud && 
       ( <div class="product__rud-column">
-          <button className="product__edit-btn" onClick={() => editProduct({id})}><FaEdit /></button>
-          <button className="product__delete-btn" onClick={() => deleteProduct({id})}><FaTimesCircle /></button>
+          <button className="product__edit-btn btn--no-border" onClick={() => editProduct({id})}><FaEdit /></button>
+          <button className="product__delete-btn btn--no-border" onClick={() => deleteProduct({id})}><FaTimesCircle /></button>
         </div>
       )}
     </article>

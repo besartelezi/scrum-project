@@ -2,52 +2,42 @@ const helper = require("../helper");
 const db = require("./dbConfig");
 
 async function getProducts() {
-  const rows = await db.query(`SELECT * FROM "products"`);
-  const data = helper.emptyOrRows(rows);
-  const response = data.rows;
-
-  return {
-    response,
-  };
+    const result = await db.query(`SELECT * FROM "products"`);
+    const status = helper.catchError(result.rows.length);
+    return {
+        status,
+        resultData : result.rows
+    };
 }
 
-async function getProductById(id) {
-  const result = await db.query(
-    `SELECT product_name, amount, price, long_description, short_description, image FROM products
-                                   WHERE id = $1`,
-    [id]
-  );
-  const response = result.rows[0];
-
-  return {
-    response,
-  };
+async function getProductById(id){
+    const result = await db.query(`SELECT product_name, amount, price, long_description, short_description, image FROM products
+                                   WHERE id = $1`, [id]);
+    const status = helper.catchError(result.rows.length);
+    return {
+        status,
+        resultData : result.rows[0]
+    };
 }
 
-async function getProductByName(name) {
-  const result = await db.query(
-    `SELECT product_name, amount, price, long_description, short_description, image FROM products
-                                   WHERE product_name = $1`,
-    [name]
-  );
-  const response = result.rows[0];
-
-  return {
-    response,
-  };
+async function getProductByName(name){
+    const result = await db.query(`SELECT product_name, amount, price, long_description, short_description, image FROM products
+                                   WHERE product_name = $1`, [name]);
+    const status = helper.catchError(result.rows.length);
+    return {
+        status,
+        resultData : result.rows[0]
+    };
 }
 
-async function getProductsByUserId(id) {
-  const result = await db.query(
-    `SELECT product_name, amount, price, post_date, long_description, short_description, image FROM products
-                                   WHERE users_id = $1`,
-    [id]
-  );
-  const response = result.rows;
-
-  return {
-    response,
-  };
+async function getProductsByUserId(id){
+    const result = await db.query(`SELECT product_name, amount, price, post_date, long_description, short_description, image FROM products
+                                   WHERE users_id = $1`, [id]);
+    const status = helper.catchError(result.rows.length);
+    return {
+        status,
+        resultData : result.rows
+    };
 }
 
 async function createProduct(product, imageUrl) {
@@ -70,8 +60,8 @@ async function createProduct(product, imageUrl) {
 }
 
 async function updateProduct(id, product) {
-  const result = await db.query(
-    `UPDATE "products"
+    const result = await db.query(
+        `UPDATE "products"
          SET product_name = '${product.product_name}',
              amount='${product.amount}',
              price = '${product.price}',
@@ -82,37 +72,69 @@ async function updateProduct(id, product) {
              image = '${product.image}',
              theme_id = '${product.theme_id}'
          WHERE id = ${id}`
-  );
+    );
 
-  let message = "Error in updating product";
+    let message = "Error in updating product";
 
-  if (result.rowCount) {
-    message = "product updated successfully";
-  }
+    if (result.rowCount) {
+        message = "product updated successfully";
+    }
 
-  return { message };
+    return {message};
 }
 
 async function removeProduct(id) {
-  const result = await db.query(`DELETE
+    const result = await db.query(`DELETE
                                    FROM "products"
                                    WHERE id = ${id}`);
 
-  let message = "Error in deleting product";
+    let message = "Error in deleting product";
 
-  if (result.rowCount) {
-    message = "product deleted successfully";
-  }
+    if (result.rowCount) {
+        message = "product deleted successfully";
+    }
 
-  return { message };
+    return {message};
 }
 
+async function getProductsByCategory (id) {
+    const result = await db.query('SELECT * FROM products WHERE category_id = $1', [id]);
+
+    const data = result.rows;
+
+    let message = "Error in getting products by category";
+
+    if (result.rowCount) {
+        message = "Fetching products by category was successful.";
+    }
+
+    return {data, message};
+}
+
+// Get Product By Theme
+async function getProductByTheme (id){
+    const result = await db.query ('SELECT * FROM products WHERE theme_id = $1',[id]);
+
+    const data = result.rows;
+
+    let message = 'Error in getting products by theme';
+
+    if (result.rowCount){
+        message = 'Fetching products by theme was successful.';
+    }
+    return {data , message}
+}
+
+
 module.exports = {
-  getProducts,
-  getProductById,
-  getProductByName,
-  getProductsByUserId,
-  createProduct,
-  updateProduct,
-  removeProduct,
+    getProducts,
+    getProductById,
+    getProductByName,
+    getProductsByUserId,
+    createProduct,
+    updateProduct,
+    removeProduct,
+    getProductsByCategory,
+    getProductByTheme
+
 };
