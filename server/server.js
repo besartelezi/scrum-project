@@ -35,25 +35,6 @@ app.use("/dashboard", dashboardRouter);
 app.use("/categories", categoriesRouter);
 app.use("/themes", themesRouter);
 
-////////////////////////////////////////////////////////////////////
-const multer = require("multer");
-
-// Create multer object
-const imageUpload = multer({
-  dest: "images",
-});
-
-// Image Upload Routes
-app.post("/image", (req, res) => {
-  res.json("/image api");
-});
-
-// Image Get Routes
-app.get("/image/:filename", (req, res) => {
-  res.json("/image/:filename api");
-});
-////////////////////////////////////////////////////////////////////
-
 /* Error handler middleware */
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;

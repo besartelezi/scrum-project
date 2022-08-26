@@ -16,14 +16,12 @@ function HomePage() {
         fetch('http://localhost:9000/products')
             .then(res => res.json())
             .then(data => {
-                console.log(data.response)
                 setAllProducts(data.resultData);
             })
             .catch(err=> console.log(err))
     }
     useEffect(()=>{
-        fetchAllProducts()
-            .then(()=> console.log(allProducts))
+        fetchAllProducts();
     }, [])
 
     return (
