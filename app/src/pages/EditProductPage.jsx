@@ -13,13 +13,16 @@ function EditProductPage() {
     const location = useLocation();
     const product = location.state;
 
+    console.log("location", location);
+    console.log("product", product);
+
     const valueSelectedCategory = categories.find(category => category.id === product.category_id).name;
     const valueSelectedTheme = themes.find(theme => theme.id === product.theme_id).name;
 
 
     return (
         <div className="container editproduct-page">
-            <h1>Edit {product.name}</h1>
+            <h1>Edit {product.product_name}</h1>
             <label htmlFor="product__name">Product name:</label>
             <input type="text" placeholder="Product name" id="product__name" value={product.name}/>
             <label htmlFor="product__description--short">Short product description (max. 50 characters):</label>
@@ -50,7 +53,7 @@ function EditProductPage() {
                 )}
             </select>
             <p>Current product image:</p>
-            <div class="product__image-wrapper">
+            <div className="product__image-wrapper">
                 <img src={product.url} />
                 <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
                 <BiImageAdd />

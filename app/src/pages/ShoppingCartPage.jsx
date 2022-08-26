@@ -5,9 +5,12 @@ import React, {useState} from 'react';
 import './ShoppingCartPage.scss';
 import {FaTrashAlt} from 'react-icons/fa';
 
+
 function ShoppingCartPage() {
     //________________load context_______________
-    const {cart, setCart} = useContext(GbayContext);
+    const {cart, setCart, loggedInUser} = useContext(GbayContext);
+
+    const navigate = useNavigate();
 
     //____________________hooks__________________
     const [emptyCart, setEmptyCart] = useState(true);
@@ -37,6 +40,24 @@ function ShoppingCartPage() {
     const removeAll = () => {
         setCart([]);
         setEmptyCart(true);
+    }
+
+    const handlePayment = () => {
+
+        //check if cart is empty
+        if (emptyCart) {
+            window.alert("ur cart is empty dummy")
+        }
+        else{
+            //check if user is logged in
+            if (!loggedInUser) {
+                navigate('/redirect')
+            }
+            else {
+                //replace by navigate to confirmation page
+                window.alert("it worked")
+            }
+        }
     }
 
 
@@ -79,7 +100,7 @@ function ShoppingCartPage() {
                     <div className='cart-total-amount'>
                         &euro;{emptyCart ? (0) : (parseFloat(totalAmount/100).toFixed(2))}
                     </div>
-                    <button className='login-btn'>Proceed to payment</button>
+                    <button onClick={handlePayment} className='login-btn'>Proceed to payment</button>
                 </div>
             </div>
         </div>

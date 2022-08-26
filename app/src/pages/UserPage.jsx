@@ -11,7 +11,10 @@ function UserPage() {
 
     const {products, loggedInUser, userProducts, setUserProducts} = useContext(GbayContext);
 
-    useEffect(() => {
+
+    
+
+    const fetchProductsByUser = () => {
         fetch("http://localhost:9000/products/byuser/" + loggedInUser.id)
             .then(res => res.json())
             .then(data => {
@@ -19,6 +22,23 @@ function UserPage() {
                 setUserProducts(data.resultData);
             })
             .catch(err => console.log(err));
+    }
+
+    const deleteProduct = id => {
+        console.log("voordefetch id is", id);
+        fetch('http://localhost:9000/products/' + id, {method: 'DELETE', mode: 'cors'})
+        .then(res => res.json())
+        .then(data => {
+            if(data.message === "product deleted successfully"){
+              console.log("product deleted sucdddddddddddddddcessfully");
+            };
+        })
+        .catch(err => console.log(err));
+      }
+
+      
+    useEffect(() => {
+        fetchProductsByUser();
     }, [])
 
 
@@ -36,9 +56,7 @@ function UserPage() {
                 <h3>These are your current listings:</h3>
                 <section className="products-wrapper">
                     {userProducts.map((product) =>
-                        <div className="user__current-listing" key={crypto.randomUUID()}>
-                            <ProductItem product={product} hoverable={false} rud={true}/>
-                        </div>
+                            <ProductItem onDelete={() => deleteProduct(product.id)} product={product} hoverable={false} rud={true} key={crypto.randomUUID()}/>
                     )}
                 </section>
             </section>

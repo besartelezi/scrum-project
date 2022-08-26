@@ -10,7 +10,7 @@ function LoginPage() {
 
     const { users, setLoggedInUser } = useContext(GbayContext);
 
-    const checkDB = async (email, password) => {
+    const verifyInDB = async (email, password) => {
         fetch('http://localhost:9000/auth/login', {method: 'POST', body: JSON.stringify({email, password}), mode: 'cors', headers: {'Content-Type': 'application/json'}})
             .then(res => res.json())
             .then(data => {
@@ -31,7 +31,7 @@ function LoginPage() {
     const checkLogin = () => {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
-        checkDB(email, password)();
+        verifyInDB(email, password);
     }
 
     return (
