@@ -1,7 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+import  SubNavbar from "./SubNavbar"
 
-import { useContext } from 'react';
+import {useContext, useState, useEffect} from 'react';
 import GbayContext from '../context/GbayContext';
 
 import {FaShoppingCart} from "react-icons/fa";
@@ -15,6 +16,17 @@ function Navbar() {
     
     const { loggedInUser, setLoggedInUser } = useContext(GbayContext);
     const navigate = useNavigate();
+
+    const [subNavBarOpen, setSubNavBarOpen] = useState(false);
+
+    const [contentSubNav, setContentSubNav] = useState(false);
+
+    function toggleSubNav(content) {
+       setContentSubNav(content);
+       setSubNavBarOpen(true);
+    }
+
+    useEffect(()=>{console.log("hallo")},[toggleSubNav])
 
     const logout = () => {
         setLoggedInUser(null);
@@ -32,6 +44,12 @@ function Navbar() {
                             <Link to="/">Home</Link>
                         </li>
                         <li>
+                            <a onClick={ () => toggleSubNav ("themes")}>Themes</a>
+                        </li>
+                        <li>
+                            <a onClick={ () => toggleSubNav ("categories")}>Categories</a>
+                        </li>
+                        <li>
                             <Link to="/about-us">About us</Link>
                         </li>
                         <li>
@@ -44,6 +62,7 @@ function Navbar() {
                 </nav>
                 {loggedInUser ? (<Link className="link-userpage" to={`/user/${loggedInUser.id}`}><div className="navbar__user-info"><FaUserCircle /><p>{loggedInUser.username}</p></div></Link>) : null}
             </div>
+            {subNavBarOpen ? <SubNavbar content={contentSubNav}/> : null}
         </header>
     )
 }

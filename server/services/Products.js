@@ -32,7 +32,7 @@ async function getProductByName(name) {
   const status = helper.catchError(result.rows.length);
   return {
     status,
-    resultData: result.rows[0],
+    resultData: result.rows,
   };
 }
 
