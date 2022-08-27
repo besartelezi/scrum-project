@@ -1,0 +1,112 @@
+:root {
+  --c-light: #ffea00;
+  --c-dark: #2a2928;
+  --c-secondary: #ed831d;
+}
+
+[data-theme=dark] {
+  --background: black;
+  --text-primary: white;
+  --text-secondary: grey;
+  --accent: darkred;
+}
+
+.cart-container {
+  width: 70%;
+  height: 85%;
+}
+.cart-container .empty-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffea00;
+  background-color: #2a2928;
+}
+.cart-container .cart-header {
+  background-color: #2a2928;
+  margin: auto;
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 10px;
+}
+.cart-container .cart-header .cart-remove-all {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ed831d;
+  cursor: pointer;
+  border-bottom: 1px solid #ffea00;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.cart-container .cart-item {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2a2928;
+  padding: 10px;
+}
+.cart-container .cart-item .cart-item-img {
+  width: 15%;
+  display: flex;
+  align-items: center;
+}
+.cart-container .cart-item .cart-item-img img {
+  width: 100%;
+}
+.cart-container .cart-item .cart-item-about {
+  height: 100%;
+  width: 40%;
+}
+.cart-container .cart-item .cart-item-about .cart-item-title {
+  margin-bottom: 1rem;
+  line-height: 10px;
+  font-weight: 800;
+  color: #ed831d;
+}
+.cart-container .cart-item .cart-item-about .cart-item-subtitle {
+  color: #ffea00;
+  line-height: 1.6;
+}
+.cart-container .cart-item .cart-item-remove-icon {
+  width: 15%;
+  color: #ed831d;
+  cursor: pointer;
+}
+.cart-container .cart-item .cart-item-price {
+  color: #ffea00;
+  width: 15%;
+}
+.cart-container .cart-checkout {
+  padding: 10px;
+  background-color: #2a2928;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.cart-container .cart-checkout .cart-number-of-items {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ed831d;
+  margin-left: auto;
+}
+.cart-container .cart-checkout .cart-total-amount {
+  font-size: 36px;
+  font-weight: 900;
+  color: #ffea00;
+  margin-left: auto;
+}
+.cart-container .cart-checkout button {
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+.cart-container .cart-border {
+  margin-bottom: 1rem;
+  box-shadow: 3px 3px #ffea00, 10px 10px #ed831d;
+}
+
+/*# sourceMappingURL=ShoppingCartPage.css.map */
