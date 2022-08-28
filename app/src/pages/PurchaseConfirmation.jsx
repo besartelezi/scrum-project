@@ -3,6 +3,8 @@ import GbayContext from '../context/GbayContext';
 import {useNavigate} from 'react-router-dom';
 import React, {useState} from 'react';
 
+import emailjs from 'emailjs-com';
+
 function PurchaseConfirmation () {
 
     const {cart, setCart, loggedInUser} = useContext(GbayContext);
@@ -34,28 +36,57 @@ function PurchaseConfirmation () {
     const deliveryDateLayout = day + "/" + month + "/" + year;
 
     //emails
-    let buyerEmail = loggedInUser.email
-    let sellerEmail
+    let usersEmail = loggedInUser.email
+    let sellerEmail = "xogawe6722@vasqa.com"
+
+    //temp items
+    let buyerItem = "some fun stuff" //need to get all products
+
+    //setting email parameters
+    let buyerEmailParams = {
+        buyerName : usersFullName,
+        buyerEmail : usersEmail,
+        buyerMessage : "A copy of " + buyerItem,
+        dateOfDelivery : deliveryDateLayout
+    }
+
+    let sellerEmailParams = {
+
+    }
+
 
     //cals all functions necessary for the purchase functionality
     const handlePurchaseConfirmation = () => {
         //first, the email functionality needs to be called
-        confirmationEmail()
+        confirmationEmailBuyer();
+        confirmationEmailSeller();
 
         //then, the selected product needs to be removed from the list
 
         //lastly, the user gets a confirmation (popup?) that will send them back to the homepage
         //the confirmation must also say that they should have received an email
 
-        goToHomepage();
+        // goToHomepage();
     }
 
     //____________________________________  Email functionality  ______________________________________
 
-    const confirmationEmail = () => {
+    const confirmationEmailBuyer = () => {
+        emailjs.send('service_mi7r6gh',
+            'template_6m5b0hj',
+            buyerEmailParams,
+            'lYd4SaGrFHej-SfOx'
+        ).then(res => {
+            console.log(res)
+        }).catch(err => console.log(err));
+
         console.log("email has been sent");
         //an email must be sent to the buyer
         //an email must be sent to the seller
+    }
+
+    const confirmationEmailSeller = () => {
+
     }
 
     //_________________________________________________________________________________________________
