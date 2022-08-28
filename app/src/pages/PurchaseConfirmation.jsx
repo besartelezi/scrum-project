@@ -37,7 +37,7 @@ function PurchaseConfirmation () {
 
     //emails
     let usersEmail = loggedInUser.email
-    let sellerEmail = "xogawe6722@vasqa.com"
+    let sellerUsersEmail = "xogawe6722@vasqa.com"
 
     //temp items
     let buyerItem = "some fun stuff" //need to get all products
@@ -46,12 +46,14 @@ function PurchaseConfirmation () {
     let buyerEmailParams = {
         buyerName : usersFullName,
         buyerEmail : usersEmail,
-        buyerMessage : "A copy of " + buyerItem,
+        buyerMessage : "Congratulations, soon you will be the proud owner of: " + buyerItem,
         dateOfDelivery : deliveryDateLayout
     }
 
     let sellerEmailParams = {
-
+        sellerName : "Ringo Roadagain",
+        sellerEmail : sellerUsersEmail,
+        sellerMessage : "Your " + buyerItem + " has just been sold!"
     }
 
 
@@ -72,21 +74,25 @@ function PurchaseConfirmation () {
     //____________________________________  Email functionality  ______________________________________
 
     const confirmationEmailBuyer = () => {
-        emailjs.send('service_mi7r6gh',
+        emailjs.send(
+            'service_bo0ty2n',
             'template_6m5b0hj',
             buyerEmailParams,
             'lYd4SaGrFHej-SfOx'
         ).then(res => {
             console.log(res)
         }).catch(err => console.log(err));
-
-        console.log("email has been sent");
-        //an email must be sent to the buyer
-        //an email must be sent to the seller
     }
 
     const confirmationEmailSeller = () => {
-
+        emailjs.send(
+            'service_bo0ty2n',
+            'template_nc5mlk8',
+            sellerEmailParams,
+            'lYd4SaGrFHej-SfOx'
+        ).then(res => {
+            console.log(res)
+        }).catch(err => console.log(err));
     }
 
     //_________________________________________________________________________________________________
