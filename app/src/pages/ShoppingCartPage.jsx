@@ -82,7 +82,7 @@ function ShoppingCartPage() {
                     (cart.map((product) =>
                             <article className='cart-item cart-border'>
                                 <div className='cart-item-img'>
-                                    <img src="/assets/images/5.jpg" alt=""/>
+                                    <img src={product.image} alt=""/>
                                 </div>
                                 <div className='cart-item-about'>
                                     <p className='cart-item-title'>{product.product_name}</p>

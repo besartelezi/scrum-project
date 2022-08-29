@@ -12,4 +12,16 @@
         font-size:2rem;
         font-weight: 700;
     }
+
+    .product-page-themeAndCategory{
+        font-size: 1rem;
+        color: $c_secondary;
+        background-color: $c_dark;
+        padding: 5px;
+        margin: 0.5rem;
+
+    }
+    .product-page-themeAndCategory-container{
+        margin: 1rem;
+    }
 }
