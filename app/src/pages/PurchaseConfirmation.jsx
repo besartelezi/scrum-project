@@ -59,12 +59,10 @@ function PurchaseConfirmation () {
         sellerMessage : "Your " + buyerItem + " has just been sold!"
     }
 
-    console.log(cart)
-
     //calls all functions necessary for the purchase functionality
     const handlePurchaseConfirmation = () => {
-        // confirmationEmailBuyer();
-        // //like the products, find a way to send multiple mails to multiple sellers
+        confirmationEmailBuyer();
+        //like the products, find a way to send multiple mails to multiple sellers
         // confirmationEmailSeller();
         removeMultipleProducts(cart);
         confirmMessage();
@@ -99,8 +97,7 @@ function PurchaseConfirmation () {
     }
 
     //_________________________________________________________________________________________________
-
-
+    
     //looping over every single product in cart
     const removeMultipleProducts = (cart) => {
         for(let i = 0; i < cart.length;i++){
