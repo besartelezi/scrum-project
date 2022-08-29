@@ -268,3 +268,47 @@ But we did have some progress on other ends.
 This day we mixed it upa  bit, by giving out some back end tasks to the developers that were more busy with the front end, and vice versa.
 We thought this was essential, since we wanted all developers to understand how the project works.
 It might have consumed some time, but we're confident we'll still be able to give the client a fine result at the end!
+
+### Day 8: "Age of Breakfast: The Eating Meeting"
+Today we tried something new.
+Instead of the usual 'stand-up meeting', we sat down with a ton of food and held a 'eating meeting'.
+Apart from being delicious, it was also a very informative meeting.
+We decided that today would be the day we'd solve the database/image problem.
+
+Thankfully, we were able to find a way to store and get images to the database.
+We had 2 different methods, one was using base64 and the other was using cloudinary.
+After some research, testing, and some advice from the coaches, we decided we would go with cloudinary.
+So in the afternoon, our lead back end developer would focus on that, while the rest would focus on the features of the MVP.
+
+At the end of the day, we finally succeeded in getting an image stored in the database.
+This is, something the cool kids would refer to as, "a massive W".
+
+With that out of the way, here is an accurate picture of how the eating meeting went!
+
+![aligos-breakfast](readme-images/aligos-breakfast.png)
+
+### Day 9: "Aligos: Infinity War"
+Day 9 was the most intense day by far.
+Tickets were flying off the sprint like it was everybody's business.
+The products **finally** have images.
+The MVP is very nearly done, all that remains is fixing the "add a new product" functionality, the "purchase" functionality and an email confirmation.
+These are all things that will be finished by monday.
+
+This means everyone can relax during the weekend.
+But if there are people that want to work on the weekend, there are more than enough tickets over for some extra features we'd like to add.
+
+The day ended with a FriJay, which is an hour of fun game-time with any willing participants in the class.
+There weren't a lot of people present, since ya know, this IS a pretty big assignment.
+Nonetheless, some Aligos did join because our team needs to prove we can kick butt at everything.
+
+Unfortunately, our SCRUM Master lost against his sworn FriJay arch-enemy by about 15 points in Scribble.
+He then said he would go train in a cave hidden by a waterfall, where he would spend the remainder of his days making cave-paintings or meditating under the waterfall.
+All for the sake of winning the next time in Scribble.
+
+### Weekend 2: "Electric Boogaloo"
+
+### Day 10: "Aligos: Endgame"
+
+---
+
+## The Final Finale

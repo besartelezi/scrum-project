@@ -122,6 +122,7 @@ On Success:
     ]
 }
 ```
+
 ### Get all categories => "/categories"
 
 On Success:
@@ -168,55 +169,98 @@ On Success:
 
 ```js
 {
-    "response": [
+    "status": "success",
+    "resultData": [
         {
-            "id": "1",
-            "product_name": "testProductName",
+            "id": "17",
+            "product_name": "productName",
             "amount": 10,
-            "price": 101,
-            "category_id": 1,
-            "post_date": "2022-08-22T22:00:00.000Z",
+            "price": 1000,
+            "category_id": 2,
+            "post_date": "2022-08-14T22:00:00.000Z",
             "users_id": 1,
-            "image": {
-                "type": "Buffer",
-                "data": [
-                    116,
-                    101,
-                    115,
-                    116,
-                    73,
-                    109,
-                    103
-                ]
-            },
-            "theme_id": 1,
-            "long_description": "testLongDesc",
-            "short_description": "testShortDesc"
+            "theme_id": 4,
+            "long_description": "long desc",
+            "short_description": "short desc",
+            "image": "http://res.cloudinary.com/dpchxrbum/image/upload/v1661438689/blog/2022-08-25T14:44:48.477Z.jpg"
         },
         {
-            "id": "2",
-            "product_name": "testProductName2",
-            "amount": 11,
-            "price": 102,
+            "id": "18",
+            "product_name": "productName",
+            "amount": 10,
+            "price": 1000,
             "category_id": 2,
-            "post_date": "2022-08-23T22:00:00.000Z",
-            "users_id": 2,
-            "image": {
-                "type": "Buffer",
-                "data": [
-                    116,
-                    101,
-                    115,
-                    116,
-                    73,
-                    109,
-                    103,
-                    50
-                ]
-            },
-            "theme_id": 2,
-            "long_description": "testLongDesc2",
-            "short_description": "testShortDesc2"
+            "post_date": "2022-08-14T22:00:00.000Z",
+            "users_id": 1,
+            "theme_id": 4,
+            "long_description": "long desc",
+            "short_description": "short desc",
+            "image": "http://res.cloudinary.com/dpchxrbum/image/upload/v1661438882/blog/2022-08-25T14:48:01.380Z.jpg"
+        },
+        {
+            "id": "19",
+            "product_name": "hey handsome",
+            "amount": 10,
+            "price": 1000,
+            "category_id": 2,
+            "post_date": "2022-08-14T22:00:00.000Z",
+            "users_id": 1,
+            "theme_id": 4,
+            "long_description": "long desc",
+            "short_description": "short desc",
+            "image": "http://res.cloudinary.com/dpchxrbum/image/upload/v1661439308/project/2022-08-25T14:55:06.190Z.jpg"
+        },
+        {
+            "id": "20",
+            "product_name": "new product",
+            "amount": 12,
+            "price": 1000,
+            "category_id": 2,
+            "post_date": "2022-07-06T22:00:00.000Z",
+            "users_id": 1,
+            "theme_id": 5,
+            "long_description": "loooooongdesc",
+            "short_description": "shrtdsc",
+            "image": "http://res.cloudinary.com/dpchxrbum/image/upload/v1661498665/project/2022-08-26T07:24:23.646Z.jpg"
+        },
+        {
+            "id": "21",
+            "product_name": "new product another",
+            "amount": 12,
+            "price": 1000,
+            "category_id": 2,
+            "post_date": "2022-07-06T22:00:00.000Z",
+            "users_id": 1,
+            "theme_id": 5,
+            "long_description": "loooooongdesc",
+            "short_description": "shrtdsc",
+            "image": "http://res.cloudinary.com/dpchxrbum/image/upload/v1661500068/project/2022-08-26T07:47:47.588Z.jpg"
+        },
+        {
+            "id": "22",
+            "product_name": "new product another",
+            "amount": 12,
+            "price": 1000,
+            "category_id": 2,
+            "post_date": "2022-07-06T22:00:00.000Z",
+            "users_id": 1,
+            "theme_id": 5,
+            "long_description": "loooooongdesc",
+            "short_description": "shrtdsc",
+            "image": "http://res.cloudinary.com/dpchxrbum/image/upload/v1661500883/project/2022-08-26T08:01:21.982Z.jpg"
+        },
+        {
+            "id": "23",
+            "product_name": "and another testhihi",
+            "amount": 69,
+            "price": 1337,
+            "category_id": 3,
+            "post_date": "2022-01-11T23:00:00.000Z",
+            "users_id": 3,
+            "theme_id": 3,
+            "long_description": "longdesc",
+            "short_description": "shortdesccccccc",
+            "image": "http://res.cloudinary.com/dpchxrbum/image/upload/v1661517902/project/2022-08-26T12:45:00.726Z.png"
         }
     ]
 }
@@ -230,7 +274,7 @@ TODO: HANDLE ERROR
 
 ### Get product by Id => "/products/byid/${id}"
 
-On Success: 
+On Success:
 
 ```js
 {
@@ -265,22 +309,18 @@ On Success:
 
 ```js
 {
-    {
-        "status": "success",
-        "resultData": {
-        "product_name": "ole",
-            "amount": 1,
-            "price": 30000,
-            "long_description": "short",
-            "short_description": "Long",
-            "image": {
-            "type": "Buffer",
-                "data": [
-                47
-            ]
+    "status": "success",
+    "resultData": [
+        {
+            "product_name": "hey handsome",
+            "amount": 10,
+            "price": 1000,
+            "long_description": "long desc",
+            "short_description": "short desc",
+            "image": "http://res.cloudinary.com/dpchxrbum/image/upload/v1661439308/project/2022-08-25T14:55:06.190Z.jpg"
         }
-    }
-    }
+    ]
+}
 ```
 
 On Error:
@@ -300,6 +340,7 @@ On Success:
     "status": "success",
         "resultData": [
         {
+            "id": 3,
             "product_name": "ole",
             "amount": 1,
             "price": 30000,
@@ -314,6 +355,7 @@ On Success:
             }
         },
         {
+            "id": 4,
             "product_name": "ola",
             "amount": 1,
             "price": 20000,

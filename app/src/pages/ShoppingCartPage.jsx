@@ -55,7 +55,7 @@ function ShoppingCartPage() {
             }
             else {
                 //replace by navigate to confirmation page
-                window.alert("it worked")
+                navigate('/confirm')
             }
         }
     }
@@ -100,7 +100,7 @@ function ShoppingCartPage() {
                     <div className='cart-total-amount'>
                         &euro;{emptyCart ? (0) : (parseFloat(totalAmount/100).toFixed(2))}
                     </div>
-                    <button onClick={handlePayment} className='login-btn'>Proceed to payment</button>
+                    <button onClick={handlePayment} className='btn--cta'>Proceed to payment</button>
                 </div>
             </div>
         </div>
