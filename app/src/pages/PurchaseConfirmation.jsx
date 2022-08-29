@@ -3,6 +3,8 @@ import GbayContext from '../context/GbayContext';
 import {useNavigate} from 'react-router-dom';
 import React, {useState} from 'react';
 
+import emailjs from 'emailjs-com';
+
 function PurchaseConfirmation () {
 
     const {cart, setCart, loggedInUser} = useContext(GbayContext);
@@ -34,28 +36,63 @@ function PurchaseConfirmation () {
     const deliveryDateLayout = day + "/" + month + "/" + year;
 
     //emails
-    let buyerEmail = loggedInUser.email
-    let sellerEmail
+    let usersEmail = loggedInUser.email
+    let sellerUsersEmail = "xogawe6722@vasqa.com"
+
+    //temp items
+    let buyerItem = "some fun stuff" //need to get all products
+
+    //setting email parameters
+    let buyerEmailParams = {
+        buyerName : usersFullName,
+        buyerEmail : usersEmail,
+        buyerMessage : "Congratulations, soon you will be the proud owner of: " + buyerItem,
+        dateOfDelivery : deliveryDateLayout
+    }
+
+    let sellerEmailParams = {
+        sellerName : "Ringo Roadagain",
+        sellerEmail : sellerUsersEmail,
+        sellerMessage : "Your " + buyerItem + " has just been sold!"
+    }
+
 
     //cals all functions necessary for the purchase functionality
     const handlePurchaseConfirmation = () => {
         //first, the email functionality needs to be called
-        confirmationEmail()
+        confirmationEmailBuyer();
+        confirmationEmailSeller();
 
         //then, the selected product needs to be removed from the list
 
         //lastly, the user gets a confirmation (popup?) that will send them back to the homepage
         //the confirmation must also say that they should have received an email
 
-        goToHomepage();
+        // goToHomepage();
     }
 
     //____________________________________  Email functionality  ______________________________________
 
-    const confirmationEmail = () => {
-        console.log("email has been sent");
-        //an email must be sent to the buyer
-        //an email must be sent to the seller
+    const confirmationEmailBuyer = () => {
+        emailjs.send(
+            'service_bo0ty2n',
+            'template_6m5b0hj',
+            buyerEmailParams,
+            'lYd4SaGrFHej-SfOx'
+        ).then(res => {
+            console.log(res)
+        }).catch(err => console.log(err));
+    }
+
+    const confirmationEmailSeller = () => {
+        emailjs.send(
+            'service_bo0ty2n',
+            'template_nc5mlk8',
+            sellerEmailParams,
+            'lYd4SaGrFHej-SfOx'
+        ).then(res => {
+            console.log(res)
+        }).catch(err => console.log(err));
     }
 
     //_________________________________________________________________________________________________
