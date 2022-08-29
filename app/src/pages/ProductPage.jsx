@@ -91,8 +91,8 @@ function ProductPage() {
                 <p>{product.long_description}</p>
                 <p className="product__price">&euro;{parseFloat(product.price / 100).toFixed(2)}</p>
                 <div className='product-page-themeAndCategory-container'>
-                     <i className='product-page-themeAndCategory'>{productCat}</i>
-                    <i className='product-page-themeAndCategory'>{productTheme}</i>
+                     <span className='product-page-themeAndCategory'>{productCat}</span>
+                    <span className='product-page-themeAndCategory'>{productTheme}</span>
                 </div>
                 <button className='btn--cta' onClick={() => addToCart(product)}><span>Buy</span></button>
                 {addedToCart ? (<h3>Added to cart!</h3>) : alertTag}
