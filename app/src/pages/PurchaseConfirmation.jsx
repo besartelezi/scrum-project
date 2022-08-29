@@ -9,6 +9,9 @@ function PurchaseConfirmation () {
 
     const {cart, setCart, loggedInUser} = useContext(GbayContext);
 
+    //hooks
+    const [emptyCart, setEmptyCart] = useState(true);
+
     const navigate = useNavigate();
 
     //users full address, it is being split up to make it look better on the site
@@ -56,19 +59,16 @@ function PurchaseConfirmation () {
         sellerMessage : "Your " + buyerItem + " has just been sold!"
     }
 
-
-    //cals all functions necessary for the purchase functionality
+    //calls all functions necessary for the purchase functionality
     const handlePurchaseConfirmation = () => {
-        //first, the email functionality needs to be called
         confirmationEmailBuyer();
-        confirmationEmailSeller();
-
-        //then, the selected product needs to be removed from the list
-
-        //lastly, the user gets a confirmation (popup?) that will send them back to the homepage
-        //the confirmation must also say that they should have received an email
-
-        // goToHomepage();
+        //like the products, find a way to send multiple mails to multiple sellers
+        // confirmationEmailSeller();
+        removeMultipleProducts(cart);
+        confirmMessage();
+        setCart([]);
+        setEmptyCart(true);
+        goToHomepage();
     }
 
     //____________________________________  Email functionality  ______________________________________
@@ -84,6 +84,7 @@ function PurchaseConfirmation () {
         }).catch(err => console.log(err));
     }
 
+    //need to add a way to select the email of the person that's selling the product
     const confirmationEmailSeller = () => {
         emailjs.send(
             'service_bo0ty2n',
@@ -96,14 +97,38 @@ function PurchaseConfirmation () {
     }
 
     //_________________________________________________________________________________________________
+    
+    //looping over every single product in cart
+    const removeMultipleProducts = (cart) => {
+        for(let i = 0; i < cart.length;i++){
+            removeProduct(cart[i].id)
+        }
+    }
 
-    //on button click, user gets sent back to the cart
+    //removing a single product from the database after purchase
+    const removeProduct = async (id) => {
+        const data = await fetch(`http://localhost:9000/products/${id}`,
+            {method : "DELETE",
+                type : "no-cors"}
+        );
+        const result = data.json()
+        return result;
+    }
+
+    //sending the user to different pages according to what button they press
     const goToCart = () => {
         navigate('/shopping-cart')
     }
 
     const goToHomepage = () => {
-        navigate('/');
+        setTimeout(
+        navigate('/'),
+        3000)
+    }
+
+    //pop-up
+    const confirmMessage = () => {
+        window.alert("Good news everyone, your purchase has been accepted, and your cool stuff will be delivered to you with the Planet Express!");
     }
 
     return (
@@ -121,9 +146,14 @@ function PurchaseConfirmation () {
 
                 <h1>Delivery moment:</h1>
 
-                {/*<p>{cart.product.price}</p>*/}
-
                 <p>{deliveryDateLayout}</p>
+
+                {cart.map((product) =>
+                    <article>
+                        <p>{product.product_name}</p>
+                        <p>€ {product.price/100}</p>
+                    </article>
+                )}
 
             </div>
 
