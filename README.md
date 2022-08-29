@@ -319,4 +319,44 @@ As for how the presentation went, that is something you should ask our future-se
 
 ---
 
-## The Final Finale
+## Post Mortem - R.I.P. SCRUM Project
+A Post Mortem is a quick analysis about what resulted in the project's demise.
+So writing this can be difficult, since every member in our group agrees that the project was a great success.
+However, we will try and find things that did cost us a lot of time and/or went wrong.
+With that being said, here's another meme describing our Post Mortem!
+
+![post-mortem](readme-images/post-mortem.png)
+
+### Deployment - Database
+One of the biggest problems we faced during this assignment, was picking what database to use.
+We started with MySQL, but then realized we couldn't deploy this on Heroku.
+So we changed from MySQL to PostgreSQL.
+But eventually, we weren't able to deploy the project, since just completing the MVP was much tougher than we had anticipated.
+
+Re-doing the database could've been prevented if we started with researching when to use what database and what database would've suited our needs.
+But our entire team does agree that we learn the most when encountering a problem, and solving it when a problem arises.
+Then we've gained knowledge, so the next project goes way smoother.
+
+### Planning
+Preparing for battle is half the battle, so preparing for a project is about half the project.
+Before even touching a single line of code, we should've made a plan of attack.
+We did make a plan of attack, what we were going to use, why use that, etc...
+But, we should've spend some time researching different databases, frameworks,...
+Preparation is key!
+
+### SCRUM - Time
+Time-management is something we didn't do enough during this project.
+Because of this, we weren't able to properly anticipate how long a single task would take to finish.
+We had a "gut feeling" and every single person had their own opinion ob how long it should take, but we didn't specify a specific amount of time to every task.
+This is definitely something we should focus on during our next projects.
+
+### Smaller Tasks
+I think the title is pretty self-explanatory.
+We had to create smaller tasks, and more attainable goals.
+Not only will it give the developers more of a sense of success upon finishing a task, we can also more accurately gauge how long a task will take to finish.
+
+### Final Thoughts
+So in short, most issues we did have were planning/organizing wise, which makes sense, since this is our first SCRUM assignment.
+But we are definitely very proud of our finished project, we learned a lot from the mistakes we made, and we learned a lot from each other.
+
+![thanos](readme-images/thanos-finally-rest.gif)
