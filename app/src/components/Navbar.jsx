@@ -43,12 +43,12 @@ function Navbar() {
                         <li>
                             <Link to="/">Home</Link>
                         </li>
-                        <li>
-                            <a onClick={ () => toggleSubNav ("themes")}>Themes</a>
-                        </li>
-                        <li>
-                            <a onClick={ () => toggleSubNav ("categories")}>Categories</a>
-                        </li>
+                        {/*<li>*/}
+                        {/*    <a onClick={ () => toggleSubNav ("themes")}>Themes</a>*/}
+                        {/*</li>*/}
+                        {/*<li>*/}
+                        {/*    <a onClick={ () => toggleSubNav ("categories")}>Categories</a>*/}
+                        {/*</li>*/}
                         <li>
                             <Link to="/about-us">About us</Link>
                         </li>
