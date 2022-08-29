@@ -88,7 +88,7 @@ function AddProductPage() {
                 </select>
                 <label htmlFor="product__picture">Choose a product picture:</label>
                 <input type="file" id="product__picture" accept="image/png, image/jpeg" />
-                <button onClick={addProduct} className="addproduct-btn">Add product</button>
+                <button onClick={addProduct} className="btn--cta addproduct-btn">Add product</button>
            
         </div>
     )
