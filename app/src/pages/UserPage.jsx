@@ -10,10 +10,7 @@ import ProductItem from '../components/ProductItem';
 function UserPage() {
 
     const {products, loggedInUser, userProducts, setUserProducts} = useContext(GbayContext);
-
-
     
-
     const fetchProductsByUser = () => {
         fetch("http://localhost:9000/products/byuser/" + loggedInUser.id)
             .then(res => res.json())
@@ -30,7 +27,7 @@ function UserPage() {
         .then(res => res.json())
         .then(data => {
             if(data.message === "product deleted successfully"){
-              console.log("product deleted sucdddddddddddddddcessfully");
+                fetchProductsByUser();
             };
         })
         .catch(err => console.log(err));
