@@ -38,7 +38,7 @@ async function getProductByName(name) {
 
 async function getProductsByUserId(id) {
   const result = await db.query(
-    `SELECT id, product_name, amount, price, post_date, long_description, short_description, image FROM products
+    `SELECT id, category_id, theme_id, product_name, amount, price, post_date, long_description, short_description, image FROM products
                                    WHERE users_id = $1`,
     [id]
   );
