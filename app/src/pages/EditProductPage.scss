@@ -9,7 +9,7 @@
         margin-bottom:0.4rem;
     }
 
-    input, textarea, select, img {
+    input:not([type="file"]), textarea, select {
         margin-bottom:1rem;
     }
 
@@ -17,7 +17,7 @@
         height: 200px;
     }
 
-    .product__image {
+    .product__image--changer {
         font-size: 15rem;
         background-color: $c-secondary;
         color: $c-dark;
@@ -31,14 +31,12 @@
         }
     }
 
-    .login-btn {
-        margin-right:auto;
-    }
-
     .product__image-wrapper {
         position:relative;
         max-width: 500px;
         max-height:500px;
+        margin-bottom:2rem;
+        overflow: hidden;
 
 
         input, svg {
@@ -62,6 +60,11 @@
         svg {
             background-color: $c-secondary;
             padding:0.2rem;
+            border:4px solid $c-dark;
         }
+    }
+    
+    .btn-edit {
+        margin-right:auto;
     }
 }
