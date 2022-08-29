@@ -305,9 +305,17 @@ Unfortunately, our SCRUM Master lost against his sworn FriJay arch-enemy by abou
 He then said he would go train in a cave hidden by a waterfall, where he would spend the remainder of his days making cave-paintings or meditating under the waterfall.
 All for the sake of winning the next time in Scribble.
 
-### Weekend 2: "Electric Boogaloo"
-
 ### Day 10: "Aligos: Endgame"
+This is, we're in the endgame now...
+We started this day like any other day, with a quick stand-up meeting.
+Previously, we thought that we had a whole day extra to finish our MVP and prepare a presentation for the client.
+But unfortunately, we were wrong, we only had half a day.
+
+Thankfully, we believe in Murphy's law, where if something can go wrong, it WILL go wrong.
+We did some work over the weekend, resulted in us being able to finish the MVP on time.
+So for the next hours, we focused in the MVP, and then we would spend the rest of the time preparing our presentation.
+
+As for how the presentation went, that is something you should ask our future-selves!
 
 ---
 
