@@ -86,7 +86,7 @@ function ProductPage() {
         <div className="container product-page">
             <h1>{product.product_name}</h1>
             <div>
-                <img className="product__img" src="/assets/images/5.jpg"/>
+                <img className="product__img" src={product.image}/>
                 <h3>{product.short_description}</h3>
                 <p>{product.long_description}</p>
                 <p className="product__price">&euro;{parseFloat(product.price / 100).toFixed(2)}</p>
