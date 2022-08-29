@@ -80,9 +80,9 @@ function EditProductPage() {
             <label htmlFor="product__name">Product name:</label>
             <input type="text" placeholder="Product name" id="product__name" defaultValue={product.product_name}/>
             <label htmlFor="product__description--short">Short product description (max. 50 characters):</label>
-            <input type="text" placeholder="Product description (short)" maxlength="50" id="product__description--short" defaultValue={product.short_description} />
+            <input type="text" placeholder="Product description (short)" maxLength="50" id="product__description--short" defaultValue={product.short_description} />
             <label htmlFor="product__description--long">Long product description:</label>
-            <textarea placeholder="Product name" maxlength="50" id="product__description--long" defaultValue={product.long_description} />
+            <textarea placeholder="Product name" id="product__description--long" defaultValue={product.long_description} />
             <label htmlFor="product__price">Product price:</label>
             <input type="text" placeholder="Product price" id="product__price" defaultValue={product.price} />
             <label htmlFor="product__category">Product category:</label>
